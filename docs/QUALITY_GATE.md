@@ -20,4 +20,8 @@
 
 Stage 1.1 只验证规划层和项目 Canonical Facts；没有正文时，正文元数据与正文内容校验必须明确报告跳过。任何语义门失败，Stage 1.1 不得标记 PASS。
 
+人工复核事项记录规则：`docs/archive/STAGE3_REVIEW_REQUIRED.md` 是 Stage 3 的历史记录，不得继续写入。Stage 3.1 及以后产生的新人工复核事项，在活动路径 `docs/STAGE3_REVIEW_REQUIRED.md` 重新创建并以 `- REVIEW:` 行登记；未解决事项清零后删除该文件或清空 REVIEW 行。
+
+Archive 边界：各 `archive/` 目录中的文件仅为历史记录，不是当前权威数据；不被 validator 当正式输入，不被生成器默认读取，不参与 Manifest / Source / Knowledge 正式校验。
+
 当前 `PACKAGE_PLAN.csv` 的 100 / 99 / 40 是 Stage 1/1.1 逻辑规划，不是最终上传分包，也不作为 Stage 2 阻塞项。Gate 9 和 Gate 10 的最终验收在 Stage 6 package rebalancing 后执行：每包不超过 100 个文件并建议保留 10~20 个文件余量，包内文件平铺；Package 只作为运输单元，不改变知识 ID、领域或语义归属。

@@ -8,7 +8,9 @@ Stage 1.1 明确不包含：大规模公开资料搜集、PDF 下载、知识正
 
 ## 2. 事实基线
 
-企业唯一事实源为 `enterprise_model/CANONICAL_FACTS.yaml`；三个项目的唯一事实源为 `enterprise_model/projects/P001_CANONICAL_FACTS.yaml` 等文件。公司与项目事实在其他文件中不得自行变体。当前企业是合成企业；所有未由公共来源支持的内部规则都必须标记为 `SYNTHETIC` 或 `SYNTHETIC_DERIVED`。
+企业唯一事实源为 `enterprise_model/CANONICAL_FACTS.yaml`；`enterprise_model/ENTERPRISE_OVERVIEW.md` 仅为便于人阅读的派生视图，不得作为独立权威事实源，两者冲突时以 `CANONICAL_FACTS.yaml` 为准。三个项目的唯一事实源为 `enterprise_model/projects/P001_CANONICAL_FACTS.yaml` 等文件。公司与项目事实在其他文件中不得自行变体。当前企业是合成企业；所有未由公共来源支持的内部规则都必须标记为 `SYNTHETIC` 或 `SYNTHETIC_DERIVED`。
+
+其余权威索引：来源以 `sources/SOURCE_REGISTRY.csv` 为唯一登记表；知识资产总目录为 `manifests/KNOWLEDGE_MANIFEST.csv`；外部来源血缘为 `manifests/SOURCE_LINEAGE.csv`；关键 Claim 血缘为 `manifests/CLAIM_PROVENANCE.csv`。正式知识可以引用和表达 Canonical Facts，但不得维护脱离 Canonical 的独立事实配置。
 
 ## 3. 知识治理
 

@@ -14,6 +14,15 @@
 2. `PACKAGE-02` 企业历史案例库
 3. `PACKAGE-03` 企业业务数据与模板库
 
+## 权威数据源
+
+- 企业事实唯一权威源：`enterprise_model/CANONICAL_FACTS.yaml`。`enterprise_model/ENTERPRISE_OVERVIEW.md` 仅为便于人阅读的派生视图，不得作为独立权威事实源；两者冲突时以 `CANONICAL_FACTS.yaml` 为准。
+- 项目事实唯一权威源：`enterprise_model/projects/P001_CANONICAL_FACTS.yaml`、`P002_CANONICAL_FACTS.yaml`、`P003_CANONICAL_FACTS.yaml`。
+- 来源权威索引：`sources/SOURCE_REGISTRY.csv`。
+- 知识资产总目录：`manifests/KNOWLEDGE_MANIFEST.csv`。
+- 外部来源血缘：`manifests/SOURCE_LINEAGE.csv`。
+- 关键 Claim 血缘：`manifests/CLAIM_PROVENANCE.csv`（Stage 3 已建立 79 条关键声明；更细粒度 Claim 覆盖为 Stage 3.1 待补）。
+
 ## 12 个智能体
 
 需求洞察与方案顾问、AI项目经理、企业知识管家、智能会议协同官、企业文档创作官、文档规范与排版官、AI招聘与人才助手、培训绩效与员工发展助手、智能采购顾问、招投标审查官、合同与履约风控官、企业经营分析师。
@@ -41,18 +50,14 @@ Stage 1 项目初始化；Stage 1.1 语义修复；Stage 2 公开真实资料搜
 
 ## 运行校验
 
-在仓库根目录执行：
+在仓库根目录执行统一入口：
 
 ```powershell
-python scripts/validate_manifest.py
-python scripts/validate_metadata.py
-python scripts/validate_source_lineage.py
-python scripts/validate_agent_coverage.py
-python scripts/validate_semantic_dependencies.py
-python scripts/validate_consistency.py
-python scripts/validate_upload_constraints.py
-python scripts/validate_source_coverage.py
-python scripts/validate_core_knowledge.py
+python scripts/validate_all.py
 ```
 
+该入口按稳定顺序执行全部 9 个活动 validator（Manifest、Metadata、Source Lineage、Source Coverage、Agent Coverage、Semantic Dependency、Canonical Consistency、Upload Constraints、Core Knowledge），逐项报告 PASS / REVIEW / FAIL，任意 FAIL 时以非 0 退出。也可单独运行 `scripts/validate_*.py` 中的任意一个。
+
 规划层校验脚本仅使用 Python 标准库；`validate_metadata.py` 与 `validate_core_knowledge.py` 另需 `pyyaml` 和 `jsonschema`。
+
+Stage 3 已完成，一次性生成器 `generate_stage3.py` 已归档至 `scripts/archive/`，仅保留历史复现用途，不作为活动入口；它会直接重写正式知识正文，不得再次运行。
