@@ -5,7 +5,7 @@ from semantic_rules import APPLICABILITIES, NORMATIVE_FORCES, SOURCE_AUTHORITIES
 from validation_common import fail, manifest_rows, read_csv, ROOT
 
 manifest_ids = {r["knowledge_id"] for r in manifest_rows()}
-sources = read_csv(ROOT / "source_registry/SOURCE_REGISTRY.csv")
+sources = read_csv(ROOT / "sources/SOURCE_REGISTRY.csv")
 source_ids = {r["source_id"] for r in sources}
 rows = read_csv(ROOT / "manifests/SOURCE_LINEAGE.csv")
 errors = []

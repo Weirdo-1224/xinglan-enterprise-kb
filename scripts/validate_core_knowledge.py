@@ -14,7 +14,7 @@ CORE = ROOT / "knowledge" / "core"
 ALLOWED_TYPES = {"ENTERPRISE_FOUNDATION", "PUBLIC_REFERENCE", "POLICY", "SOP", "FAQ_RULE", "ROLE"}
 EXPECTED = [row for row in manifest_rows() if row["package"] == "PACKAGE-01" and row["knowledge_type"] in ALLOWED_TYPES]
 ASSETS = {row["knowledge_id"]: row for row in manifest_rows()}
-SOURCES = {row["source_id"]: row for row in read_csv(ROOT / "source_registry/SOURCE_REGISTRY.csv")}
+SOURCES = {row["source_id"]: row for row in read_csv(ROOT / "sources/SOURCE_REGISTRY.csv")}
 SCHEMA = yaml.safe_load((ROOT / "schemas/knowledge_metadata.schema.json").read_text(encoding="utf-8-sig"))
 VALIDATOR = Draft202012Validator(SCHEMA, format_checker=FormatChecker())
 
@@ -161,7 +161,7 @@ else:
             errors.append(f"{row['claim_id']}: incomplete evidence")
     print(f"PASS: {len(claims)} critical claims validated")
 
-review_path = ROOT / "docs/STAGE3_REVIEW_REQUIRED.md"
+review_path = ROOT / "docs/archive/STAGE3_REVIEW_REQUIRED.md"
 if not review_path.exists():
     errors.append("STAGE3_REVIEW_REQUIRED.md missing")
 else:

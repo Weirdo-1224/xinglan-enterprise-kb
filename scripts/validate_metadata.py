@@ -82,7 +82,7 @@ for project_id in ("P001", "P002", "P003"):
 source_validator = None
 if source:
     source_validator = Draft202012Validator(source, format_checker=FormatChecker())
-registry_path = ROOT / "source_registry" / "SOURCE_REGISTRY.csv"
+registry_path = ROOT / "sources" / "SOURCE_REGISTRY.csv"
 try:
     source_rows = read_csv(registry_path)
 except OSError as exc:

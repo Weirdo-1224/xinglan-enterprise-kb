@@ -1,6 +1,6 @@
 # 星澜数字科技有限公司模拟企业知识库
 
-本项目为“模拟企业知识库 + 12 个企业智能体”准备可上传、可验证的知识资产规划。Stage 1.1 在 Stage 1 的 195 项基础上完成语义修复，现规划 239 项资产；只建立规则、企业与项目唯一事实源、数据契约、Manifest、能力覆盖矩阵和校验框架，不批量生成知识正文。
+本项目为“模拟企业知识库 + 12 个企业智能体”准备可上传、可验证的知识资产。当前规划 239 项资产，其中 Stage 3 企业核心知识库 100 份正文已完成并通过全部校验；工程已从 Stage 驱动的实验脚手架收敛为可长期维护的正式知识库结构。
 
 ## 为什么使用模拟企业
 
@@ -22,23 +22,22 @@
 
 客户需求 → 需求澄清 → 解决方案 → 项目立项 → 项目计划 → 人员配置 → 招聘 / 培训 → 采购 → 招投标 → 合同 → 项目执行 → 会议协同 → 风险管理 → 验收 → 结项 → 经营分析 → 知识沉淀。
 
-## 工程目录
+## 工程主链与目录
 
-- `enterprise_model/`：企业 Canonical Model，以及 P001/P002/P003 项目唯一事实源
+工程主链：`sources → enterprise_model → manifests → knowledge → validation(scripts) → deliverables`。
+
+- `sources/`：来源登记表 `SOURCE_REGISTRY.csv`、逐条来源核验备注 `source_notes/`，原始文件缓存（如有）只放 `raw/`
+- `enterprise_model/`：企业 Canonical Facts 唯一事实源、企业概览、知识治理规则，以及 `projects/` 下 P001/P002/P003 项目唯一事实源
+- `manifests/`：知识资产 Manifest、智能体能力覆盖、来源血缘、声明溯源和上传包规划；已派生/停用清单归档于 `archive/`
+- `knowledge/`：知识正文与结构化数据；Stage 3 核心知识 100 份位于 `core/`
 - `schemas/`：知识、来源、项目和业务数据契约
-- `manifests/`：知识资产、智能体、业务链、来源血缘和打包规划
-- `source_registry/`、`sources/`：来源登记与 Stage 2 来源存放区
-- `knowledge/`：后续知识正文和结构化数据的目标目录
-- `scripts/`：基础质量校验脚本
-- `docs/`：架构、来源、合成数据和质量门规范
+- `scripts/`：质量校验脚本；停用生成器归档于 `archive/`
+- `docs/`：架构、来源、合成数据和质量门等长期治理文档；阶段性说明归档于 `archive/`
+- `deliverables/`：仅存放最终交付物；Stage 中间报告归档于 `archive/`
 
 ## Stage 顺序
 
-Stage 1 项目初始化；Stage 1.1 语义修复；Stage 2 公开真实资料搜集；Stage 3 企业核心知识库；Stage 4 三个完整历史项目；Stage 5 业务数据与模板；Stage 6 全局 QA、RAG 适配与最终打包。
-
-## 当前状态
-
-Stage 1.1 已完成语义依赖、能力覆盖、来源适用性和项目 Canonical Model 的架构升级。当前没有批量知识正文、真实业务数据、最终 ZIP，也未执行 Stage 2。
+Stage 1 项目初始化；Stage 1.1 语义修复；Stage 2 公开真实资料搜集；Stage 3 企业核心知识库（100 份正文，已完成）；Stage 4 三个完整历史项目；Stage 5 业务数据与模板；Stage 6 全局 QA、RAG 适配与最终打包。
 
 ## 运行校验
 
@@ -52,6 +51,8 @@ python scripts/validate_agent_coverage.py
 python scripts/validate_semantic_dependencies.py
 python scripts/validate_consistency.py
 python scripts/validate_upload_constraints.py
+python scripts/validate_source_coverage.py
+python scripts/validate_core_knowledge.py
 ```
 
-校验脚本使用 Python 标准库，不依赖第三方包。
+规划层校验脚本仅使用 Python 标准库；`validate_metadata.py` 与 `validate_core_knowledge.py` 另需 `pyyaml` 和 `jsonschema`。

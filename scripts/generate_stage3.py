@@ -9,7 +9,7 @@ import yaml
 ROOT = Path(__file__).resolve().parents[1]
 MANIFEST = ROOT / "manifests" / "KNOWLEDGE_MANIFEST.csv"
 LINEAGE = ROOT / "manifests" / "SOURCE_LINEAGE.csv"
-REGISTRY = ROOT / "source_registry" / "SOURCE_REGISTRY.csv"
+REGISTRY = ROOT / "sources" / "SOURCE_REGISTRY.csv"
 CORE = ROOT / "knowledge" / "core"
 
 

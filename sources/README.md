@@ -1,3 +1,8 @@
-# 来源文件区
+# 来源区
 
-按 `official/`、`corporate/`、`procurement/`、`recruitment/` 和 `other/` 分类存放 Stage 2 资料。当前为空。
+统一存放来源登记与来源核验材料：
+
+- `SOURCE_REGISTRY.csv`：全部来源的唯一登记表（公开官方、公开企业、公开案例与合成来源），逐条记录来源权威、规范效力和业务适用性。
+- `source_notes/`：Stage 2 起逐条来源的核验备注。占位来源只登记在 `SOURCE_REGISTRY.csv`，不得视为已核验事实。
+
+若后续需要保留原始文件缓存，统一放在 `sources/raw/`，不再按来源类别建多层空目录。
