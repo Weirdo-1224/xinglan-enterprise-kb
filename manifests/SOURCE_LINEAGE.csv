@@ -78,3 +78,13 @@ LIN-078,POL005,SRC-CASE-016,analogical_external_source,AI 数字人平台项目�
 LIN-079,REF018,SRC-CASE-017,analogical_external_source,AI 能力中心采购文件集+评审表+成交公告三阶段链（四川信息职院）,to_be_extracted,MEDIUM,VERIFIED,Stage 2.2 ccgp 公告页核验；附件含采购文件集与评审情况表；P002 方向材料最完整案例
 LIN-080,POL005,SRC-CASE-017,analogical_external_source,知识库+RAG+智能体平台需求与量化验收标准（与 P002 对应）,to_be_extracted,HIGH,VERIFIED,Stage 2.2 核验；20 智能体/20 知识库/90 日/SLA 条款可作 P002 验收模板
 LIN-081,POL017,SRC-CASE-017,analogical_external_source,等保 2.0 二级测评作为 AI 平台合同交付条件的实操样例,to_be_extracted,MEDIUM,VERIFIED,Stage 2.2 核验；与 SRC-STD-001 等保标准配套印证落地方式
+LIN-082,ROLE001,SRC-ROLE-004,analogical_role_reference,项目经理的方案协同与大型项目经验能力参照,curated_capability_mapping,MEDIUM,VERIFIED,Stage 3.1 仅作行业能力参考；岗位职责、权限和评价仍由星澜组织模型定义
+LIN-083,ROLE002,SRC-ROLE-004,analogical_role_reference,解决方案设计、客户拓展和项目支撑能力参照,curated_capability_mapping,MEDIUM,VERIFIED,Stage 3.1 仅作行业能力参考；岗位职责、权限和评价仍由星澜组织模型定义
+LIN-084,ROLE004,SRC-ROLE-001,analogical_role_reference,LLM/RAG/Agent/向量检索与评测能力参照,curated_capability_mapping,MEDIUM,VERIFIED,Stage 3.1 仅作行业能力参考；岗位职责、权限和评价仍由星澜组织模型定义
+LIN-085,ROLE004,SRC-ROLE-002,analogical_role_reference,服务端工程、微服务与云原生能力参照,curated_capability_mapping,MEDIUM,VERIFIED,Stage 3.1 仅作行业能力参考；岗位职责、权限和评价仍由星澜组织模型定义
+LIN-086,ROLE004,SRC-ROLE-003,analogical_role_reference,AI训练推理与大模型工程化能力参照,curated_capability_mapping,MEDIUM,VERIFIED,Stage 3.1 仅作行业能力参考；岗位职责、权限和评价仍由星澜组织模型定义
+LIN-087,ROLE005,SRC-ROLE-005,analogical_role_reference,供应商选择、合同与绩效管理能力参照,curated_capability_mapping,MEDIUM,VERIFIED,Stage 3.1 仅作行业能力参考；岗位职责、权限和评价仍由星澜组织模型定义
+LIN-088,ROLE006,SRC-ROLE-008,analogical_role_reference,人力资源岗位类别公开入口参照,curated_capability_mapping,MEDIUM,VERIFIED,Stage 3.1 仅作行业能力参考；岗位职责、权限和评价仍由星澜组织模型定义
+LIN-089,ROLE006,SRC-ROLE-009,analogical_role_reference,HRBP真实岗位场景参照，不推断未展示职责,curated_capability_mapping,MEDIUM,VERIFIED,Stage 3.1 仅作行业能力参考；岗位职责、权限和评价仍由星澜组织模型定义
+LIN-090,ROLE006,SRC-ROLE-010,analogical_role_reference,集团职能HRBP真实岗位场景参照,curated_capability_mapping,MEDIUM,VERIFIED,Stage 3.1 仅作行业能力参考；岗位职责、权限和评价仍由星澜组织模型定义
+LIN-091,ROLE008,SRC-ROLE-006,analogical_role_reference,合同、交易风险、争议与合规能力参照,curated_capability_mapping,MEDIUM,VERIFIED,Stage 3.1 仅作行业能力参考；岗位职责、权限和评价仍由星澜组织模型定义
