@@ -23,6 +23,7 @@ VALIDATORS = [
     ("Upload Constraints", "validate_upload_constraints.py"),
     ("Core Knowledge", "validate_core_knowledge.py"),
     ("Stage 3.1 Content QA", "validate_stage31_content.py"),
+    ("Stage 4 Project Cases", "validate_stage4_cases.py"),
 ]
 
 

@@ -88,3 +88,8 @@ LIN-088,ROLE006,SRC-ROLE-008,analogical_role_reference,人力资源岗位类别�
 LIN-089,ROLE006,SRC-ROLE-009,analogical_role_reference,HRBP真实岗位场景参照，不推断未展示职责,curated_capability_mapping,MEDIUM,VERIFIED,Stage 3.1 仅作行业能力参考；岗位职责、权限和评价仍由星澜组织模型定义
 LIN-090,ROLE006,SRC-ROLE-010,analogical_role_reference,集团职能HRBP真实岗位场景参照,curated_capability_mapping,MEDIUM,VERIFIED,Stage 3.1 仅作行业能力参考；岗位职责、权限和评价仍由星澜组织模型定义
 LIN-091,ROLE008,SRC-ROLE-006,analogical_role_reference,合同、交易风险、争议与合规能力参照,curated_capability_mapping,MEDIUM,VERIFIED,Stage 3.1 仅作行业能力参考；岗位职责、权限和评价仍由星澜组织模型定义
+LIN-092,P001_25,SRC-CASE-016,analogical_external_source,招标文件条款结构与评审要素组织参照,derived_with_internal_parameters,MEDIUM,VERIFIED,Stage 4.1 血缘补登：公开成交公告附件含完整采购文件；仅作结构类比，星澜项目主体、金额、日期不移植
+LIN-093,P001_26,SRC-CASE-016,analogical_external_source,招标文件审查维度与澄清流程组织参照,derived_with_internal_parameters,MEDIUM,VERIFIED,Stage 4.1 血缘补登：同一公开案例链支撑审查记录结构；仅作结构类比
+LIN-094,P002_04,SRC-CASE-017,analogical_external_source,知识库/RAG/智能体方案需求结构参照,derived_with_internal_parameters,MEDIUM,VERIFIED,Stage 4.1 血缘补登：注册表 notes 明确该案例属 P002 知识库方向完整需求+结果链；仅作结构类比
+LIN-095,P003_04,SRC-CASE-006,analogical_external_source,智慧巡检方案需求结构与技术参数组织参照,derived_with_internal_parameters,MEDIUM,VERIFIED,Stage 4.1 血缘补登：公开智慧巡检采购案例；仅作结构类比
+LIN-096,P003_25,SRC-CASE-015,analogical_external_source,GPU 服务器规格与采购明细结构参照,derived_with_internal_parameters,MEDIUM,VERIFIED,Stage 4.1 血缘补登：公开中标公告含 GPU 推理服务器明细；仅作结构类比，星澜配置与金额不移植
