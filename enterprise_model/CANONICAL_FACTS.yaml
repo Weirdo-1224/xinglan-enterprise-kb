@@ -1,0 +1,151 @@
+schema_version: "1.0"
+fact_set_id: "CF-XLDIGITAL-001"
+status: active
+simulation_notice: "本文件是星澜数字科技有限公司的 SYNTHETIC 企业事实基线，不代表真实企业。"
+company:
+  legal_name: "星澜数字科技有限公司"
+  short_name: "星澜科技"
+  founded_year: 2021
+  headquarters: "成都"
+  employee_count: 286
+  employee_count_status: fixed_for_simulation
+  business_positioning: "约300人规模的AI/数字化科技公司，面向政企客户提供AI数字人、企业智能体、企业知识库、智慧园区/政企信息化、AI应用集成和智慧巡检/视觉智能应用。"
+  data_nature: SYNTHETIC
+  source_authority: SYNTHETIC
+  normative_force: INTERNAL_MANDATORY
+  applicability: DIRECT
+organization:
+  governance_bodies:
+    - 总经理办公会
+    - PMO
+  first_level_departments:
+    - D01: 市场营销中心
+    - D02: 产品研发中心
+    - D03: 项目交付中心
+    - D04: 采购供应中心
+    - D05: 人力资源中心
+    - D06: 财务中心
+    - D07: 法务风控中心
+    - D08: 综合管理部
+departments:
+  D01:
+    name: 市场营销中心
+    responsibility: "市场拓展、客户关系、商机管理、投标协同和合同前商务输入"
+  D02:
+    name: 产品研发中心
+    responsibility: "产品规划、架构研发、算法工程、知识库和平台技术支持"
+  D03:
+    name: 项目交付中心
+    responsibility: "项目立项、计划、实施、项目管理、客户沟通、验收和结项"
+  D04:
+    name: 采购供应中心
+    responsibility: "采购需求、供应商管理、询比价、采购执行和到货协同"
+  D05:
+    name: 人力资源中心
+    responsibility: "招聘、入转调离、培训、绩效、岗位能力和人才发展"
+  D06:
+    name: 财务中心
+    responsibility: "预算、核算、回款、成本、工时和经营数据分析支持"
+  D07:
+    name: 法务风控中心
+    responsibility: "合同审核、招投标合规、知识产权、数据安全和风险管理"
+  D08:
+    name: 综合管理部
+    responsibility: "行政、会议、档案、印章、制度发布和综合协调"
+roles:
+  - R01: 总经理
+  - R02: 中心负责人
+  - R03: PMO负责人
+  - R04: 项目经理
+  - R05: 解决方案顾问
+  - R06: 产品经理
+  - R07: 技术/算法工程师
+  - R08: 采购专员
+  - R09: HRBP/招聘专员
+  - R10: 财务经理
+  - R11: 法务风控经理
+  - R12: 综合行政专员
+  - R13: 员工
+business_lines:
+  - AI数字人解决方案
+  - 企业智能体
+  - 企业知识库
+  - 智慧园区/政企信息化建设
+  - AI应用集成
+  - 智慧巡检/视觉智能应用
+approval_rules:
+  principle: "分级授权、业务与财务相互制衡、重大事项专项审批、留痕可追溯"
+  provisional_notice: "以下阈值为 SYNTHETIC 企业内部规则，不是国家法律要求。"
+  procurement_thresholds:
+    - range: "<5万元"
+      rule: "简化采购，业务负责人和采购供应中心审核"
+    - range: "5万~20万元"
+      rule: "原则上三家比选，形成比选记录"
+    - range: "20万~100万元"
+      rule: "竞争性采购，法务/财务按事项参与"
+    - range: ">=100万元"
+      rule: "原则上公开招标或专项审批"
+  contract: "合同须经业务、财务、法务风控按权限审核后签署"
+  project: "项目立项、重大变更、验收和结项须留存审批记录"
+project_types:
+  - code: PTYPE-AI-SOLUTION
+    name: AI数字化解决方案项目
+  - code: PTYPE-KB-AGENT
+    name: 企业知识助手/智能体项目
+  - code: PTYPE-SMART-PARK
+    name: 智慧园区/政企信息化项目
+  - code: PTYPE-VISION
+    name: 视觉智能/智慧巡检项目
+document_rules:
+  primary_format: Markdown
+  target_max_words: 20000
+  split_required_over_words: 100000
+  naming_rule: "资产类型前缀 + 三位/项目序号 + 中文主题 + .md；详见 schemas/naming_rules.md"
+  version_pattern: "vMAJOR.MINOR"
+risk_levels:
+  - L1: 低
+  - L2: 中
+  - L3: 高
+  - L4: 重大
+confidentiality_levels:
+  - PUBLIC
+  - INTERNAL
+  - SENSITIVE
+  - HIGHLY_SENSITIVE
+knowledge_governance:
+  source_types:
+    - PUBLIC_OFFICIAL
+    - PUBLIC_CORPORATE
+    - PUBLIC_CASE
+    - SYNTHETIC_DERIVED
+    - SYNTHETIC
+    - INTERNAL_DERIVED
+  authority_levels:
+    L0: 国家法律法规/强制性要求
+    L1: 现行企业制度
+    L2: 现行SOP
+    L3: 规则、模板、岗位说明
+    L4: 历史案例
+    L5: 经验建议
+  source_authorities:
+    - OFFICIAL
+    - PUBLIC_CORPORATE
+    - PUBLIC_CASE
+    - SYNTHETIC_DERIVED
+    - SYNTHETIC
+    - INTERNAL_DERIVED
+  normative_forces:
+    - MANDATORY
+    - CONTRACTUAL
+    - INTERNAL_MANDATORY
+    - GUIDANCE
+    - REFERENCE
+    - NONE
+  applicability_states:
+    - DIRECT
+    - CONDITIONAL
+    - ANALOGICAL
+    - NOT_APPLICABLE
+    - PENDING_REVIEW
+  conflict_precedence: [applicability, normative_force, status, effective_date_and_version, specificity, source_authority]
+  answer_states: [EXPLICIT, DERIVED, UNKNOWN, CONFLICT, OUT_OF_SCOPE]

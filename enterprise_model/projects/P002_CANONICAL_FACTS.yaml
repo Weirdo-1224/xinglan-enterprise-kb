@@ -1,0 +1,51 @@
+{
+  "schema_version": "1.1",
+  "project_id": "P002",
+  "project_name": "银行企业知识助手项目",
+  "project_type": "PTYPE-KB-AGENT",
+  "case_classification": "问题项目",
+  "customer_type": "区域金融机构（合成）",
+  "contract_amount": {"currency": "CNY", "amount": 2800000},
+  "budget": {"currency": "CNY", "amount": 2200000},
+  "planned_start_date": "2024-03-01",
+  "planned_end_date": "2024-11-30",
+  "actual_start_date": "2024-03-11",
+  "actual_end_date": "2025-03-15",
+  "delay_days": 105,
+  "project_manager": "周骁（合成人员）",
+  "team_size": 9,
+  "milestones": [
+    {"name": "需求基线确认", "planned_date": "2024-04-15", "actual_date": "2024-05-10", "status": "delayed"},
+    {"name": "知识库试运行", "planned_date": "2024-09-30", "actual_date": "2025-01-12", "status": "delayed"},
+    {"name": "终验", "planned_date": "2024-11-30", "actual_date": "2025-03-15", "status": "accepted"}
+  ],
+  "procurement": [
+    {"item": "知识库测试环境资源", "amount": {"currency": "CNY", "amount": 180000}, "method": "三家比选", "status": "delayed"}
+  ],
+  "contracts": [
+    {"contract_id": "P002-C01", "amount": {"currency": "CNY", "amount": 2800000}, "payment_terms": "20%预付款、30%试运行、50%终验；试运行付款证据定义不清", "status": "disputed"}
+  ],
+  "changes": [
+    {"change_id": "P002-CH01", "description": "新增三类知识域", "impact": "增加实施工作量与两周工期", "status": "implemented"},
+    {"change_id": "P002-CH02", "description": "权限模型调整", "impact": "返工并影响测试", "status": "implemented"},
+    {"change_id": "P002-CH03", "description": "回答引用格式变更", "impact": "知识版本与提示模板冲突", "status": "implemented"},
+    {"change_id": "P002-CH04", "description": "验收样本范围扩大", "impact": "终验延期", "status": "approved"}
+  ],
+  "risks": [
+    {"risk_id": "P002-R01", "description": "核心实施人员不足", "level": "L3", "status": "realized"},
+    {"risk_id": "P002-R02", "description": "知识版本冲突导致回答口径不一致", "level": "L3", "status": "realized"},
+    {"risk_id": "P002-R03", "description": "付款条件与交付证据不匹配", "level": "L3", "status": "realized"}
+  ],
+  "acceptance": {"date": "2025-03-15", "result": "passed_with_conditions", "criteria_status": "整改后通过；付款证据争议单独跟踪"},
+  "financials": {
+    "actual_cost": {"currency": "CNY", "amount": 2650000},
+    "recognized_revenue": {"currency": "CNY", "amount": 2520000},
+    "payment_status": "尾款因付款条件争议延期",
+    "budget_variance": {"currency": "CNY", "amount": 450000}
+  },
+  "final_status": "completed_with_issues",
+  "lessons": ["频繁变更必须回到需求基线并评估合同影响", "知识版本冲突需要专属处置流程", "人员缺口与成本偏差应更早升级", "付款条件必须绑定可验证的交付证据"],
+  "fact_status": "approved",
+  "synthetic_notice": true,
+  "documents": ["P002_01", "P002_02", "P002_03", "P002_04", "P002_05", "P002_06", "P002_07", "P002_08", "P002_09", "P002_10", "P002_11", "P002_12", "P002_13", "P002_14", "P002_15", "P002_16", "P002_17", "P002_18", "P002_19", "P002_20", "P002_21", "P002_22", "P002_23", "P002_24", "P002_25", "P002_26", "P002_27", "P002_28", "P002_29", "P002_30", "P002_31"]
+}

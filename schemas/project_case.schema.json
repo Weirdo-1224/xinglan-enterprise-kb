@@ -1,0 +1,39 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://xinglan.example/schemas/project_case.schema.json",
+  "title": "Xinglan Synthetic Project Canonical Case",
+  "type": "object", "additionalProperties": false,
+  "required": ["schema_version", "project_id", "project_name", "project_type", "case_classification", "customer_type", "contract_amount", "budget", "planned_start_date", "planned_end_date", "actual_start_date", "actual_end_date", "delay_days", "project_manager", "team_size", "milestones", "procurement", "contracts", "changes", "risks", "acceptance", "financials", "final_status", "lessons", "fact_status", "synthetic_notice", "documents"],
+  "properties": {
+    "schema_version": {"const": "1.1"}, "project_id": {"type": "string", "pattern": "^P[0-9]{3}$"},
+    "project_name": {"type": "string", "minLength": 1}, "project_type": {"type": "string", "minLength": 1},
+    "case_classification": {"enum": ["优秀项目", "问题项目", "复杂技术项目"]},
+    "customer_type": {"type": "string", "minLength": 1},
+    "contract_amount": {"$ref": "#/$defs/money"}, "budget": {"$ref": "#/$defs/money"},
+    "planned_start_date": {"type": "string", "format": "date"}, "planned_end_date": {"type": "string", "format": "date"},
+    "actual_start_date": {"type": "string", "format": "date"}, "actual_end_date": {"type": "string", "format": "date"},
+    "delay_days": {"type": "integer", "minimum": 0}, "project_manager": {"type": "string", "minLength": 1},
+    "team_size": {"type": "integer", "minimum": 1},
+    "milestones": {"type": "array", "minItems": 2, "items": {"$ref": "#/$defs/milestone"}},
+    "procurement": {"type": "array", "items": {"$ref": "#/$defs/procurement"}},
+    "contracts": {"type": "array", "minItems": 1, "items": {"$ref": "#/$defs/contract"}},
+    "changes": {"type": "array", "items": {"$ref": "#/$defs/change"}},
+    "risks": {"type": "array", "items": {"$ref": "#/$defs/risk"}},
+    "acceptance": {"$ref": "#/$defs/acceptance"}, "financials": {"$ref": "#/$defs/financials"},
+    "final_status": {"enum": ["completed", "completed_with_issues", "closed", "cancelled"]},
+    "lessons": {"type": "array", "minItems": 1, "items": {"type": "string", "minLength": 1}, "uniqueItems": true},
+    "fact_status": {"enum": ["provisional", "approved"]}, "synthetic_notice": {"const": true},
+    "documents": {"type": "array", "minItems": 20, "maxItems": 40, "items": {"type": "string", "pattern": "^P[0-9]{3}_[0-9]{2}$"}, "uniqueItems": true}
+  },
+  "$defs": {
+    "money": {"type": "object", "additionalProperties": false, "required": ["currency", "amount"], "properties": {"currency": {"const": "CNY"}, "amount": {"type": "number", "minimum": 0}}},
+    "signed_money": {"type": "object", "additionalProperties": false, "required": ["currency", "amount"], "properties": {"currency": {"const": "CNY"}, "amount": {"type": "number"}}},
+    "milestone": {"type": "object", "additionalProperties": false, "required": ["name", "planned_date", "actual_date", "status"], "properties": {"name": {"type": "string"}, "planned_date": {"type": "string", "format": "date"}, "actual_date": {"type": "string", "format": "date"}, "status": {"enum": ["on_time", "delayed", "accepted", "disputed"]}}},
+    "procurement": {"type": "object", "additionalProperties": false, "required": ["item", "amount", "method", "status"], "properties": {"item": {"type": "string"}, "amount": {"$ref": "#/$defs/money"}, "method": {"type": "string"}, "status": {"enum": ["planned", "completed", "delayed", "disputed"]}}},
+    "contract": {"type": "object", "additionalProperties": false, "required": ["contract_id", "amount", "payment_terms", "status"], "properties": {"contract_id": {"type": "string"}, "amount": {"$ref": "#/$defs/money"}, "payment_terms": {"type": "string"}, "status": {"enum": ["draft", "active", "completed", "disputed"]}}},
+    "change": {"type": "object", "additionalProperties": false, "required": ["change_id", "description", "impact", "status"], "properties": {"change_id": {"type": "string"}, "description": {"type": "string"}, "impact": {"type": "string"}, "status": {"enum": ["proposed", "approved", "rejected", "implemented"]}}},
+    "risk": {"type": "object", "additionalProperties": false, "required": ["risk_id", "description", "level", "status"], "properties": {"risk_id": {"type": "string"}, "description": {"type": "string"}, "level": {"enum": ["L1", "L2", "L3", "L4"]}, "status": {"enum": ["open", "mitigated", "closed", "realized"]}}},
+    "acceptance": {"type": "object", "additionalProperties": false, "required": ["date", "result", "criteria_status"], "properties": {"date": {"type": "string", "format": "date"}, "result": {"enum": ["passed", "passed_with_conditions", "failed", "disputed"]}, "criteria_status": {"type": "string"}}},
+    "financials": {"type": "object", "additionalProperties": false, "required": ["actual_cost", "recognized_revenue", "payment_status", "budget_variance"], "properties": {"actual_cost": {"$ref": "#/$defs/money"}, "recognized_revenue": {"$ref": "#/$defs/money"}, "payment_status": {"type": "string"}, "budget_variance": {"$ref": "#/$defs/signed_money"}}}
+  }
+}

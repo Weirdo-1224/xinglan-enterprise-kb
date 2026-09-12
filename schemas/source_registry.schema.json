@@ -1,0 +1,40 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://xinglan.example/schemas/source_registry.schema.json",
+  "title": "Xinglan Source Registry Row",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["source_id", "status", "verification_status", "notes"],
+  "properties": {
+    "source_id": {"type": "string", "pattern": "^SRC-[A-Z0-9]+-[0-9]{3}$"},
+    "title": {"type": ["string", "null"]}, "publisher": {"type": ["string", "null"]},
+    "source_type": {"type": ["string", "null"], "enum": ["PUBLIC_OFFICIAL", "PUBLIC_CORPORATE", "PUBLIC_CASE", "SYNTHETIC_DERIVED", "SYNTHETIC", "INTERNAL_DERIVED", null]},
+    "domain": {"type": ["string", "null"]},
+    "publication_date": {"anyOf": [{"type": "string", "format": "date"}, {"const": ""}, {"type": "null"}]},
+    "effective_date": {"anyOf": [{"type": "string", "format": "date"}, {"const": ""}, {"type": "null"}]},
+    "status": {"enum": ["candidate", "active", "deprecated", "archived"]},
+    "url": {"type": ["string", "null"]},
+    "access_date": {"anyOf": [{"type": "string", "format": "date"}, {"const": ""}, {"type": "null"}]},
+    "authority_level": {"type": ["string", "null"], "enum": ["L0", "L1", "L2", "L3", "L4", "L5", null]},
+    "source_authority": {"type": ["string", "null"], "enum": ["OFFICIAL", "PUBLIC_CORPORATE", "PUBLIC_CASE", "SYNTHETIC_DERIVED", "SYNTHETIC", "INTERNAL_DERIVED", null]},
+    "normative_force": {"type": ["string", "null"], "enum": ["MANDATORY", "CONTRACTUAL", "INTERNAL_MANDATORY", "GUIDANCE", "REFERENCE", "NONE", null]},
+    "applicability": {"type": ["string", "null"], "enum": ["DIRECT", "CONDITIONAL", "ANALOGICAL", "NOT_APPLICABLE", "PENDING_REVIEW", null]},
+    "specificity": {"type": ["string", "null"], "enum": ["GENERAL", "DOMAIN", "ENTERPRISE", "SCENARIO", null]},
+    "applicable_scope": {"type": ["string", "null"]}, "summary": {"type": ["string", "null"]},
+    "used_by": {"type": ["string", "null"]},
+    "verification_status": {"enum": ["PENDING", "VERIFIED", "REJECTED"]}, "notes": {"type": "string"}
+  },
+  "allOf": [{
+    "if": {"properties": {"verification_status": {"const": "VERIFIED"}}, "required": ["verification_status"]},
+    "then": {
+      "required": ["title", "publisher", "url", "access_date", "source_type", "source_authority", "normative_force", "applicability", "domain"],
+      "properties": {
+        "title": {"type": "string", "minLength": 1}, "publisher": {"type": "string", "minLength": 1},
+        "url": {"type": "string", "minLength": 1}, "access_date": {"type": "string", "minLength": 1, "format": "date"},
+        "source_type": {"type": "string", "minLength": 1}, "source_authority": {"type": "string", "minLength": 1},
+        "normative_force": {"type": "string", "minLength": 1}, "applicability": {"type": "string", "minLength": 1},
+        "domain": {"type": "string", "minLength": 1}
+      }
+    }
+  }]
+}

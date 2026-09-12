@@ -1,0 +1,16 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://xinglan.example/schemas/business_data.schema.json",
+  "title": "Xinglan Synthetic Business Data",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["dataset_id", "dataset_name", "dataset_type", "synthetic_notice", "confidentiality", "fields"],
+  "properties": {
+    "dataset_id": {"type": "string", "pattern": "^DATA[0-9]{3}$"},
+    "dataset_name": {"type": "string"},
+    "dataset_type": {"enum": ["employee", "customer", "supplier", "project", "contract", "procurement", "timesheet", "cost", "budget", "operations"]},
+    "synthetic_notice": {"const": true},
+    "confidentiality": {"enum": ["PUBLIC", "INTERNAL", "SENSITIVE", "HIGHLY_SENSITIVE"]},
+    "fields": {"type": "array", "items": {"type": "object", "required": ["name", "type"], "properties": {"name": {"type": "string"}, "type": {"type": "string"}, "description": {"type": "string"}}, "additionalProperties": false}}
+  }
+}

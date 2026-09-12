@@ -1,0 +1,4 @@
+﻿package_id,package_name,scope,estimated_file_count,max_file_count,flattened,contents,status,planning_note
+PACKAGE-01,企业核心知识库,企业基础、公开依据、制度、SOP、FAQ/规则、岗位,100,100,YES,KB;REF;POL;SOP;FAQ;ROLE,planned,Stage 1/1.1 逻辑规划，非最终上传分包；Stage 6 须重新平衡并尽量保留 10~20 个文件余量
+PACKAGE-02,企业历史案例库,差异化 P001/P002/P003 案例与跨项目复盘,99,100,YES,P001/P002/P003;CASE,planned,Stage 1/1.1 逻辑规划，非最终上传分包；Stage 6 须重新平衡并尽量保留 10~20 个文件余量
+PACKAGE-03,企业业务数据与模板库,模板与结构化合成业务数据,40,100,YES,TPL;DATA,planned,Stage 1/1.1 逻辑规划，非最终上传分包；Stage 6 须重新平衡并尽量保留 10~20 个文件余量

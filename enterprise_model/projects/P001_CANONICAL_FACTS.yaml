@@ -1,0 +1,46 @@
+{
+  "schema_version": "1.1",
+  "project_id": "P001",
+  "project_name": "智慧园区 AI 数字人服务平台",
+  "project_type": "PTYPE-SMART-PARK",
+  "case_classification": "优秀项目",
+  "customer_type": "政企园区运营单位（合成）",
+  "contract_amount": {"currency": "CNY", "amount": 3600000},
+  "budget": {"currency": "CNY", "amount": 3000000},
+  "planned_start_date": "2024-02-01",
+  "planned_end_date": "2024-10-31",
+  "actual_start_date": "2024-02-05",
+  "actual_end_date": "2024-10-28",
+  "delay_days": 0,
+  "project_manager": "林澄（合成人员）",
+  "team_size": 14,
+  "milestones": [
+    {"name": "需求基线确认", "planned_date": "2024-03-15", "actual_date": "2024-03-14", "status": "on_time"},
+    {"name": "平台上线", "planned_date": "2024-09-30", "actual_date": "2024-09-27", "status": "on_time"},
+    {"name": "终验", "planned_date": "2024-10-31", "actual_date": "2024-10-28", "status": "accepted"}
+  ],
+  "procurement": [
+    {"item": "数字人渲染与园区展示设备", "amount": {"currency": "CNY", "amount": 420000}, "method": "竞争性采购", "status": "completed"}
+  ],
+  "contracts": [
+    {"contract_id": "P001-C01", "amount": {"currency": "CNY", "amount": 3600000}, "payment_terms": "30%预付款、40%上线、30%终验", "status": "completed"}
+  ],
+  "changes": [
+    {"change_id": "P001-CH01", "description": "展示终端点位微调", "impact": "不影响总预算和终验日期", "status": "implemented"}
+  ],
+  "risks": [
+    {"risk_id": "P001-R01", "description": "园区接口联调窗口有限", "level": "L2", "status": "closed"}
+  ],
+  "acceptance": {"date": "2024-10-28", "result": "passed", "criteria_status": "全部基线指标通过，材料一次性完成复核"},
+  "financials": {
+    "actual_cost": {"currency": "CNY", "amount": 2820000},
+    "recognized_revenue": {"currency": "CNY", "amount": 3600000},
+    "payment_status": "按节点全部回款",
+    "budget_variance": {"currency": "CNY", "amount": -180000}
+  },
+  "final_status": "completed",
+  "lessons": ["早期冻结需求基线降低了返工", "招投标材料的机器预审与人工复核配合有效", "验收证据按里程碑归档有利于一次验收"],
+  "fact_status": "approved",
+  "synthetic_notice": true,
+  "documents": ["P001_01", "P001_02", "P001_03", "P001_04", "P001_05", "P001_06", "P001_07", "P001_08", "P001_09", "P001_10", "P001_11", "P001_12", "P001_13", "P001_14", "P001_15", "P001_16", "P001_17", "P001_18", "P001_19", "P001_20", "P001_21", "P001_22", "P001_23", "P001_24", "P001_25", "P001_26", "P001_27", "P001_28", "P001_29", "P001_30", "P001_31", "P001_32", "P001_33"]
+}

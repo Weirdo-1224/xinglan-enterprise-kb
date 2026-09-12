@@ -1,0 +1,51 @@
+{
+  "schema_version": "1.1",
+  "project_id": "P003",
+  "project_name": "电力 AI 智能巡检平台",
+  "project_type": "PTYPE-VISION",
+  "case_classification": "复杂技术项目",
+  "customer_type": "能源行业企业（合成）",
+  "contract_amount": {"currency": "CNY", "amount": 5800000},
+  "budget": {"currency": "CNY", "amount": 4900000},
+  "planned_start_date": "2024-05-01",
+  "planned_end_date": "2025-04-30",
+  "actual_start_date": "2024-05-08",
+  "actual_end_date": "2025-06-20",
+  "delay_days": 51,
+  "project_manager": "顾川（合成人员）",
+  "team_size": 18,
+  "milestones": [
+    {"name": "视频数据治理方案", "planned_date": "2024-07-31", "actual_date": "2024-08-20", "status": "delayed"},
+    {"name": "算法指标专项评审", "planned_date": "2025-01-15", "actual_date": "2025-02-12", "status": "disputed"},
+    {"name": "终验", "planned_date": "2025-04-30", "actual_date": "2025-06-20", "status": "accepted"}
+  ],
+  "procurement": [
+    {"item": "GPU训练与推理服务器", "amount": {"currency": "CNY", "amount": 1280000}, "method": "公开招标或专项审批", "status": "completed"},
+    {"item": "视频采集与边缘计算设备", "amount": {"currency": "CNY", "amount": 760000}, "method": "竞争性采购", "status": "completed"}
+  ],
+  "contracts": [
+    {"contract_id": "P003-C01", "amount": {"currency": "CNY", "amount": 5800000}, "payment_terms": "20%预付款、30%设备到货、30%试运行、20%终验", "status": "completed"}
+  ],
+  "changes": [
+    {"change_id": "P003-CH01", "description": "由单模型改为检测与跟踪组合方案", "impact": "增加算法开发和GPU测试周期", "status": "implemented"},
+    {"change_id": "P003-CH02", "description": "验收指标按场景重新分层", "impact": "触发专项评审和验收争议", "status": "implemented"}
+  ],
+  "risks": [
+    {"risk_id": "P003-R01", "description": "视频样本分布与算法难点影响指标", "level": "L3", "status": "mitigated"},
+    {"risk_id": "P003-R02", "description": "视频数据含敏感现场信息", "level": "L4", "status": "mitigated"},
+    {"risk_id": "P003-R03", "description": "GPU供货周期影响训练计划", "level": "L2", "status": "closed"},
+    {"risk_id": "P003-R04", "description": "验收指标定义存在理解差异", "level": "L3", "status": "realized"}
+  ],
+  "acceptance": {"date": "2025-06-20", "result": "passed_with_conditions", "criteria_status": "按场景化指标复测后通过，争议纪要归档"},
+  "financials": {
+    "actual_cost": {"currency": "CNY", "amount": 4860000},
+    "recognized_revenue": {"currency": "CNY", "amount": 5800000},
+    "payment_status": "终验后完成回款",
+    "budget_variance": {"currency": "CNY", "amount": -40000}
+  },
+  "final_status": "completed_with_issues",
+  "lessons": ["GPU采购规格应与算法路线同步评审", "视频数据治理和安全评审必须前置", "算法验收指标需按场景定义样本、阈值和复测方法", "技术方案变更应同步更新合同与验收基线"],
+  "fact_status": "approved",
+  "synthetic_notice": true,
+  "documents": ["P003_01", "P003_02", "P003_03", "P003_04", "P003_05", "P003_06", "P003_07", "P003_08", "P003_09", "P003_10", "P003_11", "P003_12", "P003_13", "P003_14", "P003_15", "P003_16", "P003_17", "P003_18", "P003_19", "P003_20", "P003_21", "P003_22", "P003_23", "P003_24", "P003_25", "P003_26", "P003_27", "P003_28", "P003_29", "P003_30", "P003_31"]
+}
