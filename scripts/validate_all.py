@@ -26,6 +26,8 @@ VALIDATORS = [
     ("Stage 4 Project Cases", "validate_stage4_cases.py"),
     ("Stage 5 Business Data & Templates", "validate_stage5_assets.py"),
     ("Stage 6 Precheck Guardrails", "validate_stage6_precheck.py"),
+    ("Stage 6.1 RAG Quality", "validate_rag_quality.py"),
+    ("Stage 6 Final Delivery", "validate_stage6.py"),
 ]
 
 

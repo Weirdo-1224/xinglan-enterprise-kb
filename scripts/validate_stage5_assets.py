@@ -381,13 +381,16 @@ def validate_realism(data: dict[str, list[dict[str, object]]]) -> None:
                 fail(f"{dataset}: {field} {as_date(row[field])} after as_of {AS_OF}")
 
     # Stage 6 precheck P0-2 guard: nobody may book hours before their hire date.
+    # work_month is stored as a month-start sentinel (day is always 1), so the
+    # comparison is at month granularity (Stage 6 ruling): booking hours in the
+    # hire month itself is valid.
     for row in data["DATA007"]:
         employee = employees.get(str(row["employee_id"]))
         if employee is None:
             continue
         work, hire = as_date(row["work_month"]), as_date(employee["hire_date"])
-        if work and hire and work < hire:
-            fail(f"{row['timesheet_id']}: work_month {work} precedes hire_date {hire} ({row['employee_id']})")
+        if work and hire and (work.year, work.month) < (hire.year, hire.month):
+            fail(f"{row['timesheet_id']}: work_month {work:%Y-%m} precedes hire month {hire:%Y-%m} ({row['employee_id']})")
 
     # Stage 6 precheck P0-1/P0-5 guard: procurement chain request <= sign <= delivery,
     # plus request <= committed delivery, across DATA005 <-> DATA006.

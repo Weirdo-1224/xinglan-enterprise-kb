@@ -1,0 +1,130 @@
+{
+  "summary": {
+    "core": 100,
+    "cases": 99,
+    "templates": 28,
+    "business_data": 12,
+    "total": 239,
+    "md_processed": 227,
+    "xlsx_copied": 12,
+    "removed_sections": 12,
+    "warnings": 0
+  },
+  "removed_sections": [
+    {
+      "knowledge_id": "KB001",
+      "rag_path": "core/KB001_企业基础_公司简介.md",
+      "section": "## 来源与边界",
+      "body_line_start": 14,
+      "line_count": 6
+    },
+    {
+      "knowledge_id": "KB002",
+      "rag_path": "core/KB002_企业基础_组织架构.md",
+      "section": "## 来源与边界",
+      "body_line_start": 14,
+      "line_count": 6
+    },
+    {
+      "knowledge_id": "KB003",
+      "rag_path": "core/KB003_企业基础_部门职责.md",
+      "section": "## 来源与边界",
+      "body_line_start": 23,
+      "line_count": 6
+    },
+    {
+      "knowledge_id": "KB004",
+      "rag_path": "core/KB004_企业基础_项目制协作模型.md",
+      "section": "## 来源与边界",
+      "body_line_start": 14,
+      "line_count": 6
+    },
+    {
+      "knowledge_id": "KB005",
+      "rag_path": "core/KB005_企业基础_权限审批基本原则.md",
+      "section": "## 来源与边界",
+      "body_line_start": 14,
+      "line_count": 6
+    },
+    {
+      "knowledge_id": "KB006",
+      "rag_path": "core/KB006_企业基础_知识治理与冲突解析.md",
+      "section": "## 来源与边界",
+      "body_line_start": 14,
+      "line_count": 6
+    },
+    {
+      "knowledge_id": "KB007",
+      "rag_path": "core/KB007_企业基础_数据分类分级.md",
+      "section": "## 来源与边界",
+      "body_line_start": 19,
+      "line_count": 6
+    },
+    {
+      "knowledge_id": "KB008",
+      "rag_path": "core/KB008_企业基础_文档与版本规则.md",
+      "section": "## 来源与边界",
+      "body_line_start": 14,
+      "line_count": 6
+    },
+    {
+      "knowledge_id": "KB009",
+      "rag_path": "core/KB009_企业基础_风险等级规则.md",
+      "section": "## 来源与边界",
+      "body_line_start": 14,
+      "line_count": 6
+    },
+    {
+      "knowledge_id": "KB010",
+      "rag_path": "core/KB010_企业基础_业务术语表.md",
+      "section": "## 来源与边界",
+      "body_line_start": 22,
+      "line_count": 6
+    },
+    {
+      "knowledge_id": "KB011",
+      "rag_path": "core/KB011_企业基础_企业主业务链.md",
+      "section": "## 来源与边界",
+      "body_line_start": 14,
+      "line_count": 6
+    },
+    {
+      "knowledge_id": "KB012",
+      "rag_path": "core/KB012_企业基础_模拟企业与数据声明.md",
+      "section": "## 来源与边界",
+      "body_line_start": 14,
+      "line_count": 6
+    }
+  ],
+  "warnings": [],
+  "stage6_1_quality_fix": {
+    "targeted_assets": [
+      "CASE002",
+      "DATA001",
+      "DATA004",
+      "DATA007",
+      "DATA011",
+      "FAQ005",
+      "KB005",
+      "KB008",
+      "P001_09",
+      "P001_25",
+      "P002_26",
+      "P002_27",
+      "P003_13",
+      "POL010",
+      "TPL013"
+    ],
+    "title_overrides": {
+      "P002_27": "银行企业知识助手项目-延期原因链与知识版本冲突处理",
+      "CASE002": "P002 银行企业知识助手项目负毛利异常原因与采购合同成本联动复盘"
+    },
+    "xlsx_retrieval_guides": [
+      "DATA001",
+      "DATA004",
+      "DATA007",
+      "DATA011"
+    ],
+    "governed_originals_modified": false
+  }
+}

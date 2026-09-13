@@ -57,12 +57,26 @@ for r in rows:
         if not ids(r["synthetic_fields"]): errors.append(f"{kid}: policy synthetic_fields not planned")
 
 plans = read_csv(ROOT / "manifests/PACKAGE_PLAN.csv")
-if {r["package_id"] for r in plans} != PACKAGES: errors.append("package plan must contain exactly PACKAGE-01..03")
-for package in plans:
-    actual = sum(r["package"] == package["package_id"] for r in rows)
-    estimate, maximum = int(package["estimated_file_count"]), int(package["max_file_count"])
-    if actual != estimate: errors.append(f"{package['package_id']}: estimate {estimate} != manifest {actual}")
-    if estimate > maximum or maximum > 100: errors.append(f"{package['package_id']}: package exceeds 100-file limit")
+# Stage 6: PACKAGE_PLAN is the final transport plan (4 flat upload ZIPs).
+# The manifest `package` column stays the logical 3-way assignment:
+# PACKAGE-01/02 coincide with transport 01/02; logical PACKAGE-03 (TPL+DATA)
+# is rebalanced into transport PACKAGE-03 (DATA + PROJECT_INDEX) and PACKAGE-04 (TPL).
+plan_ids = [p["package_id"] for p in plans]
+if plan_ids != ["PACKAGE-01", "PACKAGE-02", "PACKAGE-03", "PACKAGE-04"]:
+    errors.append("package plan must contain exactly PACKAGE-01..04 (final transport plan)")
+else:
+    logical = {pid: sum(r["package"] == pid for r in rows) for pid in PACKAGES}
+    estimates = {p["package_id"]: int(p["estimated_file_count"]) for p in plans}
+    for p in plans:
+        estimate, maximum = int(p["estimated_file_count"]), int(p["max_file_count"])
+        if estimate > maximum or maximum > 100:
+            errors.append(f"{p['package_id']}: package exceeds 100-file limit")
+    if estimates["PACKAGE-01"] != logical["PACKAGE-01"]:
+        errors.append(f"PACKAGE-01: estimate {estimates['PACKAGE-01']} != logical {logical['PACKAGE-01']}")
+    if estimates["PACKAGE-02"] != logical["PACKAGE-02"]:
+        errors.append(f"PACKAGE-02: estimate {estimates['PACKAGE-02']} != logical {logical['PACKAGE-02']}")
+    if estimates["PACKAGE-03"] + estimates["PACKAGE-04"] != logical["PACKAGE-03"] + 1:
+        errors.append("PACKAGE-03+04: estimates must equal logical PACKAGE-03 plus PROJECT_INDEX.csv")
 
 fail(errors)
 print(f"PASS: Manifest {len(rows)} assets; source types, structural fields, dependencies, policy source plans and package counts are valid")

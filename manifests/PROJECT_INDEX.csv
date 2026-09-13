@@ -1,0 +1,13 @@
+﻿project_id,project_name,history_level,case_file_count,primary_datasets,note
+P001,智慧园区 AI 数字人服务平台,FULL_HISTORY,33,DATA001-DATA012,拥有完整 Stage 4 项目档案（需求、方案、合同、采购、风险、变更、会议、验收、复盘全链路），可回答历史事件类问题
+P002,银行企业知识助手项目,FULL_HISTORY,31,DATA001-DATA012,拥有完整 Stage 4 项目档案（需求、方案、合同、采购、风险、变更、会议、验收、复盘全链路），可回答历史事件类问题
+P003,电力 AI 智能巡检平台,FULL_HISTORY,31,DATA001-DATA012,拥有完整 Stage 4 项目档案（需求、方案、合同、采购、风险、变更、会议、验收、复盘全链路），可回答历史事件类问题
+P004,制造企业知识库一期,STRUCTURED_ONLY,0,DATA004;DATA005;DATA006;DATA007;DATA008;DATA009;DATA010,仅有 Stage 5 结构化经营数据，不存在完整会议/变更/风险等历史材料；对此类项目的历史细节问题必须回答 UNKNOWN 并说明仅有结构化经营记录
+P005,城市服务智能客服平台,STRUCTURED_ONLY,0,DATA004;DATA005;DATA006;DATA007;DATA008;DATA009;DATA010,仅有 Stage 5 结构化经营数据，不存在完整会议/变更/风险等历史材料；对此类项目的历史细节问题必须回答 UNKNOWN 并说明仅有结构化经营记录
+P006,产业园综合运营驾驶舱,STRUCTURED_ONLY,0,DATA004;DATA005;DATA006;DATA007;DATA008;DATA009;DATA010,仅有 Stage 5 结构化经营数据，不存在完整会议/变更/风险等历史材料；对此类项目的历史细节问题必须回答 UNKNOWN 并说明仅有结构化经营记录
+P007,教育机构数字人服务,STRUCTURED_ONLY,0,DATA004;DATA005;DATA006;DATA007;DATA008;DATA009;DATA010,仅有 Stage 5 结构化经营数据，不存在完整会议/变更/风险等历史材料；对此类项目的历史细节问题必须回答 UNKNOWN 并说明仅有结构化经营记录
+P008,交通场站视觉巡检,STRUCTURED_ONLY,0,DATA004;DATA005;DATA006;DATA007;DATA008;DATA009;DATA010,仅有 Stage 5 结构化经营数据，不存在完整会议/变更/风险等历史材料；对此类项目的历史细节问题必须回答 UNKNOWN 并说明仅有结构化经营记录
+P009,零售知识助手试点,STRUCTURED_ONLY,0,DATA004;DATA005;DATA006;DATA007;DATA008;DATA009;DATA010,仅有 Stage 5 结构化经营数据，不存在完整会议/变更/风险等历史材料；对此类项目的历史细节问题必须回答 UNKNOWN 并说明仅有结构化经营记录
+P010,政务热线智能体建设,STRUCTURED_ONLY,0,DATA004;DATA005;DATA006;DATA007;DATA008;DATA009;DATA010,仅有 Stage 5 结构化经营数据，不存在完整会议/变更/风险等历史材料；对此类项目的历史细节问题必须回答 UNKNOWN 并说明仅有结构化经营记录
+P011,设备制造视觉质检,STRUCTURED_ONLY,0,DATA004;DATA005;DATA006;DATA007;DATA008;DATA009;DATA010,仅有 Stage 5 结构化经营数据，不存在完整会议/变更/风险等历史材料；对此类项目的历史细节问题必须回答 UNKNOWN 并说明仅有结构化经营记录
+P012,集团知识平台升级,STRUCTURED_ONLY,0,DATA004;DATA005;DATA006;DATA007;DATA008;DATA009;DATA010,仅有 Stage 5 结构化经营数据，不存在完整会议/变更/风险等历史材料；对此类项目的历史细节问题必须回答 UNKNOWN 并说明仅有结构化经营记录

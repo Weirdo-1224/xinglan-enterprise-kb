@@ -1,0 +1,548 @@
+[
+  {
+    "question_id": "A10-Q01",
+    "agent_id": "A10",
+    "question_type": "FACT_QUERY",
+    "question": "智慧园区 AI 数字人服务平台那次投标，招标文件里的最高限价和工期要求是什么？",
+    "gold_answer": "投标报价不得超过最高限价 400 万元；项目工期为 2024-02-01 至 2024-10-31（含终验）。",
+    "expected_answer_points": [
+      "投标报价不得超过最高限价 400 万元",
+      "项目工期 2024-02-01 至 2024-10-31（含终验）"
+    ],
+    "expected_evidence": ["P001_25"],
+    "forbidden_facts": ["最高限价 360 万元"],
+    "boundary_expectation": "ANSWER"
+  },
+  {
+    "question_id": "A10-Q02",
+    "agent_id": "A10",
+    "question_type": "FACT_QUERY",
+    "question": "P001 招标文件评分标准里，价格、技术、服务、业绩各占多少分？",
+    "gold_answer": "价格 30 分（低价优先法折算）；技术 40 分（方案 20 分、参数响应 20 分）；服务 15 分（实施与质保服务方案）；业绩 15 分（类似项目案例）。",
+    "expected_answer_points": [
+      "30 分（低价优先法折算）",
+      "40 分（方案 20 分、参数响应 20 分）",
+      "15 分（实施与质保服务方案）",
+      "15 分（类似项目案例）"
+    ],
+    "expected_evidence": ["P001_25"],
+    "forbidden_facts": ["技术 50 分"],
+    "boundary_expectation": "ANSWER"
+  },
+  {
+    "question_id": "A10-Q03",
+    "agent_id": "A10",
+    "question_type": "POLICY_JUDGMENT",
+    "question": "一个采购项目预算 120 万元，超过了咱们内部 100 万的线，是不是就必须依法招标了？",
+    "gold_answer": "不能据此认定。星澜内部 100 万元阈值是模拟内部规则，不等于法定必须招标规模标准；是否依法必须招标取决于项目性质、资金来源、法定范围和规模标准，不能用内部阈值替代，具体项目需法务核验。",
+    "expected_answer_points": [
+      "星澜内部 100 万元阈值是模拟内部规则，不等于法定必须招标规模标准",
+      "不能用星澜 100 万元内部阈值替代"
+    ],
+    "expected_evidence": ["POL013", "FAQ009"],
+    "forbidden_facts": ["超过 100 万元即构成依法必须招标"],
+    "boundary_expectation": "ANSWER"
+  },
+  {
+    "question_id": "A10-Q04",
+    "agent_id": "A10",
+    "question_type": "PROCESS_GUIDANCE",
+    "question": "收到一份外部招标文件，按公司流程应该怎么做审查？",
+    "gold_answer": "按 SOP029 招标文件审查流程：登记文件来源、版本、公告/接收时间、截止时间和平台，校验附件齐全；判断星澜角色及法律/项目规则适用性（内部阈值不冒充法定规模）；提取时间表、资格、实质条款、否决项、评分、需求、合同和提交要求；建立条款—责任人—证据—截止时间矩阵；业务、技术、财务、法务、安全分别审查；对歧义或限制性条件经授权渠道在期限内提出澄清；答疑/更正后做版本差异并更新矩阵；最后形成通过、修改、澄清或停止的审查结论，由授权人确认后封版/转投标编制。",
+    "expected_answer_points": [
+      "登记文件来源、版本、公告/接收时间、截止时间和平台，校验附件齐全",
+      "建立条款—责任人—证据—截止时间矩阵",
+      "形成通过、修改、澄清或停止的审查结论"
+    ],
+    "expected_evidence": ["SOP029"],
+    "forbidden_facts": ["无需登记文件来源和版本"],
+    "boundary_expectation": "ANSWER"
+  },
+  {
+    "question_id": "A10-Q05",
+    "agent_id": "A10",
+    "question_type": "PROCESS_GUIDANCE",
+    "question": "投标文件封版提交前要走哪些审查步骤？",
+    "gold_answer": "按 SOP030 投标文件审查流程：冻结招标文件版本和截止时间；资格审查逐项验证主体、证照有效期、业绩、人员、授权；商务审查付款、交付、质保、违约、偏离和承诺，技术审查参数、架构、实施与验收；评分审查把每个得分点映射到具体章节和证据页；财务交叉核对总价、分项、税率、大小写；检查正文、附件、目录、页码、签字盖章、文件名、格式、大小和加密证书；由独立复核人按阻断清单复查，编制人修复后再次验证差异；授权代表确认最终哈希/版本，预留上传时间并保存平台成功回执；提交后锁定最终包和日志。",
+    "expected_answer_points": [
+      "冻结招标文件版本和截止时间",
+      "由独立复核人按阻断清单复查，编制人修复后再次验证差异",
+      "授权代表确认最终哈希/版本，预留上传时间并保存平台成功回执"
+    ],
+    "expected_evidence": ["SOP030"],
+    "forbidden_facts": ["提交后可自行补充修正投标承诺"],
+    "boundary_expectation": "ANSWER"
+  },
+  {
+    "question_id": "A10-Q06",
+    "agent_id": "A10",
+    "question_type": "HISTORICAL_CASE",
+    "question": "P001 投标那次机器预审到底查出了多少问题？都是什么类型？",
+    "gold_answer": "2023-12-19 投标文件初稿完成后，市场投标组按 FAQ009 配置机器预审工具对四册投标材料扫描，共发现 12 项问题，其中完整性问题 4 项、一致性问题 6 项、合规性问题 2 项，全部于 2023-12-22 前闭环后进入人工复核环节。",
+    "expected_answer_points": [
+      "共发现 12 项问题",
+      "完整性问题 4 项、一致性问题 6 项、合规性问题 2 项",
+      "全部于 2023-12-22 前闭环"
+    ],
+    "expected_evidence": ["P001_32"],
+    "forbidden_facts": ["共发现 15 项问题"],
+    "boundary_expectation": "ANSWER"
+  },
+  {
+    "question_id": "A10-Q07",
+    "agent_id": "A10",
+    "question_type": "CROSS_DOCUMENT_REASONING",
+    "question": "P001 商务响应表在投标审查阶段被发现并修正了哪些表述问题？",
+    "gold_answer": "两处，交叉见 P001_29 与 P001_32：①付款时限\"15 个工作日\"在响应表中漏写（问题 AI-Q02）；②质保期\"12 个月\"与商务承诺函\"一年\"表述不一致（问题 AI-Q11）。两处均于 2023-12-21 前修订统一，经人工复核确认。",
+    "expected_answer_points": [
+      "付款时限\"15 个工作日\"在响应表中漏写",
+      "质保期\"12 个月\"与商务承诺函\"一年\"表述不一致",
+      "均于 2023-12-21 前修订统一"
+    ],
+    "expected_evidence": ["P001_29", "P001_32"],
+    "forbidden_facts": ["2023-12-25 前修订统一"],
+    "boundary_expectation": "ANSWER"
+  },
+  {
+    "question_id": "A10-Q08",
+    "agent_id": "A10",
+    "question_type": "TEMPLATE_GENERATION",
+    "question": "按公司模板给我一份招标文件审查清单的骨架，必须包含哪些字段？",
+    "gold_answer": "依据 TPL026 招标文件审查清单，必填字段共 16 项：审查编号；文件来源、版本与附件；公告/接收时间与截止时间；平台与提交方式；星澜角色及规则适用性；资格条件与否决项；商务和合同条件；技术需求与验收；评分办法与得分证据要求；时间表；条款—责任人—证据—截止矩阵；冲突与歧义；澄清问题及答复；专业审查意见；通过/修改/澄清/停止结论；授权确认与封版。",
+    "expected_answer_points": [
+      "审查编号",
+      "资格条件与否决项",
+      "评分办法与得分证据要求",
+      "条款—责任人—证据—截止矩阵",
+      "通过/修改/澄清/停止结论"
+    ],
+    "expected_evidence": ["TPL026"],
+    "forbidden_facts": ["评标委员会名单"],
+    "boundary_expectation": "ANSWER"
+  },
+  {
+    "question_id": "A10-Q09",
+    "agent_id": "A10",
+    "question_type": "STRUCTURED_DATA_QUERY",
+    "question": "资格审查前帮我筛一下：供应商主数据里高风险（L3 及以上）的供应商有几家？都是谁？",
+    "gold_answer": "共 6 家，均为 L3（无 L4）：SUP005、SUP010、SUP015、SUP020、SUP025、SUP030。其中 SUP005 状态为观察，其余 5 家状态为有效。",
+    "expected_answer_points": [
+      "SUP005",
+      "SUP010",
+      "SUP015",
+      "SUP020",
+      "SUP025",
+      "SUP030",
+      "L3"
+    ],
+    "expected_evidence": ["DATA003"],
+    "forbidden_facts": ["共 5 家高风险供应商", "高风险供应商均为 L4"],
+    "boundary_expectation": "ANSWER"
+  },
+  {
+    "question_id": "A10-Q10",
+    "agent_id": "A10",
+    "question_type": "CONFLICT",
+    "question": "P001 投标材料里知识库问答准确率我查到两个数：一处写不低于 90%，一处写不低于 92%，到底以哪个为准？",
+    "gold_answer": "两个数来源口径不同，并不矛盾：不低于 90% 是招标文件 JS-03 的门槛要求；不低于 92% 是投标技术响应表经机器预审整改后的承诺应答值（AI-Q03：统一为不低于 92%，方案正文同步更新），响应值优于招标要求。应分别标注来源口径，不能混用，也不能认定其中之一写错。",
+    "expected_answer_points": [
+      "知识库问答准确率不低于 90%",
+      "统一为不低于 92%"
+    ],
+    "expected_evidence": ["P001_25", "P001_32"],
+    "forbidden_facts": ["不低于 85%"],
+    "boundary_expectation": "CONFLICT"
+  },
+  {
+    "question_id": "A10-Q11",
+    "agent_id": "A10",
+    "question_type": "UNKNOWN",
+    "question": "咱们制度里对投标保证金有没有专门的管理细则？比如保函形式和退还时限是怎么规定的？",
+    "gold_answer": "知识库中不存在专门的投标保证金/保函管理细则；POL013 仅提到财务审核报价、保证金与税务以及保证金留痕要求，未规定保函形式与退还时限。应回答无法从知识库确认（UNKNOWN），不得编造细则条文。",
+    "expected_answer_points": [],
+    "expected_evidence": ["POL013"],
+    "forbidden_facts": [],
+    "boundary_expectation": "UNKNOWN"
+  },
+  {
+    "question_id": "A10-Q12",
+    "agent_id": "A10",
+    "question_type": "OUT_OF_SCOPE",
+    "question": "帮我写一首赞美投标团队的四言绝句，周五动员会上要用。",
+    "gold_answer": "该请求属于文学创作，与企业知识库无关，应拒绝并说明超出知识库服务范围。",
+    "expected_answer_points": [],
+    "expected_evidence": [],
+    "forbidden_facts": [],
+    "boundary_expectation": "OUT_OF_SCOPE"
+  },
+  {
+    "question_id": "A11-Q01",
+    "agent_id": "A11",
+    "question_type": "FACT_QUERY",
+    "question": "P002 银行企业知识助手项目合同签署前，法务审核是什么情况？哪些意见没落实？",
+    "gold_answer": "法务风控经理谭肃于 2024-02-23（签约 2024-02-26 前 3 日）按 SOP018 对合同 P002-C01（金额 280 万元）出具书面审核意见。第 3 条\"试运行付款证据\"意见（30% 试运行付款 84 万元的证据定义过于原则化，建议细化列举可验证证据）未完全落实；其\"建议在签约后 30 日内与客户书面确认证据清单\"的要求也未执行。",
+    "expected_answer_points": [
+      "法务风控经理谭肃",
+      "2024-02-23",
+      "未完全落实",
+      "建议在签约后 30 日内与客户书面确认证据清单"
+    ],
+    "expected_evidence": ["P002_15"],
+    "forbidden_facts": ["2024-02-27", "全部审核意见均已落实"],
+    "boundary_expectation": "ANSWER"
+  },
+  {
+    "question_id": "A11-Q02",
+    "agent_id": "A11",
+    "question_type": "FACT_QUERY",
+    "question": "P002 那笔 84 万试运行款争议是怎么发生的？最后怎么解决的？",
+    "gold_answer": "2025-02-06 项目组提交试运行款付款申请 84 万元；2025-02-14 客户信息科技部以\"试运行付款证据不足\"暂缓付款；2025-02-21 经法务风控经理谭肃与客户陈恪协调形成付款证据补充确认，84 万元试运行款解除暂缓进入支付流程；终验款中 28 万元尾款挂起，连同 CH01 等变更费用打包谈判，由法务与市场负责人按月跟踪。",
+    "expected_answer_points": [
+      "2025-02-14",
+      "暂缓付款",
+      "84 万元",
+      "2025-02-21",
+      "28 万元尾款挂起"
+    ],
+    "expected_evidence": ["P002_30"],
+    "forbidden_facts": ["2025-03-14 客户暂缓付款"],
+    "boundary_expectation": "ANSWER"
+  },
+  {
+    "question_id": "A11-Q03",
+    "agent_id": "A11",
+    "question_type": "POLICY_JUDGMENT",
+    "question": "客户急着上线，要求我们先开工、合同后补签，这样行吗？",
+    "gold_answer": "原则上不行。POL014 规定先履行后补签仅限经批准的紧急止损，不能常态化；对方要求先开工时，至少完成主体、范围、价格、数据安全和责任边界的临时书面安排并获授权。",
+    "expected_answer_points": [
+      "先履行后补签仅限经批准的紧急止损，不能常态化",
+      "至少完成主体、范围、价格、数据安全和责任边界的临时书面安排并获授权"
+    ],
+    "expected_evidence": ["POL014"],
+    "forbidden_facts": ["可以先开工，合同后补签即可"],
+    "boundary_expectation": "ANSWER"
+  },
+  {
+    "question_id": "A11-Q04",
+    "agent_id": "A11",
+    "question_type": "PROCESS_GUIDANCE",
+    "question": "一份销售合同从审核到履约跟踪，流程上要走哪些步骤？",
+    "gold_answer": "按 SOP018 合同审核与履约跟踪流程：经办人登记合同主体、项目/采购编号、金额、期限、交易目的和草案版本；核验对方主体、签约代表、关联关系与收款账户；业务逐项确认范围、交付、验收和客户/供应商前提，财务核对价税、付款和预算；法务与专业人员审查知识产权、数据安全、保密、变更、违约、解除和争议条款；形成偏离/风险清单，业务、财务、法务分别给意见，由有权人决定接受或调整；签署前比对最终文本与审批版，确认附件、页码、签章和日期；合同管理员拆解义务、责任人、证据和提醒，项目/采购按节点提交履约信息；付款或收款节点核验合同状态、验收/交付、发票和授权，异常进入争议或变更；合同完成后关闭未决义务，归档签署件、履约和通知证据。",
+    "expected_answer_points": [
+      "经办人登记合同主体、项目/采购编号、金额、期限、交易目的和草案版本",
+      "核验对方主体、签约代表、关联关系与收款账户",
+      "付款或收款节点核验合同状态、验收/交付、发票和授权"
+    ],
+    "expected_evidence": ["SOP018"],
+    "forbidden_facts": ["口头同意即可变更合同"],
+    "boundary_expectation": "ANSWER"
+  },
+  {
+    "question_id": "A11-Q05",
+    "agent_id": "A11",
+    "question_type": "HISTORICAL_CASE",
+    "question": "P003 电力巡检平台终验前的验收指标争议最后是怎么解决的？",
+    "gold_answer": "2025-05-09 召开验收指标争议专项协调会（MTG-P003-06），结论：终验按 CH02 分层指标执行，6 场景阈值与样本量以验收方案第二版为准；2025-06-10 启动分层复测，2025-06-18 前完成全部 6 场景测试且全部满足分层指标；2025-06-20 终验会按纪要窗口召开并通过（附条件）；双方确认指标理解差异起于合同整体口径承诺，不再追溯责任。",
+    "expected_answer_points": [
+      "终验按 CH02 分层指标执行",
+      "2025-06-10 启动分层复测",
+      "2025-06-20 终验会按纪要窗口召开并通过"
+    ],
+    "expected_evidence": ["P003_30"],
+    "forbidden_facts": ["2025-05-10 启动复测"],
+    "boundary_expectation": "ANSWER"
+  },
+  {
+    "question_id": "A11-Q06",
+    "agent_id": "A11",
+    "question_type": "CROSS_DOCUMENT_REASONING",
+    "question": "P002 尾款 28 万挂起的根因是什么？证据链是怎样的？",
+    "gold_answer": "根因是签约时法务意见未落实、付款条件未绑定可验证证据。证据链：合同审核意见曾要求细化可验证证据清单（试运行起止确认单、试运行报告、问题闭环清单、客户书面确认函），但未在签约文本中落实，签约后 30 日内亦未完成客户书面确认（P002_15）；履约中客户于 2025-02-14 以试运行付款证据不足暂缓 84 万元，2025-02-21 补充确认后争议降级但 28 万元尾款挂起（P002_30）；复盘将\"付款条件必须绑定可验证的交付证据\"列为四条教训之一。",
+    "expected_answer_points": [
+      "28 万元尾款挂起",
+      "法务审核意见曾要求细化可验证证据清单",
+      "签约后 30 日内亦未完成客户书面确认",
+      "付款条件必须绑定可验证的交付证据"
+    ],
+    "expected_evidence": ["P002_15", "P002_30"],
+    "forbidden_facts": ["尾款 28 万元已全额收回"],
+    "boundary_expectation": "ANSWER"
+  },
+  {
+    "question_id": "A11-Q07",
+    "agent_id": "A11",
+    "question_type": "TEMPLATE_GENERATION",
+    "question": "按 TPL020 给一份合同审查清单的骨架，必填字段有哪些？",
+    "gold_answer": "依据 TPL020 合同审查清单模板，必填字段共 16 项：合同编号与草案版本；合同类型与交易目的；对方主体和代表权限；项目/采购编号；金额、税率与预算；范围与交付；验收标准；付款/收款节点与证据；知识产权；数据安全与保密；变更、违约、解除与争议；偏离及风险清单；业务、财务、法务意见；最终文本比对；批准与签署信息；履约义务、责任人和提醒。",
+    "expected_answer_points": [
+      "合同编号与草案版本",
+      "对方主体和代表权限",
+      "付款/收款节点与证据",
+      "偏离及风险清单"
+    ],
+    "expected_evidence": ["TPL020"],
+    "forbidden_facts": ["招投标评分办法"],
+    "boundary_expectation": "ANSWER"
+  },
+  {
+    "question_id": "A11-Q08",
+    "agent_id": "A11",
+    "question_type": "STRUCTURED_DATA_QUERY",
+    "question": "合同台账里现在有哪些合同处于争议状态？金额多大？",
+    "gold_answer": "仅 1 份：P002-C01（销售合同，P002 银行企业知识助手项目），金额 2,800,000 元，合同状态为 disputed，风险等级 L3。台账中其余合同状态为 completed 或 active，无 overdue。",
+    "expected_answer_points": [
+      "P002-C01",
+      "disputed",
+      "2800000",
+      "L3"
+    ],
+    "expected_evidence": ["DATA005"],
+    "forbidden_facts": ["两份合同处于争议状态"],
+    "boundary_expectation": "ANSWER"
+  },
+  {
+    "question_id": "A11-Q09",
+    "agent_id": "A11",
+    "question_type": "CONFLICT",
+    "question": "P002 试运行款 84 万，收入台账显示 2025-01-12 已确认到账，但项目争议文档说 2 月份还在被客户暂缓，到底以哪个为准？",
+    "gold_answer": "两个来源口径不同：DATA010 收入台账记录 84 万元（840000）试运行款于 2025-01-12 按确认口径入账并标记 received；而 P002_30 争议记录显示 2025-02-14 客户以试运行付款证据不足暂缓付款、2025-02-21 补充确认后才解除暂缓进入支付流程。应说明台账确认日与实际支付流程节点的口径差异，回原始凭证核实实际到账时点，不能直接断言 1 月 12 日已无条件全额到账，也不能忽视争议记录。",
+    "expected_answer_points": [
+      "试运行款",
+      "840000",
+      "2025-01-12",
+      "2025-02-14",
+      "2025-02-21"
+    ],
+    "expected_evidence": ["DATA010", "P002_30"],
+    "forbidden_facts": ["2025-04-01 客户付款到账"],
+    "boundary_expectation": "CONFLICT"
+  },
+  {
+    "question_id": "A11-Q10",
+    "agent_id": "A11",
+    "question_type": "UNKNOWN",
+    "question": "P008 交通场站视觉巡检项目当年的销售合同是怎么谈判下来的？法务当时提了几条修改意见？",
+    "gold_answer": "知识库中 P008 仅有结构化经营记录（合同台账中的字段化信息），无完整历史材料（谈判记录、合同审核意见等过程档案），无法回答谈判与法务意见等历史细节，应回答 UNKNOWN。",
+    "expected_answer_points": [],
+    "expected_evidence": ["DATA005"],
+    "forbidden_facts": [],
+    "boundary_expectation": "UNKNOWN"
+  },
+  {
+    "question_id": "A11-Q11",
+    "agent_id": "A11",
+    "question_type": "OUT_OF_SCOPE",
+    "question": "帮我查一下国内同行业公司去年的平均合同违约率，给我们风控做个对标。",
+    "gold_answer": "该问题依赖企业外部行业数据，与企业知识库无关，应说明超出知识库范围，无法回答。",
+    "expected_answer_points": [],
+    "expected_evidence": [],
+    "forbidden_facts": [],
+    "boundary_expectation": "OUT_OF_SCOPE"
+  },
+  {
+    "question_id": "A11-Q12",
+    "agent_id": "A11",
+    "question_type": "POLICY_JUDGMENT",
+    "question": "供应商说发票早就开给我们了，催着付款，是不是拿到发票就能付？",
+    "gold_answer": "不可以。FAQ010 明确发票不能替代合同、履约/验收和审批证据；付款前必须检查合同生效和授权、交付/里程碑、验收证据、合规发票、付款比例日期、质保/扣款、账户一致性及预算。预付款则按合同条件、担保和风险控制人工核验。",
+    "expected_answer_points": [
+      "发票不能替代合同、履约/验收和审批证据",
+      "合同生效和授权、交付/里程碑、验收证据、合规发票、付款比例日期、质保/扣款、账户一致性及预算"
+    ],
+    "expected_evidence": ["FAQ010"],
+    "forbidden_facts": ["发票是付款的充分条件"],
+    "boundary_expectation": "ANSWER"
+  },
+  {
+    "question_id": "A12-Q01",
+    "agent_id": "A12",
+    "question_type": "STRUCTURED_DATA_QUERY",
+    "question": "咱们 12 个项目里，把预算偏差按绝对值排，哪个项目偏差最大？偏了多少？",
+    "gold_answer": "P011 设备制造视觉质检，budget_variance 为 -3,420,000 元（-342 万元），绝对值全公司最大；其后为 P008（-177 万元）与 P010（-161 万元）。注意 P011 仍为进行中项目，该偏差部分反映项目尚未完工的成本进度，解读时应结合项目状态。",
+    "expected_answer_points": [
+      "P011",
+      "-3420000"
+    ],
+    "expected_evidence": ["DATA004"],
+    "forbidden_facts": ["P008 偏差最大", "-177 万元"],
+    "boundary_expectation": "ANSWER"
+  },
+  {
+    "question_id": "A12-Q02",
+    "agent_id": "A12",
+    "question_type": "STRUCTURED_DATA_QUERY",
+    "question": "现在公司哪些项目处于延期状态？",
+    "gold_answer": "共 5 个项目 project_status 为 delayed：P005 城市服务智能客服平台、P006 产业园综合运营驾驶舱、P007 教育机构数字人服务、P008 交通场站视觉巡检、P009 零售知识助手试点（这 5 个均为仅有结构化经营记录的项目）。P010、P011、P012 为 in_progress，其余项目已完工或带问题完工。",
+    "expected_answer_points": [
+      "P005",
+      "P006",
+      "P007",
+      "P008",
+      "P009",
+      "delayed"
+    ],
+    "expected_evidence": ["DATA004"],
+    "forbidden_facts": ["P010 也已延期"],
+    "boundary_expectation": "ANSWER"
+  },
+  {
+    "question_id": "A12-Q03",
+    "agent_id": "A12",
+    "question_type": "CROSS_DOCUMENT_REASONING",
+    "question": "P002 银行企业知识助手项目账面毛利为什么是负的？异常原因是什么？",
+    "gold_answer": "收入确认 252 万元对实际成本 265 万元，项目账面毛利为 -13 万元（报价阶段预期毛利约 60 万元完全落空）。成本对预算 220 万元超支 45 万元，真实分解为：CH01 新增工作量未获补偿 18 万、CH02 权限返工 12 万、CH03 版本冲突处置与返工 9 万、延期期间人力成本 8 万、CH04 验收样本扩大 10 万，其他零星偏差冲抵 -12 万（差旅与外采节余），合计 265 万元。",
+    "expected_answer_points": [
+      "项目账面毛利为 -13 万元",
+      "实际成本 265 万元，对预算 220 万元超支 45 万元",
+      "CH01 新增工作量未获补偿",
+      "CH02 权限返工",
+      "CH03 版本冲突处置与返工",
+      "延期期间人力成本",
+      "CH04 验收样本扩大",
+      "其他零星偏差冲抵"
+    ],
+    "expected_evidence": ["DATA004", "CASE002", "P002_23"],
+    "forbidden_facts": ["账面毛利为 13 万元", "超支 54 万元"],
+    "boundary_expectation": "ANSWER"
+  },
+  {
+    "question_id": "A12-Q04",
+    "agent_id": "A12",
+    "question_type": "FACT_QUERY",
+    "question": "经营指标里\"预算偏差\"是怎么定义的？算出正数说明什么？",
+    "gold_answer": "按 DATA012 经营指标字典 OP006：预算偏差=实际成本减批准预算（actual_cost-budget_amount），单位 CNY，数据源为项目主数据；正数为超支。预算为零或口径变化时不能机械计算比例。",
+    "expected_answer_points": [
+      "预算偏差",
+      "实际成本减批准预算",
+      "actual_cost-budget_amount",
+      "正数为超支"
+    ],
+    "expected_evidence": ["DATA012"],
+    "forbidden_facts": ["负数代表超支"],
+    "boundary_expectation": "ANSWER"
+  },
+  {
+    "question_id": "A12-Q05",
+    "agent_id": "A12",
+    "question_type": "POLICY_JUDGMENT",
+    "question": "项目成本偏差超过多大比例就必须升级？给我一个明确阈值。",
+    "gold_answer": "现行上游没有统一百分比阈值，FAQ011 明确\"当前上游没有统一百分比阈值\"，应结合毛利、现金流、趋势、合同和风险等级判断；需要新阈值时另走制度审批，问答本身不创造阈值。因此不能给出编造的百分比红线。",
+    "expected_answer_points": [
+      "当前上游没有统一百分比阈值",
+      "应结合毛利、现金流、趋势、合同和风险等级判断"
+    ],
+    "expected_evidence": ["FAQ011"],
+    "forbidden_facts": ["偏差超过 5% 必须升级"],
+    "boundary_expectation": "ANSWER"
+  },
+  {
+    "question_id": "A12-Q06",
+    "agent_id": "A12",
+    "question_type": "PROCESS_GUIDANCE",
+    "question": "一个项目要做结项和复盘，流程上要走哪些步骤？",
+    "gold_answer": "按 SOP011 项目结项与复盘流程：项目经理核对交付与验收范围，列出未决事项、责任人和关闭/移交条件；财务核对收入、开票、回款、成本、未结费用和完工预测差异；采购和法务关闭订单、合同义务、保证金、索赔和争议；技术/交付移交账号、环境、代码、数据、资产、质保和运维责任；关闭项目权限与临时资源，验证客户/第三方数据返还、删除或继续保管依据；按目录归档批准版本、决策、变更、交付和验收证据；组织无责归因复盘，区分事实、根因、有效做法和可复用改进；PMO 验证所有阻断项关闭或已正式移交后，将项目状态改为关闭。",
+    "expected_answer_points": [
+      "项目经理核对交付与验收范围，列出未决事项、责任人和关闭/移交条件",
+      "财务核对收入、开票、回款、成本、未结费用和完工预测差异",
+      "组织无责归因复盘，区分事实、根因、有效做法和可复用改进",
+      "PMO 验证所有阻断项关闭或已正式移交后，将项目状态改为关闭"
+    ],
+    "expected_evidence": ["SOP011"],
+    "forbidden_facts": ["复盘应追究个人责任"],
+    "boundary_expectation": "ANSWER"
+  },
+  {
+    "question_id": "A12-Q07",
+    "agent_id": "A12",
+    "question_type": "HISTORICAL_CASE",
+    "question": "P001 智慧园区项目的经营复盘结论是什么？项目赚了多少？",
+    "gold_answer": "经营结果：合同收入 360 万元、内部预算 300 万元、实际成本 282 万元、预算节约 18 万元；项目毛利约 78 万元、毛利率约 21.7%。进度与质量：需求基线提前 1 天确认、平台上线提前 3 天、终验提前 3 天，项目延期 0 天；全周期仅 1 项正式风险、1 项变更（3.2 万元由预备费吸收）；验收一次通过。",
+    "expected_answer_points": [
+      "360 万元",
+      "282 万元",
+      "18 万元",
+      "约 78 万元",
+      "约 21.7%",
+      "项目延期 0 天"
+    ],
+    "expected_evidence": ["P001_23"],
+    "forbidden_facts": ["毛利约 87 万元", "超支 18 万元"],
+    "boundary_expectation": "ANSWER"
+  },
+  {
+    "question_id": "A12-Q08",
+    "agent_id": "A12",
+    "question_type": "TEMPLATE_GENERATION",
+    "question": "用咱们的工作报告模板（TPL014）出一份季度经营分析报告的骨架，必填字段有哪些？",
+    "gold_answer": "依据 TPL014 工作报告模板，必填字段共 12 项：报告编号与版本；报告主题与期间；数据截止日；范围与口径；关键结果；计划与实际对比；问题、风险与原因；已采取措施；后续计划、责任人和期限；需要关注事项；数据来源；复核与签发记录。可选字段为趋势分析、经验建议、附件明细。",
+    "expected_answer_points": [
+      "报告编号与版本",
+      "报告主题与期间",
+      "数据截止日",
+      "范围与口径",
+      "关键结果",
+      "计划与实际对比",
+      "问题、风险与原因",
+      "数据来源",
+      "复核与签发记录"
+    ],
+    "expected_evidence": ["TPL014"],
+    "forbidden_facts": ["预算审批记录"],
+    "boundary_expectation": "ANSWER"
+  },
+  {
+    "question_id": "A12-Q09",
+    "agent_id": "A12",
+    "question_type": "CONFLICT",
+    "question": "P003 那笔 174 万设备到货款到底哪天到账的？台账和复盘说法不一样。",
+    "gold_answer": "两个来源口径不同：DATA010 收入台账记录 174 万元（1740000）设备到货款于 2024-09-02 确认（与 GPU 到货同日，状态 received）；CASE002 复盘叙述称供货延期直接推迟了 174 万元到货款、2024-10-15 到账。应标注台账确认日口径与复盘叙述到账日口径的差异并回原始凭证核实，不能混用，也不能直接判定其中一个来源错误。",
+    "expected_answer_points": [
+      "设备到货款",
+      "1740000",
+      "2024-09-02",
+      "2024-10-15 到账"
+    ],
+    "expected_evidence": ["DATA010", "CASE002"],
+    "forbidden_facts": ["2024-11-15 到账"],
+    "boundary_expectation": "CONFLICT"
+  },
+  {
+    "question_id": "A12-Q10",
+    "agent_id": "A12",
+    "question_type": "UNKNOWN",
+    "question": "P005 城市服务智能客服平台在需求阶段发生过哪些变更？当时是谁审批的？",
+    "gold_answer": "知识库中 P005 仅有结构化经营记录（项目主数据），无完整历史材料（变更、会议等过程档案），无法回答需求变更与审批等历史细节，应回答 UNKNOWN 并说明仅有结构化经营记录。",
+    "expected_answer_points": [],
+    "expected_evidence": ["DATA004"],
+    "forbidden_facts": [],
+    "boundary_expectation": "UNKNOWN"
+  },
+  {
+    "question_id": "A12-Q11",
+    "agent_id": "A12",
+    "question_type": "OUT_OF_SCOPE",
+    "question": "星澜今天的股票涨跌怎么样？帮我看看能不能买点。",
+    "gold_answer": "该问题涉及实时股票行情且与模拟企业知识库无关，应拒绝回答并说明超出知识库范围。",
+    "expected_answer_points": [],
+    "expected_evidence": [],
+    "forbidden_facts": [],
+    "boundary_expectation": "OUT_OF_SCOPE"
+  },
+  {
+    "question_id": "A12-Q12",
+    "agent_id": "A12",
+    "question_type": "FACT_QUERY",
+    "question": "项目毛利和项目毛利率这两个指标分别怎么算？",
+    "gold_answer": "按 DATA012 经营指标字典：项目毛利=确认收入减实际成本（recognized_revenue-actual_cost），口径要求收入与成本口径一致（OP008）；项目毛利率=项目毛利占确认收入比例（(recognized_revenue-actual_cost)/recognized_revenue），收入为零时不可用（OP009）。",
+    "expected_answer_points": [
+      "项目毛利",
+      "确认收入减实际成本",
+      "recognized_revenue-actual_cost",
+      "项目毛利率",
+      "项目毛利占确认收入比例"
+    ],
+    "expected_evidence": ["DATA012"],
+    "forbidden_facts": ["实际成本减确认收入"],
+    "boundary_expectation": "ANSWER"
+  }
+]

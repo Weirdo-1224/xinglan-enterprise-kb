@@ -11,9 +11,14 @@ for required in ["星澜数字科技有限公司", "founded_year: 2021", "headqu
 
 rows = manifest_rows()
 if len(rows) != len({r["knowledge_id"] for r in rows}): errors.append("manifest IDs are not unique")
-for package in read_csv(ROOT / "manifests/PACKAGE_PLAN.csv"):
-    actual = sum(r["package"] == package["package_id"] for r in rows)
-    if actual != int(package["estimated_file_count"]): errors.append(f"{package['package_id']}: estimate mismatch")
+# Stage 6 final transport plan: 4 flat ZIPs covering all assets plus the
+# PROJECT_INDEX.csv transport copy in PACKAGE-03.
+plans = read_csv(ROOT / "manifests/PACKAGE_PLAN.csv")
+total_estimate = sum(int(p["estimated_file_count"]) for p in plans)
+if total_estimate != len(rows) + 1:
+    errors.append(f"package plan total {total_estimate} != {len(rows)} assets + PROJECT_INDEX.csv")
+if any(int(p["estimated_file_count"]) > 100 for p in plans):
+    errors.append("package plan exceeds the 100-file upload limit")
 
 manifest_ids = {r["knowledge_id"] for r in rows}
 required_project_fields = {
