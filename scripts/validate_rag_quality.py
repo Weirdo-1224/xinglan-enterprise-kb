@@ -19,7 +19,12 @@ from pathlib import Path
 
 import openpyxl
 
-from build_rag_package import RAG_SUMMARIES, RAG_TITLE_OVERRIDES, XLSX_RETRIEVAL_GUIDES
+from build_rag_package import (
+    RAG_SUMMARIES,
+    RAG_TITLE_OVERRIDES,
+    REDUNDANT_TAIL_HEADINGS,
+    XLSX_RETRIEVAL_GUIDES,
+)
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -189,6 +194,15 @@ def main() -> int:
         if "检索说明" not in wb.sheetnames:
             fix_integrity.append(f"{kid}: retrieval guide sheet missing")
         wb.close()
+    relation_hits: list[str] = []
+    manifest_by_id = {row["knowledge_id"]: row for row in manifest}
+    for kid, text in texts.items():
+        row = manifest_by_id[kid]
+        heading = REDUNDANT_TAIL_HEADINGS.get(row["knowledge_type"])
+        if heading and any(line.strip() == heading for line in text.splitlines()):
+            relation_hits.append(f"{kid}: {heading}")
+    if relation_hits:
+        fix_integrity.extend(relation_hits)
 
     passed_ids = {qid for qid, _, missing in ranks if not missing}
     review_passed = sorted(REVIEW_FAILURE_IDS & passed_ids)
@@ -218,6 +232,7 @@ def main() -> int:
         print(f"FAIL: targeted quality-fix integrity: {fix_integrity}")
     else:
         print(f"PASS: {len(RAG_SUMMARIES) + len(XLSX_RETRIEVAL_GUIDES)} targeted release enrichments intact")
+        print("PASS: redundant final relation/source-directory sections absent")
     review_ok = len(review_passed) == len(REVIEW_FAILURE_IDS)
     return 1 if failures or noise_hits or not boundary_ok or fix_integrity or not review_ok else 0
 

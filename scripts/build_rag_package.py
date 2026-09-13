@@ -32,6 +32,14 @@ EXPECTED_COUNTS = {"core": 100, "cases": 99, "templates": 28, "business_data": 1
 MD_DIRS = ["core", "cases", "templates"]
 REQUIRED_HEADER_KEYS = ["knowledge_id", "knowledge_type", "domain", "title", "served_agents", "source_type"]
 GOVERNANCE_SECTION = "## 来源与边界"
+REDUNDANT_TAIL_HEADINGS = {
+    "POLICY": "## 8. 关联知识",
+    "SOP": "## 关联制度与血缘",
+    "FAQ_RULE": "## 依据",
+    "PUBLIC_REFERENCE": "## 关联知识",
+    "PROJECT_CASE": "## 关联",
+    "TEMPLATE": "## 关联制度与流程",
+}
 NOISE_TOKENS = ["validator", "validate_", "scripts/", ".py", "Codex",
                 "enterprise_model/", "repository", "KNOWLEDGE_MANIFEST"]
 TYPE_TO_SUBDIR = {
@@ -45,8 +53,9 @@ PROJECT_ID_RE = re.compile(r"\AP(\d{3})_")
 # Release-only retrieval summaries.  They describe the governed content in
 # natural business language; they do not replace or change governed facts.
 RAG_SUMMARIES = {
-    "P002_26": "本记录用于追溯 P002 银行企业知识助手项目当时为什么延期、梳理真实原因链：核心实施人员长期少 2 人（在岗 7 人、编制 9 人）与知识版本冲突叠加，导致 2024-09-30 试运行里程碑失守；后续升级、基线重排和资源补齐过程见下文。",
+    "P002_26": "本记录用于从客户与方案风险角度识别 P002 的风险信号，并追溯银行企业知识助手项目当时为什么延期、梳理真实原因链：核心实施人员长期少 2 人（在岗 7 人、编制 9 人）与知识版本冲突叠加，导致 2024-09-30 试运行里程碑失守。",
     "P002_27": "本记录适用于识别 P002 的客户与方案风险信号，并从知识治理角度追溯项目为什么延期：CH03 引入新引用规范后，v1.3 出现回答口径和版本字段不一致，214 条冲突历时约 4 周清零并产生约 9 万元人力成本。",
+    "P002_23": "本复盘适用于查询 P002 哪些变更抬高了成本及各自金额：CH01 新增工作量 18 万元、CH02 权限返工 12 万元、CH03 版本冲突 9 万元、CH04 验收样本扩大 10 万元，另有延期人力 8 万元和节余冲抵 -12 万元；最终成本 265 万元，较预算超支 45 万元。",
     "FAQ005": "适用于快速判断会议结论、口头同意、行动项和会议纪要能否直接执行；会议讨论不等于批准，涉及采购、预算或项目变更时仍须完成对应授权与审批。不适用于替代采购或变更流程。",
     "POL010": "适用于判断通知、请示、报告、函件等正式公文应选什么文种以及如何审批、签发和归档；向总经理或其他有权人申请专项预算，应使用一文一事、明确请求批准事项的请示。",
     "TPL013": "适用于向有权人申请专项预算、资源支持或事项裁决时搭建请示；重点记录主送批准人、金额与含税口径、依据、明确请示事项、批准意见和条件。不用于单纯汇报情况。",
@@ -125,10 +134,39 @@ def remove_governance_section(body: str, knowledge_id: str, rag_rel: str,
     return "\n".join(lines[:start] + lines[end:])
 
 
+def remove_redundant_tail(body: str, knowledge_type: str, knowledge_id: str,
+                          rag_rel: str, removed: list[dict]) -> str:
+    """Remove a final directory-like relation section from the RAG copy.
+
+    Only the final section is eligible.  In-body citations and every business
+    fact, condition, exception, stop rule and boundary remain untouched.
+    """
+    heading = REDUNDANT_TAIL_HEADINGS.get(knowledge_type)
+    if not heading:
+        return body
+    lines = body.split("\n")
+    starts = [i for i, line in enumerate(lines) if line.strip() == heading]
+    if not starts:
+        return body
+    start = starts[-1]
+    later_heading = next((line for line in lines[start + 1:] if line.startswith("## ")), None)
+    if later_heading:
+        fail(f"{rag_rel}: relation section is not final; refusing broad removal")
+    removed.append({
+        "knowledge_id": knowledge_id,
+        "rag_path": rag_rel,
+        "section": heading,
+        "body_line_start": start + 1,
+        "line_count": len(lines) - start,
+    })
+    return "\n".join(lines[:start]).rstrip() + "\n"
+
+
 def transform_md(src: Path, dst: Path, subdir: str) -> tuple[list[dict], list[dict]]:
     raw = src.read_bytes()
-    eol = "\r\n" if b"\r\n" in raw else "\n"
-    front, body = parse_frontmatter(raw.decode("utf-8"))
+    decoded = raw.decode("utf-8").replace("\r\n", "\n").replace("\r", "\n")
+    eol = "\n"
+    front, body = parse_frontmatter(decoded)
     for key in REQUIRED_HEADER_KEYS:
         if key not in front:
             fail(f"{src.name}: frontmatter missing key {key}")
@@ -138,6 +176,9 @@ def transform_md(src: Path, dst: Path, subdir: str) -> tuple[list[dict], list[di
     removed: list[dict] = []
     if front["knowledge_type"] == "ENTERPRISE_FOUNDATION":
         body = remove_governance_section(body, knowledge_id, rag_rel, removed)
+
+    body = remove_redundant_tail(
+        body, str(front["knowledge_type"]), knowledge_id, rag_rel, removed)
 
     summary = RAG_SUMMARIES.get(knowledge_id)
     if summary:
@@ -295,6 +336,48 @@ def quality_fix_only() -> None:
     print(f"PASS: applied release-only RAG quality fixes to {fixed} targeted assets")
 
 
+def compact_relations_only() -> None:
+    removed_all: list[dict] = []
+    changed = 0
+    for subdir in MD_DIRS:
+        for path in sorted((OUT / subdir).glob("*.md")):
+            raw = path.read_bytes()
+            # Normalize first so a prior Windows write can never create
+            # CRCRLF while removing a section.
+            normalized = raw.decode("utf-8").replace("\r\n", "\n").replace("\r", "\n")
+            front, body = parse_frontmatter(normalized)
+            removed: list[dict] = []
+            new_body = remove_redundant_tail(
+                body, str(front["knowledge_type"]), str(front["knowledge_id"]),
+                f"{subdir}/{path.name}", removed)
+            prefix = normalized[:len(normalized) - len(body)]
+            new_text = prefix + new_body
+            if removed or raw != new_text.encode("utf-8"):
+                path.write_text(new_text, encoding="utf-8", newline="\n")
+                removed_all.extend(removed)
+                changed += 1
+    if len(removed_all) not in {0, 205}:
+        fail(f"relation compaction found partial state: removed {len(removed_all)} sections")
+    remaining = []
+    for path in OUT.glob("*/*.md"):
+        front, body = parse_frontmatter(path.read_text(encoding="utf-8"))
+        heading = REDUNDANT_TAIL_HEADINGS.get(str(front["knowledge_type"]))
+        if heading and any(line.strip() == heading for line in body.splitlines()):
+            remaining.append(str(front["knowledge_id"]))
+    if remaining:
+        fail(f"redundant relation sections remain: {remaining[:10]}")
+    report_path = OUT / "build_report.json"
+    report = json.loads(report_path.read_text(encoding="utf-8")) if report_path.is_file() else {}
+    if removed_all:
+        report["relation_compaction"] = {
+            "changed_assets": len(removed_all),
+            "removed_sections": removed_all,
+            "in_body_citations_preserved": True,
+        }
+    report_path.write_text(json.dumps(report, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+    print(f"PASS: redundant final relation sections absent; files normalized/refreshed={changed}; in-body evidence preserved")
+
+
 def main() -> None:
     try:
         sys.stdout.reconfigure(encoding="utf-8", errors="replace")
@@ -352,8 +435,17 @@ if __name__ == "__main__":
         parser = argparse.ArgumentParser()
         parser.add_argument("--quality-fix-only", action="store_true",
                             help="refresh only the Stage 6.1 targeted RAG assets")
+        parser.add_argument("--compact-relations-only", action="store_true",
+                            help="remove only redundant final relation sections in the RAG release")
         args = parser.parse_args()
-        quality_fix_only() if args.quality_fix_only else main()
+        if args.quality_fix_only and args.compact_relations_only:
+            fail("choose only one partial-build mode")
+        if args.quality_fix_only:
+            quality_fix_only()
+        elif args.compact_relations_only:
+            compact_relations_only()
+        else:
+            main()
     except (AssertionError, KeyError, ValueError, OSError, yaml.YAMLError) as exc:
         print(f"FAIL: {exc}")
         raise SystemExit(1)
