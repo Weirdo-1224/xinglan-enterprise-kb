@@ -1,13 +1,3 @@
----
-knowledge_id: TPL004
-knowledge_type: TEMPLATE
-domain: 项目管理
-title: WBS计划模板
-served_agents:
-- A02
-source_type: INTERNAL_DERIVED
----
-
 # WBS计划模板
 
 ## 使用场景与边界

@@ -1,13 +1,3 @@
----
-knowledge_id: ROLE005
-knowledge_type: ROLE
-domain: 采购
-title: 采购专员
-served_agents:
-- A09
-source_type: SYNTHETIC_DERIVED
----
-
 # 采购专员
 
 ## 岗位定位与所属部门

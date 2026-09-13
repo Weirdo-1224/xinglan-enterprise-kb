@@ -1,14 +1,3 @@
----
-knowledge_id: ROLE008
-knowledge_type: ROLE
-domain: 合同履约
-title: 法务风控经理
-served_agents:
-- A10
-- A11
-source_type: SYNTHETIC_DERIVED
----
-
 # 法务风控经理
 
 ## 岗位定位与所属部门

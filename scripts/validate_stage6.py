@@ -4,8 +4,8 @@ Checks the global QA / RAG publication / agent evaluation / final packaging
 deliverables end to end:
 
 - all 239 governed assets still exist under knowledge/
-- RAG publication holds the correct counts and every published md keeps the
-  lightweight identity header and its key business rules
+- RAG publication holds the correct counts, upload Markdown omits unparsed
+  YAML frontmatter, and key business rules remain available
 - no engineering noise, TODO or placeholder in published assets
 - history_level governance is consistent (PROJECT_INDEX vs RAG_MANIFEST)
 - upload ZIPs are <=100 files, flat, and match the publication listing
@@ -67,31 +67,30 @@ if counts == {"core": 100, "cases": 99, "templates": 28, "business_data": 12} an
 else:
     fail(f"RAG counts {counts}, rag manifest rows={len(rag_manifest)}")
 
-# 3. identity header + no engineering noise + no placeholder in published md
+# 3. upload shape + no engineering noise + no placeholder in published md
 NOISE = ("validator", "validate_", "scripts/", ".py", "Codex", "enterprise_model/",
          "repository", "KNOWLEDGE_MANIFEST", "source_strategy", "synthetic_fields",
          "minimum_source_count", "dependency_rationale")
 PLACEHOLDER = ("TODO", "TBD", "PLACEHOLDER", "待补充", "待完善", "待填写", "此处填写", "示例内容", "XXXX")
-REQUIRED_KEYS = ("knowledge_id", "knowledge_type", "domain", "title", "served_agents", "source_type")
-noise_hits, placeholder_hits, header_bad = [], [], []
+noise_hits, placeholder_hits, upload_shape_bad = [], [], []
 published_md = list(RAG.glob("core/*.md")) + list(RAG.glob("cases/*.md")) + list(RAG.glob("templates/*.md"))
 for path in published_md:
     text = path.read_text(encoding="utf-8")
-    header = text.split("---", 2)[1] if text.startswith("---") else ""
-    for key in REQUIRED_KEYS:
-        if f"{key}:" not in header:
-            header_bad.append(f"{path.name}: missing {key}")
-    body = text.split("---", 2)[-1]
+    if text.startswith("---"):
+        upload_shape_bad.append(f"{path.name}: unparsed YAML frontmatter present")
+    if not re.search(r"(?m)^# .+$", text):
+        upload_shape_bad.append(f"{path.name}: H1 title missing")
+    body = text
     for token in NOISE:
         if token in body:
             noise_hits.append(f"{path.name}: {token}")
     for token in PLACEHOLDER:
         if token in body:
             placeholder_hits.append(f"{path.name}: {token}")
-if not header_bad:
-    ok(f"all {len(published_md)} published md keep the lightweight identity header")
+if not upload_shape_bad:
+    ok(f"all {len(published_md)} published md omit YAML frontmatter and keep an H1 title")
 else:
-    fail(f"identity header problems: {header_bad[:5]}")
+    fail(f"upload Markdown shape problems: {upload_shape_bad[:5]}")
 if not noise_hits:
     ok("no engineering noise in published assets")
 else:

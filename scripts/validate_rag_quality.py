@@ -106,6 +106,7 @@ def main() -> int:
     texts: dict[str, str] = {}
     chunks: list[tuple[str, str]] = []
     titles: dict[str, str] = {}
+    intros: dict[str, str] = {}
     for row in manifest:
         path = RAG / row["rag_path"]
         titles[row["knowledge_id"]] = row["title"]
@@ -114,6 +115,7 @@ def main() -> int:
         else:
             raw = path.read_text(encoding="utf-8")
             asset_chunks = markdown_chunks(path, raw)
+        intros[row["knowledge_id"]] = raw[:700]
         texts[row["knowledge_id"]] = raw
         chunks.extend((row["knowledge_id"], chunk) for chunk in asset_chunks)
 
@@ -130,6 +132,11 @@ def main() -> int:
         kid: math.sqrt(sum((1 + math.log(freq)) ** 2 * idf.get(term, 0.0) ** 2 for term, freq in tf.items()))
         for kid, tf in title_tf.items()
     }
+    intro_tf = {kid: grams(intro) for kid, intro in intros.items()}
+    intro_norm = {
+        kid: math.sqrt(sum((1 + math.log(freq)) ** 2 * idf.get(term, 0.0) ** 2 for term, freq in tf.items()))
+        for kid, tf in intro_tf.items()
+    }
 
     def rank(query: str) -> list[str]:
         qtf = grams(query)
@@ -145,7 +152,15 @@ def main() -> int:
             dot = sum(qweight * (1 + math.log(tf[term])) * idf.get(term, 0.0)
                       for term, qweight in qweights.items() if term in tf)
             title_score = dot / (qnorm * (title_norm[kid] or 1.0))
-            best_scores[kid] = best_scores.get(kid, 0.0) + 0.35 * title_score
+            # With frontmatter intentionally absent, uploaded filename/H1 title
+            # is the primary identity signal and receives an explicit boost.
+            best_scores[kid] = best_scores.get(kid, 0.0) + 0.75 * title_score
+        for kid, tf in intro_tf.items():
+            dot = sum(qweight * (1 + math.log(tf[term])) * idf.get(term, 0.0)
+                      for term, qweight in qweights.items() if term in tf)
+            intro_score = dot / (qnorm * (intro_norm[kid] or 1.0))
+            # Natural-language scope/summary replaces opaque YAML metadata.
+            best_scores[kid] = best_scores.get(kid, 0.0) + 0.75 * intro_score
         return [kid for kid, _ in sorted(best_scores.items(), key=lambda item: (-item[1], item[0]))]
 
     failures: list[str] = []

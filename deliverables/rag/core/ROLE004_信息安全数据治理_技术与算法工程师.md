@@ -1,15 +1,3 @@
----
-knowledge_id: ROLE004
-knowledge_type: ROLE
-domain: 信息安全数据治理
-title: 技术与算法工程师
-served_agents:
-- A01
-- A02
-- A11
-source_type: SYNTHETIC_DERIVED
----
-
 # 技术与算法工程师
 
 ## 岗位定位与所属部门

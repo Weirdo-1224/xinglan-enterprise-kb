@@ -1,14 +1,3 @@
----
-knowledge_id: ROLE003
-knowledge_type: ROLE
-domain: 企业基础
-title: 产品经理
-served_agents:
-- A01
-- A02
-source_type: SYNTHETIC_DERIVED
----
-
 # 产品经理
 
 ## 岗位定位与所属部门

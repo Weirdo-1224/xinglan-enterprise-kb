@@ -7,10 +7,94 @@
     "total": 239,
     "md_processed": 227,
     "xlsx_copied": 12,
-    "removed_sections": 12,
+    "removed_sections": 217,
     "warnings": 0
   },
   "removed_sections": [
+    {
+      "knowledge_id": "FAQ001",
+      "rag_path": "core/FAQ001_人力资源_请假与出勤常见问题.md",
+      "section": "## 依据",
+      "body_line_start": 38,
+      "line_count": 4
+    },
+    {
+      "knowledge_id": "FAQ002",
+      "rag_path": "core/FAQ002_招聘_招聘面试评价常见问题.md",
+      "section": "## 依据",
+      "body_line_start": 34,
+      "line_count": 4
+    },
+    {
+      "knowledge_id": "FAQ003",
+      "rag_path": "core/FAQ003_培训绩效_绩效目标设定常见问题.md",
+      "section": "## 依据",
+      "body_line_start": 34,
+      "line_count": 4
+    },
+    {
+      "knowledge_id": "FAQ004",
+      "rag_path": "core/FAQ004_项目管理_项目延期处理规则.md",
+      "section": "## 依据",
+      "body_line_start": 34,
+      "line_count": 4
+    },
+    {
+      "knowledge_id": "FAQ005",
+      "rag_path": "core/FAQ005_会议协同_会议决策与待办常见问题.md",
+      "section": "## 依据",
+      "body_line_start": 34,
+      "line_count": 4
+    },
+    {
+      "knowledge_id": "FAQ006",
+      "rag_path": "core/FAQ006_公文规范_公文格式快速检查规则.md",
+      "section": "## 依据",
+      "body_line_start": 34,
+      "line_count": 4
+    },
+    {
+      "knowledge_id": "FAQ007",
+      "rag_path": "core/FAQ007_采购_采购阈值适用问答.md",
+      "section": "## 依据",
+      "body_line_start": 38,
+      "line_count": 4
+    },
+    {
+      "knowledge_id": "FAQ008",
+      "rag_path": "core/FAQ008_供应商_供应商准入问答.md",
+      "section": "## 依据",
+      "body_line_start": 34,
+      "line_count": 4
+    },
+    {
+      "knowledge_id": "FAQ009",
+      "rag_path": "core/FAQ009_招投标_招投标完整性资格商务技术评分与风险检查规则.md",
+      "section": "## 依据",
+      "body_line_start": 38,
+      "line_count": 4
+    },
+    {
+      "knowledge_id": "FAQ010",
+      "rag_path": "core/FAQ010_合同履约_合同付款条件检查规则.md",
+      "section": "## 依据",
+      "body_line_start": 34,
+      "line_count": 4
+    },
+    {
+      "knowledge_id": "FAQ011",
+      "rag_path": "core/FAQ011_经营分析_项目成本偏差问答.md",
+      "section": "## 依据",
+      "body_line_start": 34,
+      "line_count": 4
+    },
+    {
+      "knowledge_id": "FAQ012",
+      "rag_path": "core/FAQ012_信息安全数据治理_敏感数据使用问答.md",
+      "section": "## 依据",
+      "body_line_start": 34,
+      "line_count": 4
+    },
     {
       "knowledge_id": "KB001",
       "rag_path": "core/KB001_企业基础_公司简介.md",
@@ -94,9 +178,1367 @@
       "section": "## 来源与边界",
       "body_line_start": 14,
       "line_count": 6
+    },
+    {
+      "knowledge_id": "POL001",
+      "rag_path": "core/POL001_企业制度_人力资源管理办法.md",
+      "section": "## 8. 关联知识",
+      "body_line_start": 50,
+      "line_count": 4
+    },
+    {
+      "knowledge_id": "POL002",
+      "rag_path": "core/POL002_企业制度_招聘管理制度.md",
+      "section": "## 8. 关联知识",
+      "body_line_start": 53,
+      "line_count": 4
+    },
+    {
+      "knowledge_id": "POL003",
+      "rag_path": "core/POL003_企业制度_培训管理制度.md",
+      "section": "## 8. 关联知识",
+      "body_line_start": 48,
+      "line_count": 4
+    },
+    {
+      "knowledge_id": "POL004",
+      "rag_path": "core/POL004_企业制度_绩效管理办法.md",
+      "section": "## 8. 关联知识",
+      "body_line_start": 50,
+      "line_count": 4
+    },
+    {
+      "knowledge_id": "POL005",
+      "rag_path": "core/POL005_企业制度_项目管理制度.md",
+      "section": "## 8. 关联知识",
+      "body_line_start": 59,
+      "line_count": 4
+    },
+    {
+      "knowledge_id": "POL006",
+      "rag_path": "core/POL006_企业制度_项目立项管理办法.md",
+      "section": "## 8. 关联知识",
+      "body_line_start": 49,
+      "line_count": 4
+    },
+    {
+      "knowledge_id": "POL007",
+      "rag_path": "core/POL007_企业制度_项目变更管理办法.md",
+      "section": "## 8. 关联知识",
+      "body_line_start": 50,
+      "line_count": 4
+    },
+    {
+      "knowledge_id": "POL008",
+      "rag_path": "core/POL008_企业制度_会议管理制度.md",
+      "section": "## 8. 关联知识",
+      "body_line_start": 49,
+      "line_count": 4
+    },
+    {
+      "knowledge_id": "POL009",
+      "rag_path": "core/POL009_企业制度_文档管理制度.md",
+      "section": "## 8. 关联知识",
+      "body_line_start": 49,
+      "line_count": 4
+    },
+    {
+      "knowledge_id": "POL010",
+      "rag_path": "core/POL010_企业制度_公文管理办法.md",
+      "section": "## 8. 关联知识",
+      "body_line_start": 47,
+      "line_count": 4
+    },
+    {
+      "knowledge_id": "POL011",
+      "rag_path": "core/POL011_企业制度_采购管理制度.md",
+      "section": "## 8. 关联知识",
+      "body_line_start": 66,
+      "line_count": 4
+    },
+    {
+      "knowledge_id": "POL012",
+      "rag_path": "core/POL012_企业制度_供应商管理制度.md",
+      "section": "## 8. 关联知识",
+      "body_line_start": 50,
+      "line_count": 4
+    },
+    {
+      "knowledge_id": "POL013",
+      "rag_path": "core/POL013_企业制度_招投标管理制度.md",
+      "section": "## 8. 关联知识",
+      "body_line_start": 56,
+      "line_count": 4
+    },
+    {
+      "knowledge_id": "POL014",
+      "rag_path": "core/POL014_企业制度_合同管理制度.md",
+      "section": "## 8. 关联知识",
+      "body_line_start": 54,
+      "line_count": 4
+    },
+    {
+      "knowledge_id": "POL015",
+      "rag_path": "core/POL015_企业制度_预算管理制度.md",
+      "section": "## 8. 关联知识",
+      "body_line_start": 53,
+      "line_count": 4
+    },
+    {
+      "knowledge_id": "POL016",
+      "rag_path": "core/POL016_企业制度_项目成本管理制度.md",
+      "section": "## 8. 关联知识",
+      "body_line_start": 50,
+      "line_count": 4
+    },
+    {
+      "knowledge_id": "POL017",
+      "rag_path": "core/POL017_企业制度_信息安全管理制度.md",
+      "section": "## 8. 关联知识",
+      "body_line_start": 54,
+      "line_count": 4
+    },
+    {
+      "knowledge_id": "POL018",
+      "rag_path": "core/POL018_企业制度_知识产权与保密管理制度.md",
+      "section": "## 8. 关联知识",
+      "body_line_start": 52,
+      "line_count": 4
+    },
+    {
+      "knowledge_id": "REF001",
+      "rag_path": "core/REF001_公开依据_劳动合同相关规则.md",
+      "section": "## 关联知识",
+      "body_line_start": 35,
+      "line_count": 4
+    },
+    {
+      "knowledge_id": "REF002",
+      "rag_path": "core/REF002_公开依据_个人信息保护相关规则.md",
+      "section": "## 关联知识",
+      "body_line_start": 37,
+      "line_count": 4
+    },
+    {
+      "knowledge_id": "REF003",
+      "rag_path": "core/REF003_公开依据_数据安全相关规则.md",
+      "section": "## 关联知识",
+      "body_line_start": 35,
+      "line_count": 4
+    },
+    {
+      "knowledge_id": "REF004",
+      "rag_path": "core/REF004_公开依据_网络安全相关规则.md",
+      "section": "## 关联知识",
+      "body_line_start": 35,
+      "line_count": 4
+    },
+    {
+      "knowledge_id": "REF005",
+      "rag_path": "core/REF005_公开依据_政府采购基本规则.md",
+      "section": "## 关联知识",
+      "body_line_start": 36,
+      "line_count": 4
+    },
+    {
+      "knowledge_id": "REF006",
+      "rag_path": "core/REF006_公开依据_招标投标基本规则.md",
+      "section": "## 关联知识",
+      "body_line_start": 36,
+      "line_count": 4
+    },
+    {
+      "knowledge_id": "REF007",
+      "rag_path": "core/REF007_公开依据_电子招标投标规则.md",
+      "section": "## 关联知识",
+      "body_line_start": 34,
+      "line_count": 4
+    },
+    {
+      "knowledge_id": "REF008",
+      "rag_path": "core/REF008_公开依据_合同示范与民商事规则.md",
+      "section": "## 关联知识",
+      "body_line_start": 37,
+      "line_count": 4
+    },
+    {
+      "knowledge_id": "REF009",
+      "rag_path": "core/REF009_公开依据_档案管理相关规则.md",
+      "section": "## 关联知识",
+      "body_line_start": 37,
+      "line_count": 4
+    },
+    {
+      "knowledge_id": "REF010",
+      "rag_path": "core/REF010_公开依据_会计与项目成本规则.md",
+      "section": "## 关联知识",
+      "body_line_start": 34,
+      "line_count": 4
+    },
+    {
+      "knowledge_id": "REF011",
+      "rag_path": "core/REF011_公开依据_信息安全管理体系参考.md",
+      "section": "## 关联知识",
+      "body_line_start": 34,
+      "line_count": 4
+    },
+    {
+      "knowledge_id": "REF012",
+      "rag_path": "core/REF012_公开依据_项目管理实践参考.md",
+      "section": "## 关联知识",
+      "body_line_start": 37,
+      "line_count": 4
+    },
+    {
+      "knowledge_id": "REF013",
+      "rag_path": "core/REF013_公开依据_采购需求编制参考.md",
+      "section": "## 关联知识",
+      "body_line_start": 36,
+      "line_count": 4
+    },
+    {
+      "knowledge_id": "REF014",
+      "rag_path": "core/REF014_公开依据_企业内部控制参考.md",
+      "section": "## 关联知识",
+      "body_line_start": 38,
+      "line_count": 4
+    },
+    {
+      "knowledge_id": "REF015",
+      "rag_path": "core/REF015_公开依据_人力资源管理实践参考.md",
+      "section": "## 关联知识",
+      "body_line_start": 48,
+      "line_count": 4
+    },
+    {
+      "knowledge_id": "REF016",
+      "rag_path": "core/REF016_公开依据_会议治理实践参考.md",
+      "section": "## 关联知识",
+      "body_line_start": 37,
+      "line_count": 4
+    },
+    {
+      "knowledge_id": "REF017",
+      "rag_path": "core/REF017_公开依据_知识管理实践参考.md",
+      "section": "## 关联知识",
+      "body_line_start": 36,
+      "line_count": 4
+    },
+    {
+      "knowledge_id": "REF018",
+      "rag_path": "core/REF018_公开依据_公开政企项目案例研究方法.md",
+      "section": "## 关联知识",
+      "body_line_start": 53,
+      "line_count": 4
+    },
+    {
+      "knowledge_id": "SOP001",
+      "rag_path": "core/SOP001_项目管理_客户需求澄清流程.md",
+      "section": "## 关联制度与血缘",
+      "body_line_start": 48,
+      "line_count": 4
+    },
+    {
+      "knowledge_id": "SOP002",
+      "rag_path": "core/SOP002_项目管理_解决方案设计流程.md",
+      "section": "## 关联制度与血缘",
+      "body_line_start": 49,
+      "line_count": 4
+    },
+    {
+      "knowledge_id": "SOP003",
+      "rag_path": "core/SOP003_项目管理_项目立项流程.md",
+      "section": "## 关联制度与血缘",
+      "body_line_start": 49,
+      "line_count": 4
+    },
+    {
+      "knowledge_id": "SOP004",
+      "rag_path": "core/SOP004_项目管理_WBS与里程碑编制流程.md",
+      "section": "## 关联制度与血缘",
+      "body_line_start": 49,
+      "line_count": 4
+    },
+    {
+      "knowledge_id": "SOP005",
+      "rag_path": "core/SOP005_项目管理_项目资源配置流程.md",
+      "section": "## 关联制度与血缘",
+      "body_line_start": 49,
+      "line_count": 4
+    },
+    {
+      "knowledge_id": "SOP006",
+      "rag_path": "core/SOP006_项目管理_项目启动流程.md",
+      "section": "## 关联制度与血缘",
+      "body_line_start": 49,
+      "line_count": 4
+    },
+    {
+      "knowledge_id": "SOP007",
+      "rag_path": "core/SOP007_项目管理_项目周报与进度管理流程.md",
+      "section": "## 关联制度与血缘",
+      "body_line_start": 49,
+      "line_count": 4
+    },
+    {
+      "knowledge_id": "SOP008",
+      "rag_path": "core/SOP008_项目管理_项目风险管理流程.md",
+      "section": "## 关联制度与血缘",
+      "body_line_start": 49,
+      "line_count": 4
+    },
+    {
+      "knowledge_id": "SOP009",
+      "rag_path": "core/SOP009_项目管理_项目变更控制流程.md",
+      "section": "## 关联制度与血缘",
+      "body_line_start": 49,
+      "line_count": 4
+    },
+    {
+      "knowledge_id": "SOP010",
+      "rag_path": "core/SOP010_项目管理_项目验收流程.md",
+      "section": "## 关联制度与血缘",
+      "body_line_start": 49,
+      "line_count": 4
+    },
+    {
+      "knowledge_id": "SOP011",
+      "rag_path": "core/SOP011_项目管理_项目结项与复盘流程.md",
+      "section": "## 关联制度与血缘",
+      "body_line_start": 49,
+      "line_count": 4
+    },
+    {
+      "knowledge_id": "SOP012",
+      "rag_path": "core/SOP012_会议协同_会议议程与纪要流程.md",
+      "section": "## 关联制度与血缘",
+      "body_line_start": 49,
+      "line_count": 4
+    },
+    {
+      "knowledge_id": "SOP013",
+      "rag_path": "core/SOP013_企业文档_通知请示报告写作流程.md",
+      "section": "## 关联制度与血缘",
+      "body_line_start": 49,
+      "line_count": 4
+    },
+    {
+      "knowledge_id": "SOP014",
+      "rag_path": "core/SOP014_招聘_招聘需求到录用流程.md",
+      "section": "## 关联制度与血缘",
+      "body_line_start": 49,
+      "line_count": 4
+    },
+    {
+      "knowledge_id": "SOP015",
+      "rag_path": "core/SOP015_培训绩效_入职培训实施流程.md",
+      "section": "## 关联制度与血缘",
+      "body_line_start": 49,
+      "line_count": 4
+    },
+    {
+      "knowledge_id": "SOP016",
+      "rag_path": "core/SOP016_采购_采购申请与询价流程.md",
+      "section": "## 关联制度与血缘",
+      "body_line_start": 49,
+      "line_count": 4
+    },
+    {
+      "knowledge_id": "SOP017",
+      "rag_path": "core/SOP017_供应商_供应商比选与准入流程.md",
+      "section": "## 关联制度与血缘",
+      "body_line_start": 49,
+      "line_count": 4
+    },
+    {
+      "knowledge_id": "SOP018",
+      "rag_path": "core/SOP018_合同履约_合同审核与履约跟踪流程.md",
+      "section": "## 关联制度与血缘",
+      "body_line_start": 50,
+      "line_count": 4
+    },
+    {
+      "knowledge_id": "SOP019",
+      "rag_path": "core/SOP019_知识治理_知识新增与审核流程.md",
+      "section": "## 关联制度与血缘",
+      "body_line_start": 49,
+      "line_count": 4
+    },
+    {
+      "knowledge_id": "SOP020",
+      "rag_path": "core/SOP020_知识治理_知识版本与冲突处理流程.md",
+      "section": "## 关联制度与血缘",
+      "body_line_start": 49,
+      "line_count": 4
+    },
+    {
+      "knowledge_id": "SOP021",
+      "rag_path": "core/SOP021_知识治理_知识废止与归档流程.md",
+      "section": "## 关联制度与血缘",
+      "body_line_start": 49,
+      "line_count": 4
+    },
+    {
+      "knowledge_id": "SOP022",
+      "rag_path": "core/SOP022_公文规范_文档格式检查流程.md",
+      "section": "## 关联制度与血缘",
+      "body_line_start": 49,
+      "line_count": 4
+    },
+    {
+      "knowledge_id": "SOP023",
+      "rag_path": "core/SOP023_公文规范_文档排版流程.md",
+      "section": "## 关联制度与血缘",
+      "body_line_start": 49,
+      "line_count": 4
+    },
+    {
+      "knowledge_id": "SOP024",
+      "rag_path": "core/SOP024_公文规范_格式修复与模板套用流程.md",
+      "section": "## 关联制度与血缘",
+      "body_line_start": 49,
+      "line_count": 4
+    },
+    {
+      "knowledge_id": "SOP025",
+      "rag_path": "core/SOP025_培训绩效_绩效目标制定流程.md",
+      "section": "## 关联制度与血缘",
+      "body_line_start": 49,
+      "line_count": 4
+    },
+    {
+      "knowledge_id": "SOP026",
+      "rag_path": "core/SOP026_培训绩效_中期绩效回顾流程.md",
+      "section": "## 关联制度与血缘",
+      "body_line_start": 49,
+      "line_count": 4
+    },
+    {
+      "knowledge_id": "SOP027",
+      "rag_path": "core/SOP027_培训绩效_绩效评价与反馈流程.md",
+      "section": "## 关联制度与血缘",
+      "body_line_start": 49,
+      "line_count": 4
+    },
+    {
+      "knowledge_id": "SOP028",
+      "rag_path": "core/SOP028_培训绩效_绩效改进计划流程.md",
+      "section": "## 关联制度与血缘",
+      "body_line_start": 49,
+      "line_count": 4
+    },
+    {
+      "knowledge_id": "SOP029",
+      "rag_path": "core/SOP029_招投标_招标文件审查流程.md",
+      "section": "## 关联制度与血缘",
+      "body_line_start": 49,
+      "line_count": 4
+    },
+    {
+      "knowledge_id": "SOP030",
+      "rag_path": "core/SOP030_招投标_投标文件审查流程.md",
+      "section": "## 关联制度与血缘",
+      "body_line_start": 50,
+      "line_count": 4
+    },
+    {
+      "knowledge_id": "CASE001",
+      "rag_path": "cases/CASE001_历史项目案例_需求变更与基线控制复盘.md",
+      "section": "## 关联",
+      "body_line_start": 55,
+      "line_count": 7
+    },
+    {
+      "knowledge_id": "CASE002",
+      "rag_path": "cases/CASE002_历史项目案例_采购合同与成本联动复盘.md",
+      "section": "## 关联",
+      "body_line_start": 50,
+      "line_count": 8
+    },
+    {
+      "knowledge_id": "CASE003",
+      "rag_path": "cases/CASE003_历史项目案例_验收指标与知识沉淀复盘.md",
+      "section": "## 关联",
+      "body_line_start": 61,
+      "line_count": 7
+    },
+    {
+      "knowledge_id": "CASE004",
+      "rag_path": "cases/CASE004_历史项目案例_文档格式与排版正反案例.md",
+      "section": "## 关联",
+      "body_line_start": 53,
+      "line_count": 6
+    },
+    {
+      "knowledge_id": "P001_01",
+      "rag_path": "cases/P001_01_客户需求说明.md",
+      "section": "## 关联",
+      "body_line_start": 52,
+      "line_count": 7
+    },
+    {
+      "knowledge_id": "P001_02",
+      "rag_path": "cases/P001_02_需求调研记录.md",
+      "section": "## 关联",
+      "body_line_start": 57,
+      "line_count": 7
+    },
+    {
+      "knowledge_id": "P001_03",
+      "rag_path": "cases/P001_03_需求分析报告.md",
+      "section": "## 关联",
+      "body_line_start": 40,
+      "line_count": 7
+    },
+    {
+      "knowledge_id": "P001_04",
+      "rag_path": "cases/P001_04_解决方案.md",
+      "section": "## 关联",
+      "body_line_start": 38,
+      "line_count": 7
+    },
+    {
+      "knowledge_id": "P001_05",
+      "rag_path": "cases/P001_05_报价说明.md",
+      "section": "## 关联",
+      "body_line_start": 39,
+      "line_count": 7
+    },
+    {
+      "knowledge_id": "P001_06",
+      "rag_path": "cases/P001_06_项目立项申请.md",
+      "section": "## 关联",
+      "body_line_start": 40,
+      "line_count": 7
+    },
+    {
+      "knowledge_id": "P001_07",
+      "rag_path": "cases/P001_07_WBS与里程碑计划.md",
+      "section": "## 关联",
+      "body_line_start": 41,
+      "line_count": 7
+    },
+    {
+      "knowledge_id": "P001_08",
+      "rag_path": "cases/P001_08_项目启动会材料.md",
+      "section": "## 关联",
+      "body_line_start": 41,
+      "line_count": 7
+    },
+    {
+      "knowledge_id": "P001_09",
+      "rag_path": "cases/P001_09_人员配置计划.md",
+      "section": "## 关联",
+      "body_line_start": 37,
+      "line_count": 7
+    },
+    {
+      "knowledge_id": "P001_10",
+      "rag_path": "cases/P001_10_招聘需求.md",
+      "section": "## 关联",
+      "body_line_start": 41,
+      "line_count": 7
+    },
+    {
+      "knowledge_id": "P001_11",
+      "rag_path": "cases/P001_11_采购申请.md",
+      "section": "## 关联",
+      "body_line_start": 42,
+      "line_count": 7
+    },
+    {
+      "knowledge_id": "P001_12",
+      "rag_path": "cases/P001_12_采购需求规格.md",
+      "section": "## 关联",
+      "body_line_start": 41,
+      "line_count": 7
+    },
+    {
+      "knowledge_id": "P001_13",
+      "rag_path": "cases/P001_13_供应商比选记录.md",
+      "section": "## 关联",
+      "body_line_start": 33,
+      "line_count": 7
+    },
+    {
+      "knowledge_id": "P001_14",
+      "rag_path": "cases/P001_14_招投标材料与审查计划.md",
+      "section": "## 关联",
+      "body_line_start": 34,
+      "line_count": 7
+    },
+    {
+      "knowledge_id": "P001_15",
+      "rag_path": "cases/P001_15_合同审核意见.md",
+      "section": "## 关联",
+      "body_line_start": 46,
+      "line_count": 7
+    },
+    {
+      "knowledge_id": "P001_16",
+      "rag_path": "cases/P001_16_项目合同摘要.md",
+      "section": "## 关联",
+      "body_line_start": 39,
+      "line_count": 7
+    },
+    {
+      "knowledge_id": "P001_17",
+      "rag_path": "cases/P001_17_项目周报汇总.md",
+      "section": "## 关联",
+      "body_line_start": 36,
+      "line_count": 7
+    },
+    {
+      "knowledge_id": "P001_18",
+      "rag_path": "cases/P001_18_风险台账.md",
+      "section": "## 关联",
+      "body_line_start": 34,
+      "line_count": 7
+    },
+    {
+      "knowledge_id": "P001_19",
+      "rag_path": "cases/P001_19_变更记录.md",
+      "section": "## 关联",
+      "body_line_start": 44,
+      "line_count": 7
+    },
+    {
+      "knowledge_id": "P001_20",
+      "rag_path": "cases/P001_20_验收方案.md",
+      "section": "## 关联",
+      "body_line_start": 38,
+      "line_count": 7
+    },
+    {
+      "knowledge_id": "P001_21",
+      "rag_path": "cases/P001_21_验收报告.md",
+      "section": "## 关联",
+      "body_line_start": 36,
+      "line_count": 7
+    },
+    {
+      "knowledge_id": "P001_22",
+      "rag_path": "cases/P001_22_结项报告.md",
+      "section": "## 关联",
+      "body_line_start": 37,
+      "line_count": 7
+    },
+    {
+      "knowledge_id": "P001_23",
+      "rag_path": "cases/P001_23_项目经营复盘.md",
+      "section": "## 关联",
+      "body_line_start": 39,
+      "line_count": 7
+    },
+    {
+      "knowledge_id": "P001_24",
+      "rag_path": "cases/P001_24_知识沉淀清单.md",
+      "section": "## 关联",
+      "body_line_start": 41,
+      "line_count": 7
+    },
+    {
+      "knowledge_id": "P001_25",
+      "rag_path": "cases/P001_25_招标文件关键条款.md",
+      "section": "## 关联",
+      "body_line_start": 54,
+      "line_count": 7
+    },
+    {
+      "knowledge_id": "P001_26",
+      "rag_path": "cases/P001_26_招标文件审查记录.md",
+      "section": "## 关联",
+      "body_line_start": 38,
+      "line_count": 7
+    },
+    {
+      "knowledge_id": "P001_27",
+      "rag_path": "cases/P001_27_投标文件响应材料.md",
+      "section": "## 关联",
+      "body_line_start": 40,
+      "line_count": 7
+    },
+    {
+      "knowledge_id": "P001_28",
+      "rag_path": "cases/P001_28_资格材料.md",
+      "section": "## 关联",
+      "body_line_start": 45,
+      "line_count": 7
+    },
+    {
+      "knowledge_id": "P001_29",
+      "rag_path": "cases/P001_29_商务响应表.md",
+      "section": "## 关联",
+      "body_line_start": 35,
+      "line_count": 7
+    },
+    {
+      "knowledge_id": "P001_30",
+      "rag_path": "cases/P001_30_技术参数响应表.md",
+      "section": "## 关联",
+      "body_line_start": 35,
+      "line_count": 7
+    },
+    {
+      "knowledge_id": "P001_31",
+      "rag_path": "cases/P001_31_评分响应材料.md",
+      "section": "## 关联",
+      "body_line_start": 43,
+      "line_count": 7
+    },
+    {
+      "knowledge_id": "P001_32",
+      "rag_path": "cases/P001_32_AI审核问题清单.md",
+      "section": "## 关联",
+      "body_line_start": 35,
+      "line_count": 7
+    },
+    {
+      "knowledge_id": "P001_33",
+      "rag_path": "cases/P001_33_人工复核与审核结论.md",
+      "section": "## 关联",
+      "body_line_start": 47,
+      "line_count": 7
+    },
+    {
+      "knowledge_id": "P002_01",
+      "rag_path": "cases/P002_01_客户需求说明.md",
+      "section": "## 关联",
+      "body_line_start": 42,
+      "line_count": 7
+    },
+    {
+      "knowledge_id": "P002_02",
+      "rag_path": "cases/P002_02_需求调研记录.md",
+      "section": "## 关联",
+      "body_line_start": 46,
+      "line_count": 7
+    },
+    {
+      "knowledge_id": "P002_03",
+      "rag_path": "cases/P002_03_需求分析报告.md",
+      "section": "## 关联",
+      "body_line_start": 47,
+      "line_count": 7
+    },
+    {
+      "knowledge_id": "P002_04",
+      "rag_path": "cases/P002_04_解决方案.md",
+      "section": "## 关联",
+      "body_line_start": 39,
+      "line_count": 7
+    },
+    {
+      "knowledge_id": "P002_05",
+      "rag_path": "cases/P002_05_报价说明.md",
+      "section": "## 关联",
+      "body_line_start": 40,
+      "line_count": 7
+    },
+    {
+      "knowledge_id": "P002_06",
+      "rag_path": "cases/P002_06_项目立项申请.md",
+      "section": "## 关联",
+      "body_line_start": 41,
+      "line_count": 7
+    },
+    {
+      "knowledge_id": "P002_07",
+      "rag_path": "cases/P002_07_WBS与里程碑计划.md",
+      "section": "## 关联",
+      "body_line_start": 44,
+      "line_count": 7
+    },
+    {
+      "knowledge_id": "P002_08",
+      "rag_path": "cases/P002_08_项目启动会材料.md",
+      "section": "## 关联",
+      "body_line_start": 36,
+      "line_count": 7
+    },
+    {
+      "knowledge_id": "P002_09",
+      "rag_path": "cases/P002_09_人员配置计划.md",
+      "section": "## 关联",
+      "body_line_start": 35,
+      "line_count": 7
+    },
+    {
+      "knowledge_id": "P002_10",
+      "rag_path": "cases/P002_10_招聘需求.md",
+      "section": "## 关联",
+      "body_line_start": 38,
+      "line_count": 7
+    },
+    {
+      "knowledge_id": "P002_11",
+      "rag_path": "cases/P002_11_采购申请.md",
+      "section": "## 关联",
+      "body_line_start": 38,
+      "line_count": 7
+    },
+    {
+      "knowledge_id": "P002_12",
+      "rag_path": "cases/P002_12_采购需求规格.md",
+      "section": "## 关联",
+      "body_line_start": 38,
+      "line_count": 7
+    },
+    {
+      "knowledge_id": "P002_13",
+      "rag_path": "cases/P002_13_供应商比选记录.md",
+      "section": "## 关联",
+      "body_line_start": 40,
+      "line_count": 7
+    },
+    {
+      "knowledge_id": "P002_14",
+      "rag_path": "cases/P002_14_招投标材料与审查计划.md",
+      "section": "## 关联",
+      "body_line_start": 38,
+      "line_count": 7
+    },
+    {
+      "knowledge_id": "P002_15",
+      "rag_path": "cases/P002_15_合同审核意见.md",
+      "section": "## 关联",
+      "body_line_start": 35,
+      "line_count": 7
+    },
+    {
+      "knowledge_id": "P002_16",
+      "rag_path": "cases/P002_16_项目合同摘要.md",
+      "section": "## 关联",
+      "body_line_start": 40,
+      "line_count": 7
+    },
+    {
+      "knowledge_id": "P002_17",
+      "rag_path": "cases/P002_17_项目周报汇总.md",
+      "section": "## 关联",
+      "body_line_start": 53,
+      "line_count": 7
+    },
+    {
+      "knowledge_id": "P002_18",
+      "rag_path": "cases/P002_18_风险台账.md",
+      "section": "## 关联",
+      "body_line_start": 43,
+      "line_count": 7
+    },
+    {
+      "knowledge_id": "P002_19",
+      "rag_path": "cases/P002_19_变更记录.md",
+      "section": "## 关联",
+      "body_line_start": 46,
+      "line_count": 7
+    },
+    {
+      "knowledge_id": "P002_20",
+      "rag_path": "cases/P002_20_验收方案.md",
+      "section": "## 关联",
+      "body_line_start": 41,
+      "line_count": 7
+    },
+    {
+      "knowledge_id": "P002_21",
+      "rag_path": "cases/P002_21_验收报告.md",
+      "section": "## 关联",
+      "body_line_start": 38,
+      "line_count": 7
+    },
+    {
+      "knowledge_id": "P002_22",
+      "rag_path": "cases/P002_22_结项报告.md",
+      "section": "## 关联",
+      "body_line_start": 46,
+      "line_count": 7
+    },
+    {
+      "knowledge_id": "P002_23",
+      "rag_path": "cases/P002_23_项目经营复盘.md",
+      "section": "## 关联",
+      "body_line_start": 48,
+      "line_count": 7
+    },
+    {
+      "knowledge_id": "P002_24",
+      "rag_path": "cases/P002_24_知识沉淀清单.md",
+      "section": "## 关联",
+      "body_line_start": 31,
+      "line_count": 7
+    },
+    {
+      "knowledge_id": "P002_25",
+      "rag_path": "cases/P002_25_需求变更申请.md",
+      "section": "## 关联",
+      "body_line_start": 52,
+      "line_count": 7
+    },
+    {
+      "knowledge_id": "P002_26",
+      "rag_path": "cases/P002_26_项目延期风险升级记录.md",
+      "section": "## 关联",
+      "body_line_start": 38,
+      "line_count": 7
+    },
+    {
+      "knowledge_id": "P002_27",
+      "rag_path": "cases/P002_27_知识版本冲突处理记录.md",
+      "section": "## 关联",
+      "body_line_start": 36,
+      "line_count": 7
+    },
+    {
+      "knowledge_id": "P002_28",
+      "rag_path": "cases/P002_28_人员不足资源申请.md",
+      "section": "## 关联",
+      "body_line_start": 42,
+      "line_count": 7
+    },
+    {
+      "knowledge_id": "P002_29",
+      "rag_path": "cases/P002_29_成本超支预警.md",
+      "section": "## 关联",
+      "body_line_start": 44,
+      "line_count": 7
+    },
+    {
+      "knowledge_id": "P002_30",
+      "rag_path": "cases/P002_30_合同付款争议记录.md",
+      "section": "## 关联",
+      "body_line_start": 35,
+      "line_count": 7
+    },
+    {
+      "knowledge_id": "P002_31",
+      "rag_path": "cases/P002_31_项目纠偏会议纪要.md",
+      "section": "## 关联",
+      "body_line_start": 48,
+      "line_count": 7
+    },
+    {
+      "knowledge_id": "P003_01",
+      "rag_path": "cases/P003_01_客户需求说明.md",
+      "section": "## 关联",
+      "body_line_start": 42,
+      "line_count": 8
+    },
+    {
+      "knowledge_id": "P003_02",
+      "rag_path": "cases/P003_02_需求调研记录.md",
+      "section": "## 关联",
+      "body_line_start": 41,
+      "line_count": 8
+    },
+    {
+      "knowledge_id": "P003_03",
+      "rag_path": "cases/P003_03_需求分析报告.md",
+      "section": "## 关联",
+      "body_line_start": 43,
+      "line_count": 8
+    },
+    {
+      "knowledge_id": "P003_04",
+      "rag_path": "cases/P003_04_解决方案.md",
+      "section": "## 关联",
+      "body_line_start": 37,
+      "line_count": 8
+    },
+    {
+      "knowledge_id": "P003_05",
+      "rag_path": "cases/P003_05_报价说明.md",
+      "section": "## 关联",
+      "body_line_start": 35,
+      "line_count": 8
+    },
+    {
+      "knowledge_id": "P003_06",
+      "rag_path": "cases/P003_06_项目立项申请.md",
+      "section": "## 关联",
+      "body_line_start": 41,
+      "line_count": 7
+    },
+    {
+      "knowledge_id": "P003_07",
+      "rag_path": "cases/P003_07_WBS与里程碑计划.md",
+      "section": "## 关联",
+      "body_line_start": 46,
+      "line_count": 7
+    },
+    {
+      "knowledge_id": "P003_08",
+      "rag_path": "cases/P003_08_项目启动会材料.md",
+      "section": "## 关联",
+      "body_line_start": 34,
+      "line_count": 8
+    },
+    {
+      "knowledge_id": "P003_09",
+      "rag_path": "cases/P003_09_人员配置计划.md",
+      "section": "## 关联",
+      "body_line_start": 41,
+      "line_count": 7
+    },
+    {
+      "knowledge_id": "P003_10",
+      "rag_path": "cases/P003_10_招聘需求.md",
+      "section": "## 关联",
+      "body_line_start": 36,
+      "line_count": 8
+    },
+    {
+      "knowledge_id": "P003_11",
+      "rag_path": "cases/P003_11_采购申请.md",
+      "section": "## 关联",
+      "body_line_start": 37,
+      "line_count": 7
+    },
+    {
+      "knowledge_id": "P003_12",
+      "rag_path": "cases/P003_12_采购需求规格.md",
+      "section": "## 关联",
+      "body_line_start": 39,
+      "line_count": 7
+    },
+    {
+      "knowledge_id": "P003_13",
+      "rag_path": "cases/P003_13_供应商比选记录.md",
+      "section": "## 关联",
+      "body_line_start": 40,
+      "line_count": 8
+    },
+    {
+      "knowledge_id": "P003_14",
+      "rag_path": "cases/P003_14_招投标材料与审查计划.md",
+      "section": "## 关联",
+      "body_line_start": 40,
+      "line_count": 8
+    },
+    {
+      "knowledge_id": "P003_15",
+      "rag_path": "cases/P003_15_合同审核意见.md",
+      "section": "## 关联",
+      "body_line_start": 42,
+      "line_count": 8
+    },
+    {
+      "knowledge_id": "P003_16",
+      "rag_path": "cases/P003_16_项目合同摘要.md",
+      "section": "## 关联",
+      "body_line_start": 43,
+      "line_count": 7
+    },
+    {
+      "knowledge_id": "P003_17",
+      "rag_path": "cases/P003_17_项目周报汇总.md",
+      "section": "## 关联",
+      "body_line_start": 64,
+      "line_count": 8
+    },
+    {
+      "knowledge_id": "P003_18",
+      "rag_path": "cases/P003_18_风险台账.md",
+      "section": "## 关联",
+      "body_line_start": 46,
+      "line_count": 8
+    },
+    {
+      "knowledge_id": "P003_19",
+      "rag_path": "cases/P003_19_变更记录.md",
+      "section": "## 关联",
+      "body_line_start": 41,
+      "line_count": 8
+    },
+    {
+      "knowledge_id": "P003_20",
+      "rag_path": "cases/P003_20_验收方案.md",
+      "section": "## 关联",
+      "body_line_start": 40,
+      "line_count": 8
+    },
+    {
+      "knowledge_id": "P003_21",
+      "rag_path": "cases/P003_21_验收报告.md",
+      "section": "## 关联",
+      "body_line_start": 46,
+      "line_count": 9
+    },
+    {
+      "knowledge_id": "P003_22",
+      "rag_path": "cases/P003_22_结项报告.md",
+      "section": "## 关联",
+      "body_line_start": 49,
+      "line_count": 8
+    },
+    {
+      "knowledge_id": "P003_23",
+      "rag_path": "cases/P003_23_项目经营复盘.md",
+      "section": "## 关联",
+      "body_line_start": 45,
+      "line_count": 8
+    },
+    {
+      "knowledge_id": "P003_24",
+      "rag_path": "cases/P003_24_知识沉淀清单.md",
+      "section": "## 关联",
+      "body_line_start": 38,
+      "line_count": 7
+    },
+    {
+      "knowledge_id": "P003_25",
+      "rag_path": "cases/P003_25_GPU采购技术规格.md",
+      "section": "## 关联",
+      "body_line_start": 40,
+      "line_count": 7
+    },
+    {
+      "knowledge_id": "P003_26",
+      "rag_path": "cases/P003_26_算法指标专项评审.md",
+      "section": "## 关联",
+      "body_line_start": 51,
+      "line_count": 8
+    },
+    {
+      "knowledge_id": "P003_27",
+      "rag_path": "cases/P003_27_数据安全评审.md",
+      "section": "## 关联",
+      "body_line_start": 34,
+      "line_count": 8
+    },
+    {
+      "knowledge_id": "P003_28",
+      "rag_path": "cases/P003_28_视频数据治理说明.md",
+      "section": "## 关联",
+      "body_line_start": 46,
+      "line_count": 8
+    },
+    {
+      "knowledge_id": "P003_29",
+      "rag_path": "cases/P003_29_技术方案变更评审.md",
+      "section": "## 关联",
+      "body_line_start": 43,
+      "line_count": 8
+    },
+    {
+      "knowledge_id": "P003_30",
+      "rag_path": "cases/P003_30_验收指标争议纪要.md",
+      "section": "## 关联",
+      "body_line_start": 34,
+      "line_count": 8
+    },
+    {
+      "knowledge_id": "P003_31",
+      "rag_path": "cases/P003_31_算法测试专项报告.md",
+      "section": "## 关联",
+      "body_line_start": 47,
+      "line_count": 7
+    },
+    {
+      "knowledge_id": "TPL001",
+      "rag_path": "templates/TPL001_项目管理_项目立项模板.md",
+      "section": "## 关联制度与流程",
+      "body_line_start": 107,
+      "line_count": 6
+    },
+    {
+      "knowledge_id": "TPL002",
+      "rag_path": "templates/TPL002_项目管理_需求调研模板.md",
+      "section": "## 关联制度与流程",
+      "body_line_start": 106,
+      "line_count": 6
+    },
+    {
+      "knowledge_id": "TPL003",
+      "rag_path": "templates/TPL003_企业文档_解决方案模板.md",
+      "section": "## 关联制度与流程",
+      "body_line_start": 107,
+      "line_count": 6
+    },
+    {
+      "knowledge_id": "TPL004",
+      "rag_path": "templates/TPL004_项目管理_WBS计划模板.md",
+      "section": "## 关联制度与流程",
+      "body_line_start": 107,
+      "line_count": 6
+    },
+    {
+      "knowledge_id": "TPL005",
+      "rag_path": "templates/TPL005_项目管理_项目周报模板.md",
+      "section": "## 关联制度与流程",
+      "body_line_start": 105,
+      "line_count": 6
+    },
+    {
+      "knowledge_id": "TPL006",
+      "rag_path": "templates/TPL006_项目管理_项目风险台账模板.md",
+      "section": "## 关联制度与流程",
+      "body_line_start": 107,
+      "line_count": 6
+    },
+    {
+      "knowledge_id": "TPL007",
+      "rag_path": "templates/TPL007_项目管理_项目变更单模板.md",
+      "section": "## 关联制度与流程",
+      "body_line_start": 111,
+      "line_count": 6
+    },
+    {
+      "knowledge_id": "TPL008",
+      "rag_path": "templates/TPL008_项目管理_验收方案模板.md",
+      "section": "## 关联制度与流程",
+      "body_line_start": 107,
+      "line_count": 6
+    },
+    {
+      "knowledge_id": "TPL009",
+      "rag_path": "templates/TPL009_会议协同_会议议程模板.md",
+      "section": "## 关联制度与流程",
+      "body_line_start": 105,
+      "line_count": 6
+    },
+    {
+      "knowledge_id": "TPL010",
+      "rag_path": "templates/TPL010_会议协同_会议纪要模板.md",
+      "section": "## 关联制度与流程",
+      "body_line_start": 106,
+      "line_count": 6
+    },
+    {
+      "knowledge_id": "TPL011",
+      "rag_path": "templates/TPL011_会议协同_决策与待办清单模板.md",
+      "section": "## 关联制度与流程",
+      "body_line_start": 105,
+      "line_count": 6
+    },
+    {
+      "knowledge_id": "TPL012",
+      "rag_path": "templates/TPL012_公文规范_通知模板.md",
+      "section": "## 关联制度与流程",
+      "body_line_start": 106,
+      "line_count": 6
+    },
+    {
+      "knowledge_id": "TPL013",
+      "rag_path": "templates/TPL013_公文规范_请示模板.md",
+      "section": "## 关联制度与流程",
+      "body_line_start": 105,
+      "line_count": 6
+    },
+    {
+      "knowledge_id": "TPL014",
+      "rag_path": "templates/TPL014_企业文档_工作报告模板.md",
+      "section": "## 关联制度与流程",
+      "body_line_start": 105,
+      "line_count": 6
+    },
+    {
+      "knowledge_id": "TPL015",
+      "rag_path": "templates/TPL015_招聘_岗位JD模板.md",
+      "section": "## 关联制度与流程",
+      "body_line_start": 106,
+      "line_count": 6
+    },
+    {
+      "knowledge_id": "TPL016",
+      "rag_path": "templates/TPL016_招聘_面试评价表模板.md",
+      "section": "## 关联制度与流程",
+      "body_line_start": 105,
+      "line_count": 6
+    },
+    {
+      "knowledge_id": "TPL017",
+      "rag_path": "templates/TPL017_培训绩效_培训计划模板.md",
+      "section": "## 关联制度与流程",
+      "body_line_start": 106,
+      "line_count": 6
+    },
+    {
+      "knowledge_id": "TPL018",
+      "rag_path": "templates/TPL018_采购_采购申请模板.md",
+      "section": "## 关联制度与流程",
+      "body_line_start": 107,
+      "line_count": 6
+    },
+    {
+      "knowledge_id": "TPL019",
+      "rag_path": "templates/TPL019_供应商_供应商比选表模板.md",
+      "section": "## 关联制度与流程",
+      "body_line_start": 106,
+      "line_count": 6
+    },
+    {
+      "knowledge_id": "TPL020",
+      "rag_path": "templates/TPL020_合同履约_合同审查清单模板.md",
+      "section": "## 关联制度与流程",
+      "body_line_start": 109,
+      "line_count": 6
+    },
+    {
+      "knowledge_id": "TPL021",
+      "rag_path": "templates/TPL021_公文规范_文档格式检查清单.md",
+      "section": "## 关联制度与流程",
+      "body_line_start": 107,
+      "line_count": 6
+    },
+    {
+      "knowledge_id": "TPL022",
+      "rag_path": "templates/TPL022_公文规范_格式修复与模板映射记录.md",
+      "section": "## 关联制度与流程",
+      "body_line_start": 107,
+      "line_count": 6
+    },
+    {
+      "knowledge_id": "TPL023",
+      "rag_path": "templates/TPL023_培训绩效_绩效目标表.md",
+      "section": "## 关联制度与流程",
+      "body_line_start": 108,
+      "line_count": 6
+    },
+    {
+      "knowledge_id": "TPL024",
+      "rag_path": "templates/TPL024_培训绩效_中期绩效回顾表.md",
+      "section": "## 关联制度与流程",
+      "body_line_start": 107,
+      "line_count": 6
+    },
+    {
+      "knowledge_id": "TPL025",
+      "rag_path": "templates/TPL025_培训绩效_绩效评价反馈与改进计划模板.md",
+      "section": "## 关联制度与流程",
+      "body_line_start": 110,
+      "line_count": 6
+    },
+    {
+      "knowledge_id": "TPL026",
+      "rag_path": "templates/TPL026_招投标_招标文件审查清单.md",
+      "section": "## 关联制度与流程",
+      "body_line_start": 109,
+      "line_count": 6
+    },
+    {
+      "knowledge_id": "TPL027",
+      "rag_path": "templates/TPL027_招投标_投标文件审核报告模板.md",
+      "section": "## 关联制度与流程",
+      "body_line_start": 108,
+      "line_count": 6
+    },
+    {
+      "knowledge_id": "TPL028",
+      "rag_path": "templates/TPL028_招投标_招投标问题定位模板.md",
+      "section": "## 关联制度与流程",
+      "body_line_start": 107,
+      "line_count": 6
     }
   ],
   "warnings": [],
+  "frontmatter_compaction": {
+    "markdown_assets_without_frontmatter": 227,
+    "identity_metadata_location": [
+      "RAG_MANIFEST.csv",
+      "PROJECT_INDEX.csv"
+    ]
+  },
   "stage6_1_quality_fix": {
     "targeted_assets": [
       "CASE002",
@@ -113,12 +1555,22 @@
       "P002_26",
       "P002_27",
       "P003_13",
+      "POL001",
+      "POL002",
+      "POL003",
+      "POL008",
+      "POL009",
       "POL010",
+      "POL011",
+      "POL013",
+      "POL014",
       "TPL013"
     ],
     "title_overrides": {
       "P002_27": "银行企业知识助手项目-延期原因链与知识版本冲突处理",
-      "CASE002": "P002 银行企业知识助手项目负毛利异常原因与采购合同成本联动复盘"
+      "CASE002": "P002 银行企业知识助手项目负毛利异常原因与采购合同成本联动复盘",
+      "TPL013": "专项预算与事项批准请示模板",
+      "POL010": "通知请示报告与专项预算公文管理办法"
     },
     "xlsx_retrieval_guides": [
       "DATA001",
@@ -130,1443 +1582,6 @@
   },
   "relation_compaction": {
     "changed_assets": 205,
-    "removed_sections": [
-      {
-        "knowledge_id": "FAQ001",
-        "rag_path": "core/FAQ001_人力资源_请假与出勤常见问题.md",
-        "section": "## 依据",
-        "body_line_start": 38,
-        "line_count": 4
-      },
-      {
-        "knowledge_id": "FAQ002",
-        "rag_path": "core/FAQ002_招聘_招聘面试评价常见问题.md",
-        "section": "## 依据",
-        "body_line_start": 34,
-        "line_count": 4
-      },
-      {
-        "knowledge_id": "FAQ003",
-        "rag_path": "core/FAQ003_培训绩效_绩效目标设定常见问题.md",
-        "section": "## 依据",
-        "body_line_start": 34,
-        "line_count": 4
-      },
-      {
-        "knowledge_id": "FAQ004",
-        "rag_path": "core/FAQ004_项目管理_项目延期处理规则.md",
-        "section": "## 依据",
-        "body_line_start": 34,
-        "line_count": 4
-      },
-      {
-        "knowledge_id": "FAQ005",
-        "rag_path": "core/FAQ005_会议协同_会议决策与待办常见问题.md",
-        "section": "## 依据",
-        "body_line_start": 36,
-        "line_count": 4
-      },
-      {
-        "knowledge_id": "FAQ006",
-        "rag_path": "core/FAQ006_公文规范_公文格式快速检查规则.md",
-        "section": "## 依据",
-        "body_line_start": 34,
-        "line_count": 4
-      },
-      {
-        "knowledge_id": "FAQ007",
-        "rag_path": "core/FAQ007_采购_采购阈值适用问答.md",
-        "section": "## 依据",
-        "body_line_start": 38,
-        "line_count": 4
-      },
-      {
-        "knowledge_id": "FAQ008",
-        "rag_path": "core/FAQ008_供应商_供应商准入问答.md",
-        "section": "## 依据",
-        "body_line_start": 34,
-        "line_count": 4
-      },
-      {
-        "knowledge_id": "FAQ009",
-        "rag_path": "core/FAQ009_招投标_招投标完整性资格商务技术评分与风险检查规则.md",
-        "section": "## 依据",
-        "body_line_start": 38,
-        "line_count": 4
-      },
-      {
-        "knowledge_id": "FAQ010",
-        "rag_path": "core/FAQ010_合同履约_合同付款条件检查规则.md",
-        "section": "## 依据",
-        "body_line_start": 34,
-        "line_count": 4
-      },
-      {
-        "knowledge_id": "FAQ011",
-        "rag_path": "core/FAQ011_经营分析_项目成本偏差问答.md",
-        "section": "## 依据",
-        "body_line_start": 34,
-        "line_count": 4
-      },
-      {
-        "knowledge_id": "FAQ012",
-        "rag_path": "core/FAQ012_信息安全数据治理_敏感数据使用问答.md",
-        "section": "## 依据",
-        "body_line_start": 34,
-        "line_count": 4
-      },
-      {
-        "knowledge_id": "POL001",
-        "rag_path": "core/POL001_企业制度_人力资源管理办法.md",
-        "section": "## 8. 关联知识",
-        "body_line_start": 50,
-        "line_count": 4
-      },
-      {
-        "knowledge_id": "POL002",
-        "rag_path": "core/POL002_企业制度_招聘管理制度.md",
-        "section": "## 8. 关联知识",
-        "body_line_start": 53,
-        "line_count": 4
-      },
-      {
-        "knowledge_id": "POL003",
-        "rag_path": "core/POL003_企业制度_培训管理制度.md",
-        "section": "## 8. 关联知识",
-        "body_line_start": 48,
-        "line_count": 4
-      },
-      {
-        "knowledge_id": "POL004",
-        "rag_path": "core/POL004_企业制度_绩效管理办法.md",
-        "section": "## 8. 关联知识",
-        "body_line_start": 50,
-        "line_count": 4
-      },
-      {
-        "knowledge_id": "POL005",
-        "rag_path": "core/POL005_企业制度_项目管理制度.md",
-        "section": "## 8. 关联知识",
-        "body_line_start": 59,
-        "line_count": 4
-      },
-      {
-        "knowledge_id": "POL006",
-        "rag_path": "core/POL006_企业制度_项目立项管理办法.md",
-        "section": "## 8. 关联知识",
-        "body_line_start": 49,
-        "line_count": 4
-      },
-      {
-        "knowledge_id": "POL007",
-        "rag_path": "core/POL007_企业制度_项目变更管理办法.md",
-        "section": "## 8. 关联知识",
-        "body_line_start": 50,
-        "line_count": 4
-      },
-      {
-        "knowledge_id": "POL008",
-        "rag_path": "core/POL008_企业制度_会议管理制度.md",
-        "section": "## 8. 关联知识",
-        "body_line_start": 49,
-        "line_count": 4
-      },
-      {
-        "knowledge_id": "POL009",
-        "rag_path": "core/POL009_企业制度_文档管理制度.md",
-        "section": "## 8. 关联知识",
-        "body_line_start": 49,
-        "line_count": 4
-      },
-      {
-        "knowledge_id": "POL010",
-        "rag_path": "core/POL010_企业制度_公文管理办法.md",
-        "section": "## 8. 关联知识",
-        "body_line_start": 49,
-        "line_count": 4
-      },
-      {
-        "knowledge_id": "POL011",
-        "rag_path": "core/POL011_企业制度_采购管理制度.md",
-        "section": "## 8. 关联知识",
-        "body_line_start": 66,
-        "line_count": 4
-      },
-      {
-        "knowledge_id": "POL012",
-        "rag_path": "core/POL012_企业制度_供应商管理制度.md",
-        "section": "## 8. 关联知识",
-        "body_line_start": 50,
-        "line_count": 4
-      },
-      {
-        "knowledge_id": "POL013",
-        "rag_path": "core/POL013_企业制度_招投标管理制度.md",
-        "section": "## 8. 关联知识",
-        "body_line_start": 56,
-        "line_count": 4
-      },
-      {
-        "knowledge_id": "POL014",
-        "rag_path": "core/POL014_企业制度_合同管理制度.md",
-        "section": "## 8. 关联知识",
-        "body_line_start": 54,
-        "line_count": 4
-      },
-      {
-        "knowledge_id": "POL015",
-        "rag_path": "core/POL015_企业制度_预算管理制度.md",
-        "section": "## 8. 关联知识",
-        "body_line_start": 53,
-        "line_count": 4
-      },
-      {
-        "knowledge_id": "POL016",
-        "rag_path": "core/POL016_企业制度_项目成本管理制度.md",
-        "section": "## 8. 关联知识",
-        "body_line_start": 50,
-        "line_count": 4
-      },
-      {
-        "knowledge_id": "POL017",
-        "rag_path": "core/POL017_企业制度_信息安全管理制度.md",
-        "section": "## 8. 关联知识",
-        "body_line_start": 54,
-        "line_count": 4
-      },
-      {
-        "knowledge_id": "POL018",
-        "rag_path": "core/POL018_企业制度_知识产权与保密管理制度.md",
-        "section": "## 8. 关联知识",
-        "body_line_start": 52,
-        "line_count": 4
-      },
-      {
-        "knowledge_id": "REF001",
-        "rag_path": "core/REF001_公开依据_劳动合同相关规则.md",
-        "section": "## 关联知识",
-        "body_line_start": 35,
-        "line_count": 4
-      },
-      {
-        "knowledge_id": "REF002",
-        "rag_path": "core/REF002_公开依据_个人信息保护相关规则.md",
-        "section": "## 关联知识",
-        "body_line_start": 37,
-        "line_count": 4
-      },
-      {
-        "knowledge_id": "REF003",
-        "rag_path": "core/REF003_公开依据_数据安全相关规则.md",
-        "section": "## 关联知识",
-        "body_line_start": 35,
-        "line_count": 4
-      },
-      {
-        "knowledge_id": "REF004",
-        "rag_path": "core/REF004_公开依据_网络安全相关规则.md",
-        "section": "## 关联知识",
-        "body_line_start": 35,
-        "line_count": 4
-      },
-      {
-        "knowledge_id": "REF005",
-        "rag_path": "core/REF005_公开依据_政府采购基本规则.md",
-        "section": "## 关联知识",
-        "body_line_start": 36,
-        "line_count": 4
-      },
-      {
-        "knowledge_id": "REF006",
-        "rag_path": "core/REF006_公开依据_招标投标基本规则.md",
-        "section": "## 关联知识",
-        "body_line_start": 36,
-        "line_count": 4
-      },
-      {
-        "knowledge_id": "REF007",
-        "rag_path": "core/REF007_公开依据_电子招标投标规则.md",
-        "section": "## 关联知识",
-        "body_line_start": 34,
-        "line_count": 4
-      },
-      {
-        "knowledge_id": "REF008",
-        "rag_path": "core/REF008_公开依据_合同示范与民商事规则.md",
-        "section": "## 关联知识",
-        "body_line_start": 37,
-        "line_count": 4
-      },
-      {
-        "knowledge_id": "REF009",
-        "rag_path": "core/REF009_公开依据_档案管理相关规则.md",
-        "section": "## 关联知识",
-        "body_line_start": 37,
-        "line_count": 4
-      },
-      {
-        "knowledge_id": "REF010",
-        "rag_path": "core/REF010_公开依据_会计与项目成本规则.md",
-        "section": "## 关联知识",
-        "body_line_start": 34,
-        "line_count": 4
-      },
-      {
-        "knowledge_id": "REF011",
-        "rag_path": "core/REF011_公开依据_信息安全管理体系参考.md",
-        "section": "## 关联知识",
-        "body_line_start": 34,
-        "line_count": 4
-      },
-      {
-        "knowledge_id": "REF012",
-        "rag_path": "core/REF012_公开依据_项目管理实践参考.md",
-        "section": "## 关联知识",
-        "body_line_start": 37,
-        "line_count": 4
-      },
-      {
-        "knowledge_id": "REF013",
-        "rag_path": "core/REF013_公开依据_采购需求编制参考.md",
-        "section": "## 关联知识",
-        "body_line_start": 36,
-        "line_count": 4
-      },
-      {
-        "knowledge_id": "REF014",
-        "rag_path": "core/REF014_公开依据_企业内部控制参考.md",
-        "section": "## 关联知识",
-        "body_line_start": 38,
-        "line_count": 4
-      },
-      {
-        "knowledge_id": "REF015",
-        "rag_path": "core/REF015_公开依据_人力资源管理实践参考.md",
-        "section": "## 关联知识",
-        "body_line_start": 48,
-        "line_count": 4
-      },
-      {
-        "knowledge_id": "REF016",
-        "rag_path": "core/REF016_公开依据_会议治理实践参考.md",
-        "section": "## 关联知识",
-        "body_line_start": 37,
-        "line_count": 4
-      },
-      {
-        "knowledge_id": "REF017",
-        "rag_path": "core/REF017_公开依据_知识管理实践参考.md",
-        "section": "## 关联知识",
-        "body_line_start": 36,
-        "line_count": 4
-      },
-      {
-        "knowledge_id": "REF018",
-        "rag_path": "core/REF018_公开依据_公开政企项目案例研究方法.md",
-        "section": "## 关联知识",
-        "body_line_start": 53,
-        "line_count": 4
-      },
-      {
-        "knowledge_id": "SOP001",
-        "rag_path": "core/SOP001_项目管理_客户需求澄清流程.md",
-        "section": "## 关联制度与血缘",
-        "body_line_start": 48,
-        "line_count": 4
-      },
-      {
-        "knowledge_id": "SOP002",
-        "rag_path": "core/SOP002_项目管理_解决方案设计流程.md",
-        "section": "## 关联制度与血缘",
-        "body_line_start": 49,
-        "line_count": 4
-      },
-      {
-        "knowledge_id": "SOP003",
-        "rag_path": "core/SOP003_项目管理_项目立项流程.md",
-        "section": "## 关联制度与血缘",
-        "body_line_start": 49,
-        "line_count": 4
-      },
-      {
-        "knowledge_id": "SOP004",
-        "rag_path": "core/SOP004_项目管理_WBS与里程碑编制流程.md",
-        "section": "## 关联制度与血缘",
-        "body_line_start": 49,
-        "line_count": 4
-      },
-      {
-        "knowledge_id": "SOP005",
-        "rag_path": "core/SOP005_项目管理_项目资源配置流程.md",
-        "section": "## 关联制度与血缘",
-        "body_line_start": 49,
-        "line_count": 4
-      },
-      {
-        "knowledge_id": "SOP006",
-        "rag_path": "core/SOP006_项目管理_项目启动流程.md",
-        "section": "## 关联制度与血缘",
-        "body_line_start": 49,
-        "line_count": 4
-      },
-      {
-        "knowledge_id": "SOP007",
-        "rag_path": "core/SOP007_项目管理_项目周报与进度管理流程.md",
-        "section": "## 关联制度与血缘",
-        "body_line_start": 49,
-        "line_count": 4
-      },
-      {
-        "knowledge_id": "SOP008",
-        "rag_path": "core/SOP008_项目管理_项目风险管理流程.md",
-        "section": "## 关联制度与血缘",
-        "body_line_start": 49,
-        "line_count": 4
-      },
-      {
-        "knowledge_id": "SOP009",
-        "rag_path": "core/SOP009_项目管理_项目变更控制流程.md",
-        "section": "## 关联制度与血缘",
-        "body_line_start": 49,
-        "line_count": 4
-      },
-      {
-        "knowledge_id": "SOP010",
-        "rag_path": "core/SOP010_项目管理_项目验收流程.md",
-        "section": "## 关联制度与血缘",
-        "body_line_start": 49,
-        "line_count": 4
-      },
-      {
-        "knowledge_id": "SOP011",
-        "rag_path": "core/SOP011_项目管理_项目结项与复盘流程.md",
-        "section": "## 关联制度与血缘",
-        "body_line_start": 49,
-        "line_count": 4
-      },
-      {
-        "knowledge_id": "SOP012",
-        "rag_path": "core/SOP012_会议协同_会议议程与纪要流程.md",
-        "section": "## 关联制度与血缘",
-        "body_line_start": 49,
-        "line_count": 4
-      },
-      {
-        "knowledge_id": "SOP013",
-        "rag_path": "core/SOP013_企业文档_通知请示报告写作流程.md",
-        "section": "## 关联制度与血缘",
-        "body_line_start": 49,
-        "line_count": 4
-      },
-      {
-        "knowledge_id": "SOP014",
-        "rag_path": "core/SOP014_招聘_招聘需求到录用流程.md",
-        "section": "## 关联制度与血缘",
-        "body_line_start": 49,
-        "line_count": 4
-      },
-      {
-        "knowledge_id": "SOP015",
-        "rag_path": "core/SOP015_培训绩效_入职培训实施流程.md",
-        "section": "## 关联制度与血缘",
-        "body_line_start": 49,
-        "line_count": 4
-      },
-      {
-        "knowledge_id": "SOP016",
-        "rag_path": "core/SOP016_采购_采购申请与询价流程.md",
-        "section": "## 关联制度与血缘",
-        "body_line_start": 49,
-        "line_count": 4
-      },
-      {
-        "knowledge_id": "SOP017",
-        "rag_path": "core/SOP017_供应商_供应商比选与准入流程.md",
-        "section": "## 关联制度与血缘",
-        "body_line_start": 49,
-        "line_count": 4
-      },
-      {
-        "knowledge_id": "SOP018",
-        "rag_path": "core/SOP018_合同履约_合同审核与履约跟踪流程.md",
-        "section": "## 关联制度与血缘",
-        "body_line_start": 50,
-        "line_count": 4
-      },
-      {
-        "knowledge_id": "SOP019",
-        "rag_path": "core/SOP019_知识治理_知识新增与审核流程.md",
-        "section": "## 关联制度与血缘",
-        "body_line_start": 49,
-        "line_count": 4
-      },
-      {
-        "knowledge_id": "SOP020",
-        "rag_path": "core/SOP020_知识治理_知识版本与冲突处理流程.md",
-        "section": "## 关联制度与血缘",
-        "body_line_start": 49,
-        "line_count": 4
-      },
-      {
-        "knowledge_id": "SOP021",
-        "rag_path": "core/SOP021_知识治理_知识废止与归档流程.md",
-        "section": "## 关联制度与血缘",
-        "body_line_start": 49,
-        "line_count": 4
-      },
-      {
-        "knowledge_id": "SOP022",
-        "rag_path": "core/SOP022_公文规范_文档格式检查流程.md",
-        "section": "## 关联制度与血缘",
-        "body_line_start": 49,
-        "line_count": 4
-      },
-      {
-        "knowledge_id": "SOP023",
-        "rag_path": "core/SOP023_公文规范_文档排版流程.md",
-        "section": "## 关联制度与血缘",
-        "body_line_start": 49,
-        "line_count": 4
-      },
-      {
-        "knowledge_id": "SOP024",
-        "rag_path": "core/SOP024_公文规范_格式修复与模板套用流程.md",
-        "section": "## 关联制度与血缘",
-        "body_line_start": 49,
-        "line_count": 4
-      },
-      {
-        "knowledge_id": "SOP025",
-        "rag_path": "core/SOP025_培训绩效_绩效目标制定流程.md",
-        "section": "## 关联制度与血缘",
-        "body_line_start": 49,
-        "line_count": 4
-      },
-      {
-        "knowledge_id": "SOP026",
-        "rag_path": "core/SOP026_培训绩效_中期绩效回顾流程.md",
-        "section": "## 关联制度与血缘",
-        "body_line_start": 49,
-        "line_count": 4
-      },
-      {
-        "knowledge_id": "SOP027",
-        "rag_path": "core/SOP027_培训绩效_绩效评价与反馈流程.md",
-        "section": "## 关联制度与血缘",
-        "body_line_start": 49,
-        "line_count": 4
-      },
-      {
-        "knowledge_id": "SOP028",
-        "rag_path": "core/SOP028_培训绩效_绩效改进计划流程.md",
-        "section": "## 关联制度与血缘",
-        "body_line_start": 49,
-        "line_count": 4
-      },
-      {
-        "knowledge_id": "SOP029",
-        "rag_path": "core/SOP029_招投标_招标文件审查流程.md",
-        "section": "## 关联制度与血缘",
-        "body_line_start": 49,
-        "line_count": 4
-      },
-      {
-        "knowledge_id": "SOP030",
-        "rag_path": "core/SOP030_招投标_投标文件审查流程.md",
-        "section": "## 关联制度与血缘",
-        "body_line_start": 50,
-        "line_count": 4
-      },
-      {
-        "knowledge_id": "CASE001",
-        "rag_path": "cases/CASE001_历史项目案例_需求变更与基线控制复盘.md",
-        "section": "## 关联",
-        "body_line_start": 55,
-        "line_count": 7
-      },
-      {
-        "knowledge_id": "CASE002",
-        "rag_path": "cases/CASE002_历史项目案例_采购合同与成本联动复盘.md",
-        "section": "## 关联",
-        "body_line_start": 52,
-        "line_count": 8
-      },
-      {
-        "knowledge_id": "CASE003",
-        "rag_path": "cases/CASE003_历史项目案例_验收指标与知识沉淀复盘.md",
-        "section": "## 关联",
-        "body_line_start": 61,
-        "line_count": 7
-      },
-      {
-        "knowledge_id": "CASE004",
-        "rag_path": "cases/CASE004_历史项目案例_文档格式与排版正反案例.md",
-        "section": "## 关联",
-        "body_line_start": 53,
-        "line_count": 6
-      },
-      {
-        "knowledge_id": "P001_01",
-        "rag_path": "cases/P001_01_客户需求说明.md",
-        "section": "## 关联",
-        "body_line_start": 52,
-        "line_count": 7
-      },
-      {
-        "knowledge_id": "P001_02",
-        "rag_path": "cases/P001_02_需求调研记录.md",
-        "section": "## 关联",
-        "body_line_start": 57,
-        "line_count": 7
-      },
-      {
-        "knowledge_id": "P001_03",
-        "rag_path": "cases/P001_03_需求分析报告.md",
-        "section": "## 关联",
-        "body_line_start": 40,
-        "line_count": 7
-      },
-      {
-        "knowledge_id": "P001_04",
-        "rag_path": "cases/P001_04_解决方案.md",
-        "section": "## 关联",
-        "body_line_start": 38,
-        "line_count": 7
-      },
-      {
-        "knowledge_id": "P001_05",
-        "rag_path": "cases/P001_05_报价说明.md",
-        "section": "## 关联",
-        "body_line_start": 39,
-        "line_count": 7
-      },
-      {
-        "knowledge_id": "P001_06",
-        "rag_path": "cases/P001_06_项目立项申请.md",
-        "section": "## 关联",
-        "body_line_start": 40,
-        "line_count": 7
-      },
-      {
-        "knowledge_id": "P001_07",
-        "rag_path": "cases/P001_07_WBS与里程碑计划.md",
-        "section": "## 关联",
-        "body_line_start": 41,
-        "line_count": 7
-      },
-      {
-        "knowledge_id": "P001_08",
-        "rag_path": "cases/P001_08_项目启动会材料.md",
-        "section": "## 关联",
-        "body_line_start": 41,
-        "line_count": 7
-      },
-      {
-        "knowledge_id": "P001_09",
-        "rag_path": "cases/P001_09_人员配置计划.md",
-        "section": "## 关联",
-        "body_line_start": 39,
-        "line_count": 7
-      },
-      {
-        "knowledge_id": "P001_10",
-        "rag_path": "cases/P001_10_招聘需求.md",
-        "section": "## 关联",
-        "body_line_start": 41,
-        "line_count": 7
-      },
-      {
-        "knowledge_id": "P001_11",
-        "rag_path": "cases/P001_11_采购申请.md",
-        "section": "## 关联",
-        "body_line_start": 42,
-        "line_count": 7
-      },
-      {
-        "knowledge_id": "P001_12",
-        "rag_path": "cases/P001_12_采购需求规格.md",
-        "section": "## 关联",
-        "body_line_start": 41,
-        "line_count": 7
-      },
-      {
-        "knowledge_id": "P001_13",
-        "rag_path": "cases/P001_13_供应商比选记录.md",
-        "section": "## 关联",
-        "body_line_start": 33,
-        "line_count": 7
-      },
-      {
-        "knowledge_id": "P001_14",
-        "rag_path": "cases/P001_14_招投标材料与审查计划.md",
-        "section": "## 关联",
-        "body_line_start": 34,
-        "line_count": 7
-      },
-      {
-        "knowledge_id": "P001_15",
-        "rag_path": "cases/P001_15_合同审核意见.md",
-        "section": "## 关联",
-        "body_line_start": 46,
-        "line_count": 7
-      },
-      {
-        "knowledge_id": "P001_16",
-        "rag_path": "cases/P001_16_项目合同摘要.md",
-        "section": "## 关联",
-        "body_line_start": 39,
-        "line_count": 7
-      },
-      {
-        "knowledge_id": "P001_17",
-        "rag_path": "cases/P001_17_项目周报汇总.md",
-        "section": "## 关联",
-        "body_line_start": 36,
-        "line_count": 7
-      },
-      {
-        "knowledge_id": "P001_18",
-        "rag_path": "cases/P001_18_风险台账.md",
-        "section": "## 关联",
-        "body_line_start": 34,
-        "line_count": 7
-      },
-      {
-        "knowledge_id": "P001_19",
-        "rag_path": "cases/P001_19_变更记录.md",
-        "section": "## 关联",
-        "body_line_start": 44,
-        "line_count": 7
-      },
-      {
-        "knowledge_id": "P001_20",
-        "rag_path": "cases/P001_20_验收方案.md",
-        "section": "## 关联",
-        "body_line_start": 38,
-        "line_count": 7
-      },
-      {
-        "knowledge_id": "P001_21",
-        "rag_path": "cases/P001_21_验收报告.md",
-        "section": "## 关联",
-        "body_line_start": 36,
-        "line_count": 7
-      },
-      {
-        "knowledge_id": "P001_22",
-        "rag_path": "cases/P001_22_结项报告.md",
-        "section": "## 关联",
-        "body_line_start": 37,
-        "line_count": 7
-      },
-      {
-        "knowledge_id": "P001_23",
-        "rag_path": "cases/P001_23_项目经营复盘.md",
-        "section": "## 关联",
-        "body_line_start": 39,
-        "line_count": 7
-      },
-      {
-        "knowledge_id": "P001_24",
-        "rag_path": "cases/P001_24_知识沉淀清单.md",
-        "section": "## 关联",
-        "body_line_start": 41,
-        "line_count": 7
-      },
-      {
-        "knowledge_id": "P001_25",
-        "rag_path": "cases/P001_25_招标文件关键条款.md",
-        "section": "## 关联",
-        "body_line_start": 56,
-        "line_count": 7
-      },
-      {
-        "knowledge_id": "P001_26",
-        "rag_path": "cases/P001_26_招标文件审查记录.md",
-        "section": "## 关联",
-        "body_line_start": 38,
-        "line_count": 7
-      },
-      {
-        "knowledge_id": "P001_27",
-        "rag_path": "cases/P001_27_投标文件响应材料.md",
-        "section": "## 关联",
-        "body_line_start": 40,
-        "line_count": 7
-      },
-      {
-        "knowledge_id": "P001_28",
-        "rag_path": "cases/P001_28_资格材料.md",
-        "section": "## 关联",
-        "body_line_start": 45,
-        "line_count": 7
-      },
-      {
-        "knowledge_id": "P001_29",
-        "rag_path": "cases/P001_29_商务响应表.md",
-        "section": "## 关联",
-        "body_line_start": 35,
-        "line_count": 7
-      },
-      {
-        "knowledge_id": "P001_30",
-        "rag_path": "cases/P001_30_技术参数响应表.md",
-        "section": "## 关联",
-        "body_line_start": 35,
-        "line_count": 7
-      },
-      {
-        "knowledge_id": "P001_31",
-        "rag_path": "cases/P001_31_评分响应材料.md",
-        "section": "## 关联",
-        "body_line_start": 43,
-        "line_count": 7
-      },
-      {
-        "knowledge_id": "P001_32",
-        "rag_path": "cases/P001_32_AI审核问题清单.md",
-        "section": "## 关联",
-        "body_line_start": 35,
-        "line_count": 7
-      },
-      {
-        "knowledge_id": "P001_33",
-        "rag_path": "cases/P001_33_人工复核与审核结论.md",
-        "section": "## 关联",
-        "body_line_start": 47,
-        "line_count": 7
-      },
-      {
-        "knowledge_id": "P002_01",
-        "rag_path": "cases/P002_01_客户需求说明.md",
-        "section": "## 关联",
-        "body_line_start": 42,
-        "line_count": 7
-      },
-      {
-        "knowledge_id": "P002_02",
-        "rag_path": "cases/P002_02_需求调研记录.md",
-        "section": "## 关联",
-        "body_line_start": 46,
-        "line_count": 7
-      },
-      {
-        "knowledge_id": "P002_03",
-        "rag_path": "cases/P002_03_需求分析报告.md",
-        "section": "## 关联",
-        "body_line_start": 47,
-        "line_count": 7
-      },
-      {
-        "knowledge_id": "P002_04",
-        "rag_path": "cases/P002_04_解决方案.md",
-        "section": "## 关联",
-        "body_line_start": 39,
-        "line_count": 7
-      },
-      {
-        "knowledge_id": "P002_05",
-        "rag_path": "cases/P002_05_报价说明.md",
-        "section": "## 关联",
-        "body_line_start": 40,
-        "line_count": 7
-      },
-      {
-        "knowledge_id": "P002_06",
-        "rag_path": "cases/P002_06_项目立项申请.md",
-        "section": "## 关联",
-        "body_line_start": 41,
-        "line_count": 7
-      },
-      {
-        "knowledge_id": "P002_07",
-        "rag_path": "cases/P002_07_WBS与里程碑计划.md",
-        "section": "## 关联",
-        "body_line_start": 44,
-        "line_count": 7
-      },
-      {
-        "knowledge_id": "P002_08",
-        "rag_path": "cases/P002_08_项目启动会材料.md",
-        "section": "## 关联",
-        "body_line_start": 36,
-        "line_count": 7
-      },
-      {
-        "knowledge_id": "P002_09",
-        "rag_path": "cases/P002_09_人员配置计划.md",
-        "section": "## 关联",
-        "body_line_start": 35,
-        "line_count": 7
-      },
-      {
-        "knowledge_id": "P002_10",
-        "rag_path": "cases/P002_10_招聘需求.md",
-        "section": "## 关联",
-        "body_line_start": 38,
-        "line_count": 7
-      },
-      {
-        "knowledge_id": "P002_11",
-        "rag_path": "cases/P002_11_采购申请.md",
-        "section": "## 关联",
-        "body_line_start": 38,
-        "line_count": 7
-      },
-      {
-        "knowledge_id": "P002_12",
-        "rag_path": "cases/P002_12_采购需求规格.md",
-        "section": "## 关联",
-        "body_line_start": 38,
-        "line_count": 7
-      },
-      {
-        "knowledge_id": "P002_13",
-        "rag_path": "cases/P002_13_供应商比选记录.md",
-        "section": "## 关联",
-        "body_line_start": 40,
-        "line_count": 7
-      },
-      {
-        "knowledge_id": "P002_14",
-        "rag_path": "cases/P002_14_招投标材料与审查计划.md",
-        "section": "## 关联",
-        "body_line_start": 38,
-        "line_count": 7
-      },
-      {
-        "knowledge_id": "P002_15",
-        "rag_path": "cases/P002_15_合同审核意见.md",
-        "section": "## 关联",
-        "body_line_start": 35,
-        "line_count": 7
-      },
-      {
-        "knowledge_id": "P002_16",
-        "rag_path": "cases/P002_16_项目合同摘要.md",
-        "section": "## 关联",
-        "body_line_start": 40,
-        "line_count": 7
-      },
-      {
-        "knowledge_id": "P002_17",
-        "rag_path": "cases/P002_17_项目周报汇总.md",
-        "section": "## 关联",
-        "body_line_start": 53,
-        "line_count": 7
-      },
-      {
-        "knowledge_id": "P002_18",
-        "rag_path": "cases/P002_18_风险台账.md",
-        "section": "## 关联",
-        "body_line_start": 43,
-        "line_count": 7
-      },
-      {
-        "knowledge_id": "P002_19",
-        "rag_path": "cases/P002_19_变更记录.md",
-        "section": "## 关联",
-        "body_line_start": 46,
-        "line_count": 7
-      },
-      {
-        "knowledge_id": "P002_20",
-        "rag_path": "cases/P002_20_验收方案.md",
-        "section": "## 关联",
-        "body_line_start": 41,
-        "line_count": 7
-      },
-      {
-        "knowledge_id": "P002_21",
-        "rag_path": "cases/P002_21_验收报告.md",
-        "section": "## 关联",
-        "body_line_start": 38,
-        "line_count": 7
-      },
-      {
-        "knowledge_id": "P002_22",
-        "rag_path": "cases/P002_22_结项报告.md",
-        "section": "## 关联",
-        "body_line_start": 46,
-        "line_count": 7
-      },
-      {
-        "knowledge_id": "P002_23",
-        "rag_path": "cases/P002_23_项目经营复盘.md",
-        "section": "## 关联",
-        "body_line_start": 48,
-        "line_count": 7
-      },
-      {
-        "knowledge_id": "P002_24",
-        "rag_path": "cases/P002_24_知识沉淀清单.md",
-        "section": "## 关联",
-        "body_line_start": 31,
-        "line_count": 7
-      },
-      {
-        "knowledge_id": "P002_25",
-        "rag_path": "cases/P002_25_需求变更申请.md",
-        "section": "## 关联",
-        "body_line_start": 52,
-        "line_count": 7
-      },
-      {
-        "knowledge_id": "P002_26",
-        "rag_path": "cases/P002_26_项目延期风险升级记录.md",
-        "section": "## 关联",
-        "body_line_start": 40,
-        "line_count": 7
-      },
-      {
-        "knowledge_id": "P002_27",
-        "rag_path": "cases/P002_27_知识版本冲突处理记录.md",
-        "section": "## 关联",
-        "body_line_start": 38,
-        "line_count": 7
-      },
-      {
-        "knowledge_id": "P002_28",
-        "rag_path": "cases/P002_28_人员不足资源申请.md",
-        "section": "## 关联",
-        "body_line_start": 42,
-        "line_count": 7
-      },
-      {
-        "knowledge_id": "P002_29",
-        "rag_path": "cases/P002_29_成本超支预警.md",
-        "section": "## 关联",
-        "body_line_start": 44,
-        "line_count": 7
-      },
-      {
-        "knowledge_id": "P002_30",
-        "rag_path": "cases/P002_30_合同付款争议记录.md",
-        "section": "## 关联",
-        "body_line_start": 35,
-        "line_count": 7
-      },
-      {
-        "knowledge_id": "P002_31",
-        "rag_path": "cases/P002_31_项目纠偏会议纪要.md",
-        "section": "## 关联",
-        "body_line_start": 48,
-        "line_count": 7
-      },
-      {
-        "knowledge_id": "P003_01",
-        "rag_path": "cases/P003_01_客户需求说明.md",
-        "section": "## 关联",
-        "body_line_start": 42,
-        "line_count": 8
-      },
-      {
-        "knowledge_id": "P003_02",
-        "rag_path": "cases/P003_02_需求调研记录.md",
-        "section": "## 关联",
-        "body_line_start": 41,
-        "line_count": 8
-      },
-      {
-        "knowledge_id": "P003_03",
-        "rag_path": "cases/P003_03_需求分析报告.md",
-        "section": "## 关联",
-        "body_line_start": 43,
-        "line_count": 8
-      },
-      {
-        "knowledge_id": "P003_04",
-        "rag_path": "cases/P003_04_解决方案.md",
-        "section": "## 关联",
-        "body_line_start": 37,
-        "line_count": 8
-      },
-      {
-        "knowledge_id": "P003_05",
-        "rag_path": "cases/P003_05_报价说明.md",
-        "section": "## 关联",
-        "body_line_start": 35,
-        "line_count": 8
-      },
-      {
-        "knowledge_id": "P003_06",
-        "rag_path": "cases/P003_06_项目立项申请.md",
-        "section": "## 关联",
-        "body_line_start": 41,
-        "line_count": 7
-      },
-      {
-        "knowledge_id": "P003_07",
-        "rag_path": "cases/P003_07_WBS与里程碑计划.md",
-        "section": "## 关联",
-        "body_line_start": 46,
-        "line_count": 7
-      },
-      {
-        "knowledge_id": "P003_08",
-        "rag_path": "cases/P003_08_项目启动会材料.md",
-        "section": "## 关联",
-        "body_line_start": 34,
-        "line_count": 8
-      },
-      {
-        "knowledge_id": "P003_09",
-        "rag_path": "cases/P003_09_人员配置计划.md",
-        "section": "## 关联",
-        "body_line_start": 41,
-        "line_count": 7
-      },
-      {
-        "knowledge_id": "P003_10",
-        "rag_path": "cases/P003_10_招聘需求.md",
-        "section": "## 关联",
-        "body_line_start": 36,
-        "line_count": 8
-      },
-      {
-        "knowledge_id": "P003_11",
-        "rag_path": "cases/P003_11_采购申请.md",
-        "section": "## 关联",
-        "body_line_start": 37,
-        "line_count": 7
-      },
-      {
-        "knowledge_id": "P003_12",
-        "rag_path": "cases/P003_12_采购需求规格.md",
-        "section": "## 关联",
-        "body_line_start": 39,
-        "line_count": 7
-      },
-      {
-        "knowledge_id": "P003_13",
-        "rag_path": "cases/P003_13_供应商比选记录.md",
-        "section": "## 关联",
-        "body_line_start": 42,
-        "line_count": 8
-      },
-      {
-        "knowledge_id": "P003_14",
-        "rag_path": "cases/P003_14_招投标材料与审查计划.md",
-        "section": "## 关联",
-        "body_line_start": 40,
-        "line_count": 8
-      },
-      {
-        "knowledge_id": "P003_15",
-        "rag_path": "cases/P003_15_合同审核意见.md",
-        "section": "## 关联",
-        "body_line_start": 42,
-        "line_count": 8
-      },
-      {
-        "knowledge_id": "P003_16",
-        "rag_path": "cases/P003_16_项目合同摘要.md",
-        "section": "## 关联",
-        "body_line_start": 43,
-        "line_count": 7
-      },
-      {
-        "knowledge_id": "P003_17",
-        "rag_path": "cases/P003_17_项目周报汇总.md",
-        "section": "## 关联",
-        "body_line_start": 64,
-        "line_count": 8
-      },
-      {
-        "knowledge_id": "P003_18",
-        "rag_path": "cases/P003_18_风险台账.md",
-        "section": "## 关联",
-        "body_line_start": 46,
-        "line_count": 8
-      },
-      {
-        "knowledge_id": "P003_19",
-        "rag_path": "cases/P003_19_变更记录.md",
-        "section": "## 关联",
-        "body_line_start": 41,
-        "line_count": 8
-      },
-      {
-        "knowledge_id": "P003_20",
-        "rag_path": "cases/P003_20_验收方案.md",
-        "section": "## 关联",
-        "body_line_start": 40,
-        "line_count": 8
-      },
-      {
-        "knowledge_id": "P003_21",
-        "rag_path": "cases/P003_21_验收报告.md",
-        "section": "## 关联",
-        "body_line_start": 46,
-        "line_count": 9
-      },
-      {
-        "knowledge_id": "P003_22",
-        "rag_path": "cases/P003_22_结项报告.md",
-        "section": "## 关联",
-        "body_line_start": 49,
-        "line_count": 8
-      },
-      {
-        "knowledge_id": "P003_23",
-        "rag_path": "cases/P003_23_项目经营复盘.md",
-        "section": "## 关联",
-        "body_line_start": 45,
-        "line_count": 8
-      },
-      {
-        "knowledge_id": "P003_24",
-        "rag_path": "cases/P003_24_知识沉淀清单.md",
-        "section": "## 关联",
-        "body_line_start": 38,
-        "line_count": 7
-      },
-      {
-        "knowledge_id": "P003_25",
-        "rag_path": "cases/P003_25_GPU采购技术规格.md",
-        "section": "## 关联",
-        "body_line_start": 40,
-        "line_count": 7
-      },
-      {
-        "knowledge_id": "P003_26",
-        "rag_path": "cases/P003_26_算法指标专项评审.md",
-        "section": "## 关联",
-        "body_line_start": 51,
-        "line_count": 8
-      },
-      {
-        "knowledge_id": "P003_27",
-        "rag_path": "cases/P003_27_数据安全评审.md",
-        "section": "## 关联",
-        "body_line_start": 34,
-        "line_count": 8
-      },
-      {
-        "knowledge_id": "P003_28",
-        "rag_path": "cases/P003_28_视频数据治理说明.md",
-        "section": "## 关联",
-        "body_line_start": 46,
-        "line_count": 8
-      },
-      {
-        "knowledge_id": "P003_29",
-        "rag_path": "cases/P003_29_技术方案变更评审.md",
-        "section": "## 关联",
-        "body_line_start": 43,
-        "line_count": 8
-      },
-      {
-        "knowledge_id": "P003_30",
-        "rag_path": "cases/P003_30_验收指标争议纪要.md",
-        "section": "## 关联",
-        "body_line_start": 34,
-        "line_count": 8
-      },
-      {
-        "knowledge_id": "P003_31",
-        "rag_path": "cases/P003_31_算法测试专项报告.md",
-        "section": "## 关联",
-        "body_line_start": 47,
-        "line_count": 7
-      },
-      {
-        "knowledge_id": "TPL001",
-        "rag_path": "templates/TPL001_项目管理_项目立项模板.md",
-        "section": "## 关联制度与流程",
-        "body_line_start": 107,
-        "line_count": 6
-      },
-      {
-        "knowledge_id": "TPL002",
-        "rag_path": "templates/TPL002_项目管理_需求调研模板.md",
-        "section": "## 关联制度与流程",
-        "body_line_start": 106,
-        "line_count": 6
-      },
-      {
-        "knowledge_id": "TPL003",
-        "rag_path": "templates/TPL003_企业文档_解决方案模板.md",
-        "section": "## 关联制度与流程",
-        "body_line_start": 107,
-        "line_count": 6
-      },
-      {
-        "knowledge_id": "TPL004",
-        "rag_path": "templates/TPL004_项目管理_WBS计划模板.md",
-        "section": "## 关联制度与流程",
-        "body_line_start": 107,
-        "line_count": 6
-      },
-      {
-        "knowledge_id": "TPL005",
-        "rag_path": "templates/TPL005_项目管理_项目周报模板.md",
-        "section": "## 关联制度与流程",
-        "body_line_start": 105,
-        "line_count": 6
-      },
-      {
-        "knowledge_id": "TPL006",
-        "rag_path": "templates/TPL006_项目管理_项目风险台账模板.md",
-        "section": "## 关联制度与流程",
-        "body_line_start": 107,
-        "line_count": 6
-      },
-      {
-        "knowledge_id": "TPL007",
-        "rag_path": "templates/TPL007_项目管理_项目变更单模板.md",
-        "section": "## 关联制度与流程",
-        "body_line_start": 111,
-        "line_count": 6
-      },
-      {
-        "knowledge_id": "TPL008",
-        "rag_path": "templates/TPL008_项目管理_验收方案模板.md",
-        "section": "## 关联制度与流程",
-        "body_line_start": 107,
-        "line_count": 6
-      },
-      {
-        "knowledge_id": "TPL009",
-        "rag_path": "templates/TPL009_会议协同_会议议程模板.md",
-        "section": "## 关联制度与流程",
-        "body_line_start": 105,
-        "line_count": 6
-      },
-      {
-        "knowledge_id": "TPL010",
-        "rag_path": "templates/TPL010_会议协同_会议纪要模板.md",
-        "section": "## 关联制度与流程",
-        "body_line_start": 106,
-        "line_count": 6
-      },
-      {
-        "knowledge_id": "TPL011",
-        "rag_path": "templates/TPL011_会议协同_决策与待办清单模板.md",
-        "section": "## 关联制度与流程",
-        "body_line_start": 105,
-        "line_count": 6
-      },
-      {
-        "knowledge_id": "TPL012",
-        "rag_path": "templates/TPL012_公文规范_通知模板.md",
-        "section": "## 关联制度与流程",
-        "body_line_start": 106,
-        "line_count": 6
-      },
-      {
-        "knowledge_id": "TPL013",
-        "rag_path": "templates/TPL013_公文规范_请示模板.md",
-        "section": "## 关联制度与流程",
-        "body_line_start": 107,
-        "line_count": 6
-      },
-      {
-        "knowledge_id": "TPL014",
-        "rag_path": "templates/TPL014_企业文档_工作报告模板.md",
-        "section": "## 关联制度与流程",
-        "body_line_start": 105,
-        "line_count": 6
-      },
-      {
-        "knowledge_id": "TPL015",
-        "rag_path": "templates/TPL015_招聘_岗位JD模板.md",
-        "section": "## 关联制度与流程",
-        "body_line_start": 106,
-        "line_count": 6
-      },
-      {
-        "knowledge_id": "TPL016",
-        "rag_path": "templates/TPL016_招聘_面试评价表模板.md",
-        "section": "## 关联制度与流程",
-        "body_line_start": 105,
-        "line_count": 6
-      },
-      {
-        "knowledge_id": "TPL017",
-        "rag_path": "templates/TPL017_培训绩效_培训计划模板.md",
-        "section": "## 关联制度与流程",
-        "body_line_start": 106,
-        "line_count": 6
-      },
-      {
-        "knowledge_id": "TPL018",
-        "rag_path": "templates/TPL018_采购_采购申请模板.md",
-        "section": "## 关联制度与流程",
-        "body_line_start": 107,
-        "line_count": 6
-      },
-      {
-        "knowledge_id": "TPL019",
-        "rag_path": "templates/TPL019_供应商_供应商比选表模板.md",
-        "section": "## 关联制度与流程",
-        "body_line_start": 106,
-        "line_count": 6
-      },
-      {
-        "knowledge_id": "TPL020",
-        "rag_path": "templates/TPL020_合同履约_合同审查清单模板.md",
-        "section": "## 关联制度与流程",
-        "body_line_start": 109,
-        "line_count": 6
-      },
-      {
-        "knowledge_id": "TPL021",
-        "rag_path": "templates/TPL021_公文规范_文档格式检查清单.md",
-        "section": "## 关联制度与流程",
-        "body_line_start": 107,
-        "line_count": 6
-      },
-      {
-        "knowledge_id": "TPL022",
-        "rag_path": "templates/TPL022_公文规范_格式修复与模板映射记录.md",
-        "section": "## 关联制度与流程",
-        "body_line_start": 107,
-        "line_count": 6
-      },
-      {
-        "knowledge_id": "TPL023",
-        "rag_path": "templates/TPL023_培训绩效_绩效目标表.md",
-        "section": "## 关联制度与流程",
-        "body_line_start": 108,
-        "line_count": 6
-      },
-      {
-        "knowledge_id": "TPL024",
-        "rag_path": "templates/TPL024_培训绩效_中期绩效回顾表.md",
-        "section": "## 关联制度与流程",
-        "body_line_start": 107,
-        "line_count": 6
-      },
-      {
-        "knowledge_id": "TPL025",
-        "rag_path": "templates/TPL025_培训绩效_绩效评价反馈与改进计划模板.md",
-        "section": "## 关联制度与流程",
-        "body_line_start": 110,
-        "line_count": 6
-      },
-      {
-        "knowledge_id": "TPL026",
-        "rag_path": "templates/TPL026_招投标_招标文件审查清单.md",
-        "section": "## 关联制度与流程",
-        "body_line_start": 109,
-        "line_count": 6
-      },
-      {
-        "knowledge_id": "TPL027",
-        "rag_path": "templates/TPL027_招投标_投标文件审核报告模板.md",
-        "section": "## 关联制度与流程",
-        "body_line_start": 108,
-        "line_count": 6
-      },
-      {
-        "knowledge_id": "TPL028",
-        "rag_path": "templates/TPL028_招投标_招投标问题定位模板.md",
-        "section": "## 关联制度与流程",
-        "body_line_start": 107,
-        "line_count": 6
-      }
-    ],
     "in_body_citations_preserved": true
   }
 }

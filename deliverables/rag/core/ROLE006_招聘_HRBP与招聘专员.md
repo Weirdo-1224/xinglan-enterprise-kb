@@ -1,14 +1,3 @@
----
-knowledge_id: ROLE006
-knowledge_type: ROLE
-domain: 招聘
-title: HRBP与招聘专员
-served_agents:
-- A07
-- A08
-source_type: SYNTHETIC_DERIVED
----
-
 # HRBP与招聘专员
 
 ## 岗位定位与所属部门

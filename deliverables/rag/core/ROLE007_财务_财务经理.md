@@ -1,14 +1,3 @@
----
-knowledge_id: ROLE007
-knowledge_type: ROLE
-domain: 财务
-title: 财务经理
-served_agents:
-- A02
-- A12
-source_type: SYNTHETIC_DERIVED
----
-
 # 财务经理
 
 ## 岗位定位与所属部门

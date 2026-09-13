@@ -1,16 +1,3 @@
----
-knowledge_id: ROLE009
-knowledge_type: ROLE
-domain: 会议协同
-title: 综合行政专员
-served_agents:
-- A03
-- A04
-- A05
-- A06
-source_type: SYNTHETIC_DERIVED
----
-
 # 综合行政专员
 
 ## 岗位定位与所属部门

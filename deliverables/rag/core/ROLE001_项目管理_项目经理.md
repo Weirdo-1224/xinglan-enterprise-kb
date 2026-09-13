@@ -1,13 +1,3 @@
----
-knowledge_id: ROLE001
-knowledge_type: ROLE
-domain: 项目管理
-title: 项目经理
-served_agents:
-- A02
-source_type: SYNTHETIC_DERIVED
----
-
 # 项目经理
 
 ## 岗位定位与所属部门

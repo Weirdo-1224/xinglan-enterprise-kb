@@ -1,15 +1,3 @@
----
-knowledge_id: ROLE010
-knowledge_type: ROLE
-domain: 项目管理
-title: 项目成员
-served_agents:
-- A02
-- A04
-- A12
-source_type: SYNTHETIC_DERIVED
----
-
 # 项目成员
 
 ## 岗位定位与所属部门

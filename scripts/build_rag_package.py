@@ -2,7 +2,8 @@
 
 Copies knowledge assets into a retrieval-ready layout without touching the
 governed originals under knowledge/:
-- md frontmatter is replaced by a minimal identity header
+- md frontmatter is omitted because the target upload RAG does not parse it;
+  identity and routing fields remain in RAG_MANIFEST.csv / PROJECT_INDEX.csv
 - ENTERPRISE_FOUNDATION files drop the governance source table (## 来源与边界)
 - all other body bytes are preserved exactly (incl. REF legal sections, case 关联)
 - xlsx workbooks are copied; four targeted release copies receive a small
@@ -65,11 +66,22 @@ RAG_SUMMARIES = {
     "P003_13": "本记录用于参考 P003 电力 AI 智能巡检平台的历史供应商比选与 GPU 采购问题：GPU 服务器 128 万元经专项审批和三家比选，供应商后来延迟供货，项目以合同违约条款和云 GPU 过渡应对；边缘设备 76 万元走竞争性采购并三家比选。",
     "P001_25": "本文件用于查询 P001 智慧园区 AI 数字人服务平台投标时的招标文件要求，包括最高限价 400 万元、项目工期 2024-02-01 至 2024-10-31（含终验），以及资格、商务、技术、否决项和价格/技术/服务/业绩评分标准；不作为其他项目的通用制度。",
     "CASE002": "适用于分析 P002 银行企业知识助手项目为什么出现负毛利及采购、合同、成本异常：实际成本 265 万元、收入确认 252 万元、账面毛利 -13 万元；并与 P001 节约 18 万元、P003 节约 4 万元作对照。文末改进项均为复盘建议，不是现行强制要求。",
+    "POL001": "本文件是现行人力资源制度，适用于请假、出勤、劳动用工、入职离职和员工个人信息等事项；具体操作可结合相应 FAQ/SOP，但不得越过本制度的权限与停止条件。",
+    "POL002": "本文件是现行招聘管理制度，适用于招聘需求、候选人评价、录用审批和背景核验；招聘 FAQ、面试模板和流程仅细化执行，不得降低公平性、隐私或授权要求。",
+    "POL003": "本文件是现行培训管理制度，适用于培训需求、年度计划、实施、考核与培训记录；项目招聘后的入职培训和能力提升均按本制度判断。",
+    "POL008": "本文件是现行会议管理制度，适用于会议决策、纪要、行动项、录音转写和授权边界；会议讨论或纪要本身不等于采购、预算、合同或项目变更已获批准。",
+    "POL009": "本文件是现行文档管理制度，适用于正式文档发布前的版本、来源、审核、受控分发、归档与废止；个人网盘链接不能替代受控现行版本。",
+    "POL010": "本文件是现行公文管理制度，适用于通知、请示、报告、函件等文种选择及起草、审校、签发和归档；申请专项预算或资源批准应使用一文一事的请示。",
+    "POL011": "本文件是现行采购管理制度，适用于采购方式、金额档位、供应商比选、审批和紧急采购判断；含税 17 万元属于 5 万元至 20 万元档，原则上三家比选。",
+    "POL013": "本文件是现行招投标管理制度，用于判断项目是否进入招标投标程序及其审查要求；公司内部采购金额超过 100 万元不当然等于依法必须招标，仍须核验主体、资金性质、项目类型和法定范围。",
+    "POL014": "本文件是现行合同管理制度，适用于合同审核、签署、付款条件、履约证据、变更和争议处置；合同条款或证据不足时不得补写不存在的事实。",
 }
 
 RAG_TITLE_OVERRIDES = {
     "P002_27": "银行企业知识助手项目-延期原因链与知识版本冲突处理",
     "CASE002": "P002 银行企业知识助手项目负毛利异常原因与采购合同成本联动复盘",
+    "TPL013": "专项预算与事项批准请示模板",
+    "POL010": "通知请示报告与专项预算公文管理办法",
 }
 
 XLSX_RETRIEVAL_GUIDES = {
@@ -180,6 +192,12 @@ def transform_md(src: Path, dst: Path, subdir: str) -> tuple[list[dict], list[di
     body = remove_redundant_tail(
         body, str(front["knowledge_type"]), knowledge_id, rag_rel, removed)
 
+    title_override = RAG_TITLE_OVERRIDES.get(knowledge_id)
+    if title_override:
+        body, count = re.subn(r"(?m)^# .+$", f"# {title_override}", body, count=1)
+        if count != 1:
+            fail(f"{rag_rel}: H1 heading not found for title override")
+
     summary = RAG_SUMMARIES.get(knowledge_id)
     if summary:
         heading = re.search(r"(?m)^# .+$", body)
@@ -188,14 +206,7 @@ def transform_md(src: Path, dst: Path, subdir: str) -> tuple[list[dict], list[di
         insert_at = heading.end()
         body = body[:insert_at] + eol + eol + summary + body[insert_at:]
 
-    minimal = {key: front[key] for key in REQUIRED_HEADER_KEYS}
-    if knowledge_id in RAG_TITLE_OVERRIDES:
-        minimal["title"] = RAG_TITLE_OVERRIDES[knowledge_id]
-    if front["knowledge_type"] == "PROJECT_CASE":
-        minimal["project_id"] = derive_project_id(knowledge_id)
-        minimal["history_level"] = "FULL_HISTORY"
-    header = yaml.safe_dump(minimal, allow_unicode=True, sort_keys=False)
-    new_text = "---" + eol + header.replace("\n", eol) + "---" + eol + body
+    new_text = body.lstrip("\n")
 
     dst.parent.mkdir(parents=True, exist_ok=True)
     dst.write_bytes(new_text.encode("utf-8"))
@@ -277,18 +288,12 @@ def self_check() -> None:
             fail(f"{subdir}: expected {expected} files, found {counts[subdir]}")
     if sum(counts.values()) != 239:
         fail(f"total: expected 239 files, found {sum(counts.values())}")
-    case_headers = 0
     for path in sorted(OUT.glob("*/*.md")):
-        front, _ = parse_frontmatter(path.read_bytes().decode("utf-8"))
-        missing = [key for key in REQUIRED_HEADER_KEYS if key not in front]
-        if missing:
-            fail(f"{path.name}: minimal header missing {missing}")
-        if front["knowledge_type"] == "PROJECT_CASE":
-            case_headers += 1
-            if "project_id" not in front or "history_level" not in front:
-                fail(f"{path.name}: PROJECT_CASE header missing project_id/history_level")
-    if case_headers != EXPECTED_COUNTS["cases"]:
-        fail(f"cases: expected {EXPECTED_COUNTS['cases']} PROJECT_CASE headers, found {case_headers}")
+        text = path.read_text(encoding="utf-8")
+        if text.startswith("---"):
+            fail(f"{path.name}: upload copy must not contain YAML frontmatter")
+        if not re.search(r"(?m)^# .+$", text):
+            fail(f"{path.name}: upload copy missing H1 title")
     for xlsx in sorted((OUT / "business_data").glob("*.xlsx")):
         knowledge_id = xlsx.name.split("_", 1)[0]
         source = KNOWLEDGE / "business_data" / xlsx.name
@@ -336,21 +341,38 @@ def quality_fix_only() -> None:
     print(f"PASS: applied release-only RAG quality fixes to {fixed} targeted assets")
 
 
+def read_rag_manifest_rows() -> list[dict[str, str]]:
+    with (OUT / "RAG_MANIFEST.csv").open(encoding="utf-8-sig", newline="") as fh:
+        return list(csv.DictReader(fh))
+
+
 def compact_relations_only() -> None:
     removed_all: list[dict] = []
     changed = 0
+    rag_rows = {row["rag_path"].replace("\\", "/"): row for row in read_rag_manifest_rows()}
     for subdir in MD_DIRS:
         for path in sorted((OUT / subdir).glob("*.md")):
             raw = path.read_bytes()
             # Normalize first so a prior Windows write can never create
             # CRCRLF while removing a section.
             normalized = raw.decode("utf-8").replace("\r\n", "\n").replace("\r", "\n")
-            front, body = parse_frontmatter(normalized)
+            rel = f"{subdir}/{path.name}"
+            row = rag_rows.get(rel)
+            if not row:
+                fail(f"{rel}: missing from RAG manifest")
+            if normalized.startswith("---"):
+                front, body = parse_frontmatter(normalized)
+                prefix = normalized[:len(normalized) - len(body)]
+                knowledge_type = str(front["knowledge_type"])
+                knowledge_id = str(front["knowledge_id"])
+            else:
+                body = normalized
+                prefix = ""
+                knowledge_type = row["knowledge_type"]
+                knowledge_id = row["knowledge_id"]
             removed: list[dict] = []
             new_body = remove_redundant_tail(
-                body, str(front["knowledge_type"]), str(front["knowledge_id"]),
-                f"{subdir}/{path.name}", removed)
-            prefix = normalized[:len(normalized) - len(body)]
+                body, knowledge_type, knowledge_id, rel, removed)
             new_text = prefix + new_body
             if removed or raw != new_text.encode("utf-8"):
                 path.write_text(new_text, encoding="utf-8", newline="\n")
@@ -359,11 +381,11 @@ def compact_relations_only() -> None:
     if len(removed_all) not in {0, 205}:
         fail(f"relation compaction found partial state: removed {len(removed_all)} sections")
     remaining = []
-    for path in OUT.glob("*/*.md"):
-        front, body = parse_frontmatter(path.read_text(encoding="utf-8"))
-        heading = REDUNDANT_TAIL_HEADINGS.get(str(front["knowledge_type"]))
+    for rel, row in rag_rows.items():
+        body = (OUT / rel).read_text(encoding="utf-8")
+        heading = REDUNDANT_TAIL_HEADINGS.get(row["knowledge_type"])
         if heading and any(line.strip() == heading for line in body.splitlines()):
-            remaining.append(str(front["knowledge_id"]))
+            remaining.append(row["knowledge_id"])
     if remaining:
         fail(f"redundant relation sections remain: {remaining[:10]}")
     report_path = OUT / "build_report.json"
@@ -376,6 +398,29 @@ def compact_relations_only() -> None:
         }
     report_path.write_text(json.dumps(report, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     print(f"PASS: redundant final relation sections absent; files normalized/refreshed={changed}; in-body evidence preserved")
+
+
+def strip_frontmatter_only() -> None:
+    changed = 0
+    for path in sorted(OUT.glob("*/*.md")):
+        text = path.read_text(encoding="utf-8")
+        if not text.startswith("---"):
+            continue
+        _, body = parse_frontmatter(text)
+        clean = body.lstrip("\r\n").replace("\r\n", "\n").replace("\r", "\n")
+        path.write_text(clean, encoding="utf-8", newline="\n")
+        changed += 1
+    if changed not in {0, 227}:
+        fail(f"frontmatter stripping found partial state: changed {changed}/227")
+    self_check()
+    report_path = OUT / "build_report.json"
+    report = json.loads(report_path.read_text(encoding="utf-8")) if report_path.is_file() else {}
+    report["frontmatter_compaction"] = {
+        "markdown_assets_without_frontmatter": 227,
+        "identity_metadata_location": ["RAG_MANIFEST.csv", "PROJECT_INDEX.csv"],
+    }
+    report_path.write_text(json.dumps(report, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+    print(f"PASS: YAML frontmatter absent from all 227 upload Markdown assets; changed={changed}")
 
 
 def main() -> None:
@@ -418,15 +463,30 @@ def main() -> None:
         },
         "removed_sections": removed_all,
         "warnings": warnings_all,
+        "frontmatter_compaction": {
+            "markdown_assets_without_frontmatter": md_total,
+            "identity_metadata_location": ["RAG_MANIFEST.csv", "PROJECT_INDEX.csv"],
+        },
+        "stage6_1_quality_fix": {
+            "targeted_assets": sorted([*RAG_SUMMARIES, *XLSX_RETRIEVAL_GUIDES]),
+            "title_overrides": RAG_TITLE_OVERRIDES,
+            "xlsx_retrieval_guides": sorted(XLSX_RETRIEVAL_GUIDES),
+            "governed_originals_modified": False,
+        },
+        "relation_compaction": {
+            "changed_assets": sum(1 for item in removed_all
+                                  if item["section"] in REDUNDANT_TAIL_HEADINGS.values()),
+            "in_body_citations_preserved": True,
+        },
     }
     (OUT / "build_report.json").write_text(
         json.dumps(report, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
 
     print("PASS: core=100, cases=99, templates=28, business_data=12, total=239 assets in deliverables/rag")
-    print(f"PASS: {md_total} md files rebuilt with 6-key minimal header; "
-          f"{EXPECTED_COUNTS['cases']} PROJECT_CASE headers carry project_id + history_level")
+    print(f"PASS: {md_total} md upload files rebuilt without YAML frontmatter; "
+          "identity and history metadata remain in the release manifests")
     print("PASS: 12 xlsx workbooks published; 4 targeted copies include a retrieval guide; PROJECT_INDEX copied byte-for-byte")
-    print(f"PASS: removed_sections={len(removed_all)} (## 来源与边界 governance tables), warnings={len(warnings_all)}")
+    print(f"PASS: removed_sections={len(removed_all)} (governance source tables + redundant tail relations), warnings={len(warnings_all)}")
     print(f"RAG package build complete -> {OUT.relative_to(ROOT)}")
 
 
@@ -437,13 +497,17 @@ if __name__ == "__main__":
                             help="refresh only the Stage 6.1 targeted RAG assets")
         parser.add_argument("--compact-relations-only", action="store_true",
                             help="remove only redundant final relation sections in the RAG release")
+        parser.add_argument("--strip-frontmatter-only", action="store_true",
+                            help="remove YAML frontmatter only from upload Markdown assets")
         args = parser.parse_args()
-        if args.quality_fix_only and args.compact_relations_only:
+        if sum((args.quality_fix_only, args.compact_relations_only, args.strip_frontmatter_only)) > 1:
             fail("choose only one partial-build mode")
         if args.quality_fix_only:
             quality_fix_only()
         elif args.compact_relations_only:
             compact_relations_only()
+        elif args.strip_frontmatter_only:
+            strip_frontmatter_only()
         else:
             main()
     except (AssertionError, KeyError, ValueError, OSError, yaml.YAMLError) as exc:

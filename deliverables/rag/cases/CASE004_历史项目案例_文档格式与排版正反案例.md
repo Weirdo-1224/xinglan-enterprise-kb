@@ -1,16 +1,3 @@
----
-knowledge_id: CASE004
-knowledge_type: PROJECT_CASE
-domain: 公文规范
-title: 文档格式与排版正反案例
-served_agents:
-- A05
-- A06
-source_type: SYNTHETIC_DERIVED
-project_id: CROSS_PROJECT
-history_level: FULL_HISTORY
----
-
 # 文档格式与排版正反案例
 
 本文件为星澜数字科技有限公司合成历史项目材料（SYNTHETIC_DERIVED），由 P001/P002/P003 三个合成项目的已归档事实派生，不代表真实企业或真实事件。

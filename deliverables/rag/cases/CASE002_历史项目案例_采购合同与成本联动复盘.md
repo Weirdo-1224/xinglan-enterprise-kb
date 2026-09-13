@@ -1,19 +1,4 @@
----
-knowledge_id: CASE002
-knowledge_type: PROJECT_CASE
-domain: 经营分析
-title: P002 银行企业知识助手项目负毛利异常原因与采购合同成本联动复盘
-served_agents:
-- A02
-- A09
-- A11
-- A12
-source_type: SYNTHETIC_DERIVED
-project_id: CROSS_PROJECT
-history_level: FULL_HISTORY
----
-
-# 采购合同与成本联动复盘
+# P002 银行企业知识助手项目负毛利异常原因与采购合同成本联动复盘
 
 适用于分析 P002 银行企业知识助手项目为什么出现负毛利及采购、合同、成本异常：实际成本 265 万元、收入确认 252 万元、账面毛利 -13 万元；并与 P001 节约 18 万元、P003 节约 4 万元作对照。文末改进项均为复盘建议，不是现行强制要求。
 

@@ -1,14 +1,3 @@
----
-knowledge_id: TPL015
-knowledge_type: TEMPLATE
-domain: 招聘
-title: 岗位JD模板
-served_agents:
-- A07
-- A08
-source_type: INTERNAL_DERIVED
----
-
 # 岗位JD模板
 
 ## 使用场景与边界

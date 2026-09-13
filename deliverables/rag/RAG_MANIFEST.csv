@@ -38,7 +38,7 @@ POL006,POLICY,项目管理,项目立项管理办法,A01;A02;A12,SYNTHETIC_DERIVE
 POL007,POLICY,项目管理,项目变更管理办法,A02;A10;A11;A12,SYNTHETIC_DERIVED,,,core/POL007_企业制度_项目变更管理办法.md,knowledge/core/POL007_企业制度_项目变更管理办法.md
 POL008,POLICY,会议协同,会议管理制度,A02;A03;A04;A05,SYNTHETIC_DERIVED,,,core/POL008_企业制度_会议管理制度.md,knowledge/core/POL008_企业制度_会议管理制度.md
 POL009,POLICY,企业文档,文档管理制度,A03;A04;A05;A06,SYNTHETIC_DERIVED,,,core/POL009_企业制度_文档管理制度.md,knowledge/core/POL009_企业制度_文档管理制度.md
-POL010,POLICY,公文规范,公文管理办法,A03;A05;A06,SYNTHETIC_DERIVED,,,core/POL010_企业制度_公文管理办法.md,knowledge/core/POL010_企业制度_公文管理办法.md
+POL010,POLICY,公文规范,通知请示报告与专项预算公文管理办法,A03;A05;A06,SYNTHETIC_DERIVED,,,core/POL010_企业制度_公文管理办法.md,knowledge/core/POL010_企业制度_公文管理办法.md
 POL011,POLICY,采购,采购管理制度,A02;A09;A10;A11,SYNTHETIC_DERIVED,,,core/POL011_企业制度_采购管理制度.md,knowledge/core/POL011_企业制度_采购管理制度.md
 POL012,POLICY,供应商,供应商管理制度,A09;A10;A11;A12,SYNTHETIC_DERIVED,,,core/POL012_企业制度_供应商管理制度.md,knowledge/core/POL012_企业制度_供应商管理制度.md
 POL013,POLICY,招投标,招投标管理制度,A01;A09;A10;A11,SYNTHETIC_DERIVED,,,core/POL013_企业制度_招投标管理制度.md,knowledge/core/POL013_企业制度_招投标管理制度.md
@@ -210,7 +210,7 @@ TPL009,TEMPLATE,会议协同,会议议程模板,A02;A04;A05,INTERNAL_DERIVED,,,t
 TPL010,TEMPLATE,会议协同,会议纪要模板,A02;A04;A05,INTERNAL_DERIVED,,,templates/TPL010_会议协同_会议纪要模板.md,knowledge/templates/TPL010_会议协同_会议纪要模板.md
 TPL011,TEMPLATE,会议协同,决策与待办清单模板,A02;A04,INTERNAL_DERIVED,,,templates/TPL011_会议协同_决策与待办清单模板.md,knowledge/templates/TPL011_会议协同_决策与待办清单模板.md
 TPL012,TEMPLATE,公文规范,通知模板,A05;A06,INTERNAL_DERIVED,,,templates/TPL012_公文规范_通知模板.md,knowledge/templates/TPL012_公文规范_通知模板.md
-TPL013,TEMPLATE,公文规范,请示模板,A05;A06,INTERNAL_DERIVED,,,templates/TPL013_公文规范_请示模板.md,knowledge/templates/TPL013_公文规范_请示模板.md
+TPL013,TEMPLATE,公文规范,专项预算与事项批准请示模板,A05;A06,INTERNAL_DERIVED,,,templates/TPL013_公文规范_请示模板.md,knowledge/templates/TPL013_公文规范_请示模板.md
 TPL014,TEMPLATE,企业文档,工作报告模板,A05;A06;A12,INTERNAL_DERIVED,,,templates/TPL014_企业文档_工作报告模板.md,knowledge/templates/TPL014_企业文档_工作报告模板.md
 TPL015,TEMPLATE,招聘,岗位JD模板,A07;A08,INTERNAL_DERIVED,,,templates/TPL015_招聘_岗位JD模板.md,knowledge/templates/TPL015_招聘_岗位JD模板.md
 TPL016,TEMPLATE,招聘,面试评价表模板,A07;A08,INTERNAL_DERIVED,,,templates/TPL016_招聘_面试评价表模板.md,knowledge/templates/TPL016_招聘_面试评价表模板.md

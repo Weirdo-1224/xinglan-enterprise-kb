@@ -1,13 +1,3 @@
----
-knowledge_id: ROLE002
-knowledge_type: ROLE
-domain: 项目管理
-title: 解决方案顾问
-served_agents:
-- A01
-source_type: SYNTHETIC_DERIVED
----
-
 # 解决方案顾问
 
 ## 岗位定位与所属部门
