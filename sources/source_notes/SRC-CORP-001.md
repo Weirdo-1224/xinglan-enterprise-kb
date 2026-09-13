@@ -4,9 +4,9 @@
 
 - **来源 ID**：SRC-CORP-001
 - **标题**：中国石油化工股份有限公司 2024 年度内部控制评价报告
-- **发布机构**：中国石化（深圳证券交易所 600028）董事会
+- **发布机构**：中国石化（上海证券交易所 600028）董事会
 - **发布日期**：2025-03-24
-- **权威来源 URL**：http://dataclouds.cninfo.com.cn/shgonggao/2025/2025-03-24/b6bf80ae07b911f0bd3ffa163e957f7a.pdf （巨潮资讯网深交所信披平台）
+- **权威来源 URL**：http://dataclouds.cninfo.com.cn/shgonggao/2025/2025-03-24/b6bf80ae07b911f0bd3ffa163e957f7a.pdf （巨潮资讯网，法定信息披露平台之一）
 - **上市标准**：根据《企业内部控制基本规范》及其配套指引
 - **来源等级**：L5（公开企业实践）
 - **适用性判断**：source_authority=PUBLIC_CORPORATE, normative_force=REFERENCE, applicability=ANALOGICAL

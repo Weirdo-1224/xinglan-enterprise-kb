@@ -25,6 +25,7 @@ VALIDATORS = [
     ("Stage 3.1 Content QA", "validate_stage31_content.py"),
     ("Stage 4 Project Cases", "validate_stage4_cases.py"),
     ("Stage 5 Business Data & Templates", "validate_stage5_assets.py"),
+    ("Stage 6 Precheck Guardrails", "validate_stage6_precheck.py"),
 ]
 
 

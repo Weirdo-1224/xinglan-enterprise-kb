@@ -300,6 +300,47 @@ for seq in range(1, 8):
     if mtg not in p003_corpus:
         errors.append(f"P003: expected meeting id {mtg} missing from project corpus")
 
+# G5. Stage 6 precheck: every P00X_NN document reference must resolve to a manifest asset.
+doc_pattern = re.compile(r"P\d{3}_\d{2}")
+for name, (meta, body) in parsed.items():
+    for lineno, line in enumerate(body.splitlines(), start=1):
+        for doc in doc_pattern.findall(line):
+            if doc not in manifest_ids:
+                errors.append(f"{name}:{lineno}: references unknown document {doc}")
+
+# G6. Stage 6 precheck: derived CASE files restating a project's final outcome must
+# agree with that project's Canonical Facts (delay days and budget variance).
+CANON_PID = re.compile(r"P\d{3}")
+CANON_FIGURE = re.compile(r"(?<!预测)(?:延期|超支|节约)[^\d]{0,4}(\d+)\s*(天|万)")
+for case_id in ("CASE001", "CASE002", "CASE003", "CASE004"):
+    entry = next(((n, b) for n, (m, b) in parsed.items() if m.get("knowledge_id") == case_id), None)
+    if entry is None:
+        continue
+    name, body = entry
+    for lineno, line in enumerate(body.splitlines(), start=1):
+        anchors = [(m.start(), m.group(0)) for m in CANON_PID.finditer(line) if m.group(0) in projects]
+        if not anchors:
+            continue
+        for match in CANON_FIGURE.finditer(line):
+            before = [a for a in anchors if a[0] < match.start()]
+            if not before or match.start() - before[-1][0] >= 40:
+                continue
+            pid = before[-1][1]
+            context = line[max(0, match.start() - 8):match.start()]
+            if any(word in context for word in ("计划", "基线", "原", "预计", "预算差额")):
+                continue
+            value, unit = int(match.group(1)), match.group(2)
+            if unit == "天":
+                expected = projects[pid]["delay_days"]
+                actual = 0 if "零延期" in line[max(0, match.start() - 6):match.start()] else value
+            else:
+                expected = abs(projects[pid]["financials"]["budget_variance"]["amount"]) // 10000
+                actual = value
+            if actual != expected:
+                errors.append(
+                    f"{name}:{lineno}: {pid} outcome stated as {actual}{unit} but canonical is {expected}{unit}"
+                )
+
 # G4. SYNTHETIC_DERIVED assets with source_ids: every id must exist and be VERIFIED.
 source_registry = {r["source_id"]: r for r in read_csv(ROOT / "sources" / "SOURCE_REGISTRY.csv")}
 for name, (meta, body) in parsed.items():

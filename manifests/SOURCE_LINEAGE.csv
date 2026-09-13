@@ -1,10 +1,9 @@
 ﻿lineage_id,knowledge_id,source_id,relationship,claim_scope,transformation,confidence,review_status,notes
 LIN-001,KB001,SRC-SYN-001,canonical_fact_source,公司名称、成立年份、总部、员工数,direct,HIGH,VERIFIED,唯一事实源
-LIN-002,REF001,SRC-LAW-001,planned_external_source,劳动合同相关规则,to_be_extracted,PENDING,PENDING,Stage 2 核验后方可使用
 LIN-003,POL011,SRC-SYN-001,synthetic_parameter_source,内部采购阈值与审批层级,derived_with_internal_thresholds,HIGH,VERIFIED,公共规则与企业参数必须分层
-LIN-004,P001_23,SRC-SYN-001,project_canonical_source,优秀项目经营复盘规划,synthetic_generation_planned,PENDING,PENDING,Stage 4 生成正文
-LIN-005,P002_23,SRC-SYN-001,project_canonical_source,问题项目经营复盘规划,synthetic_generation_planned,PENDING,PENDING,Stage 4 生成正文
-LIN-006,P003_23,SRC-SYN-001,project_canonical_source,复杂技术项目经营复盘规划,synthetic_generation_planned,PENDING,PENDING,Stage 4 生成正文
+LIN-004,P001_23,SRC-SYN-001,project_canonical_source,优秀项目经营复盘规划,derived_from_canonical_facts,HIGH,VERIFIED,Stage 4.1 血缘补登：P001_23 经营复盘已生成，内容派生自 P001 Canonical Facts 与 DATA008/DATA010 成本收入口径
+LIN-005,P002_23,SRC-SYN-001,project_canonical_source,问题项目经营复盘规划,derived_from_canonical_facts,HIGH,VERIFIED,Stage 4.1 血缘补登：P002_23 经营复盘已生成，内容派生自 P002 Canonical Facts 与 DATA008/DATA010 成本收入口径
+LIN-006,P003_23,SRC-SYN-001,project_canonical_source,复杂技术项目经营复盘规划,derived_from_canonical_facts,HIGH,VERIFIED,Stage 4.1 血缘补登：P003_23 经营复盘已生成，内容派生自 P003 Canonical Facts 与 DATA008/DATA010 成本收入口径
 LIN-007,REF001,SRC-LAW-001,direct_external_source,劳动合同订立/解除/终止/赔偿的强制性规则,to_be_extracted,HIGH,VERIFIED,Stage 2 真实访问核验；星澜 HR/招聘/培训制度的上位强制依据
 LIN-008,POL001,SRC-LAW-001,direct_external_source,人力资源管理办法的劳动法上位依据,derived_with_internal_parameters,HIGH,VERIFIED,公共依据与企业参数分层；劳动法条款不得改写
 LIN-009,POL002,SRC-LAW-001,direct_external_source,招聘管理制度的劳动法上位依据,derived_with_internal_parameters,HIGH,VERIFIED,书面合同/试用期/招用告知义务须直接落地
@@ -13,9 +12,9 @@ LIN-011,REF004,SRC-LAW-002,direct_external_source,网络安全等级保护与关
 LIN-012,POL017,SRC-LAW-002,direct_external_source,信息安全管理制度的上位法律依据,derived_with_internal_parameters,HIGH,VERIFIED,第二十一条六项强制要素须逐项落地
 LIN-013,POL018,SRC-LAW-002,partial_external_source,知识产权与保密管理制度中网络环境保密部分,derived_with_internal_parameters,MEDIUM,VERIFIED,本法对网络环境下保密有部分约束；完整上位依据为《民法典》《保密法》等
 LIN-014,REF002,SRC-LAW-003,direct_external_source,个人信息处理的强制性规则（含告知-同意/单独同意/跨境提供/敏感个人信息）,to_be_extracted,HIGH,VERIFIED,Stage 2 真实访问核验；flk.npc.gov.cn 全会公报原文
-LIN-015,POL001,SRC-LAW-003,direct_external_source,人力资源管理办法的个保法上位依据（员工个人信息处理）,derived_with_internal_parameters,HIGH,VERIFIED,第 13 条第 2 项"人力资源管理所必需"是星澜 HR 制度的法定豁免基础
-LIN-016,POL002,SRC-LAW-003,direct_external_source,招聘管理制度的个保法上位依据（候选人简历/测评数据处理）,derived_with_internal_parameters,HIGH,VERIFIED,候选人入职前非"人力资源管理所必需"主体，须依"告知-同意"原则
-LIN-017,POL017,SRC-LAW-003,direct_external_source,信息安全管理制度中个人信息保护部分,derived_with_internal_parameters,HIGH,VERIFIED,与数据安全法、网络安全法共同构成信息安全的"三法"体系
+LIN-015,POL001,SRC-LAW-003,direct_external_source,人力资源管理办法的个保法上位依据（员工个人信息处理）,derived_with_internal_parameters,HIGH,VERIFIED,"第 13 条第 2 项""人力资源管理所必需""是星澜 HR 制度的法定豁免基础"
+LIN-016,POL002,SRC-LAW-003,direct_external_source,招聘管理制度的个保法上位依据（候选人简历/测评数据处理）,derived_with_internal_parameters,HIGH,VERIFIED,"候选人入职前非""人力资源管理所必需""主体，须依""告知-同意""原则"
+LIN-017,POL017,SRC-LAW-003,direct_external_source,信息安全管理制度中个人信息保护部分,derived_with_internal_parameters,HIGH,VERIFIED,"与数据安全法、网络安全法共同构成信息安全的""三法""体系"
 LIN-018,POL018,SRC-LAW-003,partial_external_source,保密管理中涉及个人信息部分的个保法依据,derived_with_internal_parameters,MEDIUM,VERIFIED,保密法、个保法对保密信息中含个人信息的部分有交叉约束
 LIN-019,REF003,SRC-LAW-004,direct_external_source,数据安全的强制性规则（数据分类分级/审查/应急）,to_be_extracted,HIGH,VERIFIED,Stage 2 真实访问核验；npc.gov.cn 全文 7 章 55 条
 LIN-020,POL017,SRC-LAW-004,direct_external_source,信息安全管理制度的数据安全法上位依据,derived_with_internal_parameters,HIGH,VERIFIED,第 21 条分类分级保护制度是 POL017 的核心制度来源
@@ -24,7 +23,7 @@ LIN-022,POL011,SRC-MOF-001,analogical_external_source,采购管理制度的政�
 LIN-023,POL013,SRC-MOF-001,analogical_external_source,招投标管理制度的政府采购法类比依据,derived_with_internal_parameters,MEDIUM,VERIFIED,第 4 条政府采购工程适用招标投标法，形成两法衔接
 LIN-024,POL014,SRC-MOF-001,analogical_external_source,合同管理制度的政府采购合同备案类比依据,derived_with_internal_parameters,LOW,VERIFIED,第 43 条政府采购合同适用合同法（现指民法典合同编），合同备案义务可类比
 LIN-025,REF006,SRC-LAW-005,analogical_external_source,招标投标基本规则的类比参考,to_be_extracted,MEDIUM,VERIFIED,Stage 2 真实访问核验；北京市公共资源交易服务平台 PDF 全文；星澜仅在响应依法必须招标项目时受强制约束
-LIN-026,POL013,SRC-LAW-005,analogical_external_source,招投标管理制度的招标投标法类比依据,derived_with_internal_parameters,MEDIUM,VERIFIED,第 34-48 条开标/评标/中标程序可类比到内部 ≥50 万元采购流程
+LIN-026,POL013,SRC-LAW-005,analogical_external_source,招投标管理制度的招标投标法类比依据,derived_with_internal_parameters,MEDIUM,VERIFIED,第 34-48 条开标/评标/中标程序可类比到内部 100 万元及以上公开招标或专项审批采购流程
 LIN-027,POL014,SRC-LAW-005,partial_external_source,合同管理制度中合同签订 30 日时限、中标通知效力部分,derived_with_internal_parameters,MEDIUM,VERIFIED,第 45-46 条中标通知与合同签订时限规则可类比
 LIN-028,REF008,SRC-LAW-006,direct_external_source,合同民商事基础规则（含合同成立/履行/违约/格式条款）,to_be_extracted,HIGH,VERIFIED,Stage 2 真实访问核验；广西钦州市钦南区政府公开转载全文；民法典通则+典型合同+准合同三编
 LIN-029,POL014,SRC-LAW-006,direct_external_source,合同管理制度的民法典合同编上位依据,derived_with_internal_parameters,HIGH,VERIFIED,第 463-634 条通则是合同起草 SOP 的上位依据；典型合同是 TPL007 示范文本的基础
@@ -42,7 +41,7 @@ LIN-040,REF012,SRC-CORP-002,analogical_external_source,项目管理实践参考�
 LIN-041,POL005,SRC-CORP-002,analogical_external_source,项目管理制度的 PMBOK 上位依据,derived_with_internal_parameters,HIGH,VERIFIED,8 大绩效域可作为 POL005 章节骨架
 LIN-042,POL006,SRC-CORP-002,analogical_external_source,项目立项管理办法的 PMBOK 依据,derived_with_internal_parameters,MEDIUM,VERIFIED,干系人绩效域 + 规划绩效域为立项管理提供方法论
 LIN-043,POL007,SRC-CORP-002,analogical_external_source,项目变更管理办法的 PMBOK 依据,derived_with_internal_parameters,MEDIUM,VERIFIED,项目工作绩效域 + 不确定性绩效域为变更管理提供方法论
-LIN-044,REF014,SRC-CORP-001,analogical_external_source,公开企业内部控制评价报告样例（中国石化 2024）,to_be_extracted,MEDIUM,VERIFIED,Stage 2 真实访问核验；cninfo.com.cn 巨潮资讯网深交所信披平台
+LIN-044,REF014,SRC-CORP-001,analogical_external_source,公开企业内部控制评价报告样例（中国石化 2024）,to_be_extracted,MEDIUM,VERIFIED,Stage 2 真实访问核验；cninfo.com.cn 巨潮资讯网上交所信披平台
 LIN-045,POL015,SRC-CORP-001,analogical_external_source,预算管理制度中内部控制整合部分,derived_with_internal_parameters,MEDIUM,VERIFIED,5 大内控域（控制环境/风险评估/控制活动/信息沟通/内部监督）的上市公开实践
 LIN-046,REF015,SRC-ROLE-001,analogical_external_source,AI 工程师岗位公开 JD 样例（字节跳动 2027 届校招）,to_be_extracted,MEDIUM,VERIFIED,Stage 2 真实访问核验；jobs.bytedance.com 字节跳动官方
 LIN-047,POL002,SRC-ROLE-001,analogical_external_source,招聘管理制度的岗位 JD 模板库,derived_with_internal_parameters,MEDIUM,VERIFIED,4 类 AI 岗位 JD 结构（算法/全栈/Agent/产品经理）可作为招聘 SOP 模板

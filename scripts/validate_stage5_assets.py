@@ -38,6 +38,8 @@ REQUIRED_TEMPLATE_SECTIONS = [
     "使用场景与边界", "适用角色", "文档控制", "必填字段", "可选字段", "填写规则",
     "状态与审批信息", "输出结构", "检查清单", "关联制度与流程",
 ]
+# Stage 6 precheck P1-15: filler cells that carry no template-specific information.
+ZERO_INFORMATION_CELLS = ["完成流程和形成有效记录所需", "业务值或关联记录", "按场景补充，不影响无关场景"]
 
 # Stage 5.1 realism rules
 AS_OF = date(2026, 9, 12)
@@ -181,8 +183,13 @@ def validate_templates(rows: list[dict[str, str]]) -> None:
         for section in REQUIRED_TEMPLATE_SECTIONS:
             if f"## {section}" not in body:
                 fail(f"{filename}: missing section {section}")
-        if body.count("| 必填 |") < 10 or len(body) < 2200:
+        if body.count("| 必填 |") < 10 or body.count("| 可选 |") < 3:
             fail(f"{filename}: insufficient field coverage or content depth")
+        if len(re.findall(r"^\d+\.\s+\S", body, re.M)) < 5 or len(re.findall(r"^- \[[ x]\]", body, re.M)) < 5:
+            fail(f"{filename}: insufficient filling-rule or checklist depth")
+        for filler in ZERO_INFORMATION_CELLS:
+            if filler in body:
+                fail(f"{filename}: zero-information filler text present: {filler}")
         for dep in meta["depends_on"]:
             if dep not in body:
                 fail(f"{filename}: dependency {dep} not explained in body")
@@ -372,6 +379,36 @@ def validate_realism(data: dict[str, list[dict[str, object]]]) -> None:
         for row in data[dataset]:
             if as_date(row[field]) and as_date(row[field]) > AS_OF:
                 fail(f"{dataset}: {field} {as_date(row[field])} after as_of {AS_OF}")
+
+    # Stage 6 precheck P0-2 guard: nobody may book hours before their hire date.
+    for row in data["DATA007"]:
+        employee = employees.get(str(row["employee_id"]))
+        if employee is None:
+            continue
+        work, hire = as_date(row["work_month"]), as_date(employee["hire_date"])
+        if work and hire and work < hire:
+            fail(f"{row['timesheet_id']}: work_month {work} precedes hire_date {hire} ({row['employee_id']})")
+
+    # Stage 6 precheck P0-1/P0-5 guard: procurement chain request <= sign <= delivery,
+    # plus request <= committed delivery, across DATA005 <-> DATA006.
+    contracts = {str(row["contract_id"]): row for row in data["DATA005"]}
+    for row in data["DATA005"]:
+        sign, end = as_date(row["sign_date"]), as_date(row["end_date"])
+        if sign and end and sign > end:
+            fail(f"{row['contract_id']}: sign_date {sign} is after end_date {end}")
+    for row in data["DATA006"]:
+        pid = str(row["procurement_id"])
+        request = as_date(row["request_date"])
+        delivery, committed = as_date(row["delivery_date"]), as_date(row["committed_delivery_date"])
+        if request and committed and request > committed:
+            fail(f"{pid}: request_date {request} is after committed_delivery_date {committed}")
+        if request and delivery and request > delivery:
+            fail(f"{pid}: request_date {request} is after delivery_date {delivery}")
+        contract = contracts.get(str(row["purchase_contract_id"]))
+        if contract is not None:
+            sign = as_date(contract["sign_date"])
+            if request and sign and request > sign:
+                fail(f"{pid}: request_date {request} is after linked contract sign_date {sign}")
 
     report_counts = Counter(str(row["manager_employee_id"]) for row in data["DATA001"] if row["manager_employee_id"] not in {"", None})
     dept_roots: dict[str, list[dict[str, object]]] = {dept: [] for dept in DEPARTMENTS}
